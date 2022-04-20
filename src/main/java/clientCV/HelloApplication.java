@@ -1,4 +1,4 @@
-package com.example.laboratorio_b;
+package clientCV;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

@@ -10,6 +10,12 @@ module com.example.laboratorio_b {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
 
-    opens com.example.laboratorio_b to javafx.fxml;
-    exports com.example.laboratorio_b;
+    opens clientCV to javafx.fxml;
+    exports clientCV;
+    exports clientCV.centriVaccinali;
+    opens clientCV.centriVaccinali to javafx.fxml;
+    exports clientCV;
+    opens clientCV to javafx.fxml;
+    exports clientCV.centriVaccinali.grafica;
+    opens clientCV.centriVaccinali.grafica to javafx.fxml;
 }
