@@ -1,6 +1,6 @@
 package clientCV.centriVaccinali.modelli;
 
-import clientCV.shared.Check;
+import clientCV.condivisi.Controlli;
 
 /**
  * Indirizzo
@@ -12,7 +12,7 @@ public class Indirizzo {
     private String strada, civico, comune, provincia, CAP;
     private Qualificatore qualificatore;
 
-        private Check check = new Check();
+        private Controlli controlli = new Controlli();
 
     /**
      * Costruttore Indirizzo
@@ -100,7 +100,7 @@ public class Indirizzo {
      */
     @Override
     public String toString() {
-        return check.primaMaiuscola(qualificatore.toString()) +
+        return controlli.primaMaiuscola(qualificatore.toString()) +
                 " " +
                 strada +
                 " " +

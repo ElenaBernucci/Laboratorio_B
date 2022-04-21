@@ -1,14 +1,13 @@
-package clientCV.centriVaccinali.grafica;
+package clientCV.centriVaccinali.interfacce;
 
 import clientCV.CentriVaccinali;
-import clientCV.centriVaccinali.grafica.CambiaSchermata;
-import clientCV.centriVaccinali.modelli.CentroVaccinale;
+import clientCV.Proxy;
 import clientCV.centriVaccinali.modelli.CentroVaccinale;
 import clientCV.centriVaccinali.modelli.Segnalazione;
 import clientCV.centriVaccinali.modelli.Vaccinato;
-import clientCV.persone.Cittadino;
-import clientCV.persone.Utente;
-import clientCV.shared.Check;
+import clientCV.cittadini.Cittadino;
+import clientCV.cittadini.Utente;
+import clientCV.condivisi.Controlli;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -22,21 +21,18 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import clientCV.Proxy;
+
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-
 /**
- * Setter
+ * InterfacciaCentro
  *
  * @author Bernucci Elena 740283 VA
  * @author Clementi Luca 740350 VA
  */
-
-public class Setter extends CambiaSchermata {
-
+public class InterfacciaCentro extends Interfaccia {
     private Utente utente;
     private CentroVaccinale centroVaccinale;
 
@@ -163,16 +159,16 @@ public class Setter extends CambiaSchermata {
         segnalazioniGrid.setStyle("-fx-background: transparent; -fx-background-color: transparent; ");
 
         Proxy proxy, proxy2;
-        Check check = new Check();
+        Controlli check = new Controlli();
 
         String query = "SELECT * FROM centrivaccinali WHERE nome = '" + centro + "'";
         String querySegnalazione = "SELECT * " +
-                "FROM segnalazioni JOIN sintomi ON (sintomi.idsintomo = segnalazioni.idsintomo)" +
-                "WHERE centrovaccinale = '" + centro + "'";
+                                    "FROM segnalazioni JOIN sintomi ON (sintomi.idsintomo = segnalazioni.idsintomo)" +
+                                    "WHERE centrovaccinale = '" + centro + "'";
         StringBuilder severita = new StringBuilder();
 
         int totaleSegnalazioni = 0;
-        ArrayList<Segnalazione> segnalazioni = new ArrayList<>();
+            ArrayList<Segnalazione> segnalazioni = new ArrayList<>();
 
         try {
             proxy = new Proxy();
@@ -184,29 +180,29 @@ public class Setter extends CambiaSchermata {
             e.printStackTrace();
         }
 
-        for (int i = 0; i<segnalazioni.size(); i++) {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass()
-                    .getClassLoader()
-                    .getResource(path + "SegnalazioneItem.fxml"));
+            for (int i = 0; i<segnalazioni.size(); i++) {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass()
+                        .getClassLoader()
+                        .getResource(path + "SegnalazioneItem.fxml"));
 
-            AnchorPane anchorPane = null;
-            try {
-                anchorPane = fxmlLoader.load();
-            } catch (IOException e) {
-                e.printStackTrace();
+                AnchorPane anchorPane = null;
+                try {
+                    anchorPane = fxmlLoader.load();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                InterfacciaSegnalazioneOggetto interfacciaSegnalazione = fxmlLoader.getController();
+                interfacciaSegnalazione.setData(segnalazioni.get(i));
+
+                segnalazioniGrid.add(anchorPane, 0, i);
+
+                GridPane.setMargin(anchorPane, new Insets(10, 0, 0, 0));
+
+                totaleSegnalazioni += segnalazioni.get(i).getSeverita();
+
+                severita.delete(0, severita.length());
             }
-
-            segnalazioneItemAdapter segnalazioneAdapter = fxmlLoader.getController();
-            segnalazioneAdapter.setData(segnalazioni.get(i));
-
-            segnalazioniGrid.add(anchorPane, 0, i);
-
-            GridPane.setMargin(anchorPane, new Insets(10, 0, 0, 0));
-
-            totaleSegnalazioni += segnalazioni.get(i).getSeverita();
-
-            severita.delete(0, severita.length());
-        }
 
         nomeText.setText(check.primaMaiuscola(centroVaccinale.getNome()));
         tipologiaText.setText("Tipologia: " + centroVaccinale.getTipologia().toString());
@@ -231,7 +227,7 @@ public class Setter extends CambiaSchermata {
      */
     public void vaiASegnalazione(ActionEvent event) throws IOException {
         Proxy proxy;
-        Check check = new Check();
+        Controlli check = new Controlli();
         Cittadino cittadino = (Cittadino)utente;
         String query = "SELECT * FROM vaccinati_" + check.nomeTabella(centroVaccinale.getNome()) + " WHERE idvaccinazione = " + cittadino.getIdVaccinazione();
 
@@ -251,11 +247,11 @@ public class Setter extends CambiaSchermata {
                 FXMLLoader(CentriVaccinali.class.getClassLoader().getResource(path + "Segnalazione.fxml"));
         Parent root = loader.load();
 
-        CambiaSchermata mAdapter = loader.getController();
-        SegnalazioneAdapter segnalaAdapter = loader.getController();
+        Interfaccia minterfaccia = loader.getController();
+        InterfacciaSegnalazione interfacciaSegnalazione = loader.getController();
 
-        mAdapter.setUtente(utente);
-        segnalaAdapter.setCentro(centroVaccinale);
+        minterfaccia.setUtente(utente);
+        interfacciaSegnalazione.setCentro(centroVaccinale);
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
@@ -277,7 +273,7 @@ public class Setter extends CambiaSchermata {
         }
 
 
-        Check check = new Check();
+        Controlli check = new Controlli();
         Cittadino cittadino = (Cittadino)utente;
         String query2 = "SELECT * FROM vaccinati_" + check.nomeTabella(centroVaccinale.getNome()) + " WHERE idvaccinazione = " + cittadino.getIdVaccinazione();
 
@@ -297,11 +293,11 @@ public class Setter extends CambiaSchermata {
                 FXMLLoader(CentriVaccinali.class.getClassLoader().getResource(path + "Segnalazione.fxml"));
         Parent root = loader.load();
 
-        CambiaSchermata mAdapter = loader.getController();
-        SegnalazioneAdapter segnalaAdapter = loader.getController();
+        Interfaccia minterfaccia = loader.getController();
+        InterfacciaSegnalazione interfacciaSegnalazione = loader.getController();
 
-        mAdapter.setUtente(utente);
-        segnalaAdapter.setCentro(centroVaccinale);
+        minterfaccia.setUtente(utente);
+        interfacciaSegnalazione.setCentro(centroVaccinale);
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);

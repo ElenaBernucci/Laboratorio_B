@@ -6,7 +6,6 @@ package clientCV.centriVaccinali.modelli;
  * @author Bernucci Elena 740283 VA
  * @author Clementi Luca 740350 VA
  */
-
 public class CentroVaccinale {
     private String nome;
     private Indirizzo indirizzo;

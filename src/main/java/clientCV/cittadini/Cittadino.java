@@ -1,5 +1,4 @@
-package clientCV.persone;
-
+package clientCV.cittadini;
 
 /**
  * Cittadino
@@ -13,7 +12,7 @@ public class Cittadino extends Utente {
     private int idVaccinazione;
 
     /**
-     * Costruttore Cittadino
+     * Cittadino
      *
      * @param username
      * @param password
@@ -73,4 +72,3 @@ public class Cittadino extends Utente {
 
 
 }
-

@@ -1,9 +1,8 @@
 package clientCV.centriVaccinali.modelli;
 
 import clientCV.cittadini.Persona;
-import clientCV.persone.Persona;
 
-import java.util.Date;
+import java.sql.Date;
 
 /**
  * Vaccinato
@@ -11,14 +10,15 @@ import java.util.Date;
  * @author Bernucci Elena 740283 VA
  * @author Clementi Luca 740350 VA
  */
+
 public class Vaccinato extends Persona {
     private String centroVaccinale;
     private Vaccino vaccino;
-    private java.util.Date data;
+    private Date data;
     private int idVaccinazione;
 
     /**
-     * Costruttore Vaccinato
+     * Vaccinato
      *
      * @param nome
      * @param cognome
@@ -28,13 +28,14 @@ public class Vaccinato extends Persona {
      * @param vaccino
      * @param idVaccinazione
      */
-    public Vaccinato(String nome,
-                     String cognome,
-                     String CF,
-                     String centroVaccinale,
-                     java.util.Date data,
-                     Vaccino vaccino,
-                     int idVaccinazione) {
+
+    public Vaccinato (String nome,
+                      String cognome,
+                      String CF,
+                      String centroVaccinale,
+                      Date data,
+                      Vaccino vaccino,
+                      int idVaccinazione) {
 
         super(nome, cognome, CF);
 
@@ -48,6 +49,7 @@ public class Vaccinato extends Persona {
      * Get CentroVaccinale
      * @return centroVaccinale
      */
+
     public String getCentroVaccinale() {
         return centroVaccinale;
     }
@@ -56,6 +58,7 @@ public class Vaccinato extends Persona {
      * Get Vaccino
      * @return Vaccino
      */
+
     public Vaccino getVaccino() {
         return vaccino;
     }
@@ -64,7 +67,8 @@ public class Vaccinato extends Persona {
      * Get Data
      * @return Data
      */
-    public java.util.Date getData() {
+
+    public Date getData() {
         return data;
     }
 
@@ -72,6 +76,7 @@ public class Vaccinato extends Persona {
      * Get IdVaccinazione
      * @return idVaccinazione
      */
+
     public int getIdVaccinazione() {
         return idVaccinazione;
     }
@@ -80,6 +85,7 @@ public class Vaccinato extends Persona {
      * Set CentroVaccinale
      * @param centroVaccinale
      */
+
     public void setCentroVaccinale(String centroVaccinale) {
         this.centroVaccinale = centroVaccinale;
     }
@@ -88,6 +94,7 @@ public class Vaccinato extends Persona {
      * Set Vaccino
      * @param vaccino
      */
+
     public void setVaccino(Vaccino vaccino) {
         this.vaccino = vaccino;
     }
@@ -96,6 +103,7 @@ public class Vaccinato extends Persona {
      * Set Data
      * @param data
      */
+
     public void setData(Date data) {
         this.data = data;
     }
@@ -104,6 +112,7 @@ public class Vaccinato extends Persona {
      * Set IdVaccinazione
      * @param idVaccinazione
      */
+
     public void setIdVaccinazione(int idVaccinazione) {
         this.idVaccinazione = idVaccinazione;
     }

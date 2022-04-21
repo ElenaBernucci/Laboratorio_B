@@ -9,17 +9,24 @@ public enum Vaccino {
     /**
      * Pfizer
      */
+
     PFIZER,
+
     /**
      * Astrazeneca
      */
+
     ASTRAZENECA,
+
     /**
      * Moderna
      */
+
     MODERNA,
+
     /**
      * Johnson&Johnson
      */
+
     JOHNSONANDJOHNSON
 }

@@ -1,4 +1,4 @@
-package clientCV.persone;
+package clientCV.cittadini;
 
 /**
  * Utente
@@ -7,7 +7,7 @@ package clientCV.persone;
  * @author Clementi Luca 740350 VA
  */
 
-public class Utente extends Persona {
+public class Utente extends Persona{
     private String username, password;
 
     /**

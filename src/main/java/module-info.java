@@ -9,6 +9,7 @@ module com.example.laboratorio_b {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
+    requires java.sql;
 
     opens clientCV to javafx.fxml;
     exports clientCV;
@@ -18,4 +19,6 @@ module com.example.laboratorio_b {
     opens clientCV to javafx.fxml;
     exports clientCV.centriVaccinali.grafica;
     opens clientCV.centriVaccinali.grafica to javafx.fxml;
+    exports clientCV.condivisi;
+    opens clientCV.condivisi to javafx.fxml;
 }

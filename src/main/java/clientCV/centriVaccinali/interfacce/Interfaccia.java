@@ -1,7 +1,7 @@
-package clientCV.centriVaccinali.grafica;
+package clientCV.centriVaccinali.interfacce;
 
 import clientCV.CentriVaccinali;
-import clientCV.persone.Utente;
+import clientCV.cittadini.Utente;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -10,16 +10,17 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
+
 import java.io.IOException;
 import java.util.Objects;
 
 /**
- * CambiaSchermata
+ * Interfaccia
  *
  * @author Bernucci Elena 740283 VA
  * @author Clementi Luca 740350 VA
  */
-public abstract class CambiaSchermata {
+public abstract class Interfaccia {
     /**
      * Path
      */
@@ -41,7 +42,7 @@ public abstract class CambiaSchermata {
     public void cambiaSchermata(String fxml, ActionEvent event) throws IOException {
         Parent root = FXMLLoader
                 .load(Objects.requireNonNull(CentriVaccinali.class.getClassLoader()
-                        .getResource(path + fxml)));
+                .getResource(path + fxml)));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
@@ -62,8 +63,8 @@ public abstract class CambiaSchermata {
 
         Parent root = fxmlLoader.load();
 
-        CambiaSchermata adapter = fxmlLoader.getController();
-        adapter.setUtente(utente);
+        Interfaccia interfaccia = fxmlLoader.getController();
+        interfaccia.setUtente(utente);
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);

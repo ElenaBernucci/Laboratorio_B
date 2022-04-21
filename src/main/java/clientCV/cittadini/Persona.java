@@ -1,4 +1,4 @@
-package clientCV.persone;
+package clientCV.cittadini;
 
 /**
  * Persona
@@ -13,7 +13,7 @@ public abstract class Persona {
     private String CF;
 
     /**
-     * Costruttore Persona
+     * Constructor Persona
      *
      * @param nome
      * @param cognome
@@ -51,4 +51,3 @@ public abstract class Persona {
     }
 
 }
-
