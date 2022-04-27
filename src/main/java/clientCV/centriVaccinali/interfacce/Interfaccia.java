@@ -12,7 +12,9 @@ import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.Objects;
+import java.util.ResourceBundle;
 
 /**
  * Interfaccia
@@ -25,6 +27,8 @@ public abstract class Interfaccia {
      * Path
      */
     public static final String path = "Layout/";
+
+    public abstract void initialize (URL url, ResourceBundle rb);
 
     /**
      * Imposta l'utente corrente

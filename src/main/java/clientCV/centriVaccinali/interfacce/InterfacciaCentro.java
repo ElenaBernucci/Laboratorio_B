@@ -23,8 +23,10 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 /**
  * InterfacciaCentro
@@ -104,6 +106,11 @@ public class InterfacciaCentro extends Interfaccia {
             } else {
             }
         });
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+
     }
 
     /**

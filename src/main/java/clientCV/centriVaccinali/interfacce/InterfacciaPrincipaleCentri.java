@@ -10,6 +10,8 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 /**
  * InterfacciaPrincipaleCentri
@@ -73,6 +75,11 @@ public class InterfacciaPrincipaleCentri extends Interfaccia {
             } else {
             }
         });
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+
     }
 
     /**

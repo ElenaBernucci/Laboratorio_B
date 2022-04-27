@@ -5,26 +5,23 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.media.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientCV.centriVaccinali.interfacce.InterfacciaLogIn">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientCV.centriVaccinali.interfacce.InterfacciaLogIn">
     <children>
-        <ImageView fitHeight="600.0" fitWidth="900.0">
-            <image>
-                <Image url="@../Images/sfondo gif.gif" />
-            </image>
-        </ImageView>
-        <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="430.0" layoutY="38.0">
+      <MediaView fx:id="mediaView" fitHeight="600.0" fitWidth="900.0" layoutX="1.0" layoutY="5.0" nodeOrientation="INHERIT" />
+        <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="193.0" layoutY="185.0">
             <image>
                 <Image url="@../Images/Logo.png" />
             </image>
         </ImageView>
-        <Text fill="#53b0bd" layoutX="290.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CENTRI VACCINALI">
+        <Text fill="#d91e85" layoutX="93.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CENTRI VACCINALI">
             <font>
                 <Font name="Montserrat Bold" size="32.0" />
             </font>
         </Text>
-        <TextField id="fieldUser" fx:id="usernameField" alignment="CENTER" layoutX="326.0" layoutY="210.0" prefHeight="39.0" prefWidth="250.0" promptText="Username" style="-fx-background-color: #FFFFFF#FFFFFF; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 2, 2);">
+        <TextField id="fieldUser" fx:id="usernameField" alignment="CENTER" layoutX="537.0" layoutY="174.0" prefHeight="39.0" prefWidth="250.0" promptText="Username" style="-fx-background-color: 255, 255, 255; -fx-background-radius: 05; -fx-effect: dropshadow(three-pass-box, rgba(10, 0, 2, 2)">
             <padding>
                 <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
             </padding>
@@ -35,7 +32,7 @@
                 <Cursor fx:constant="TEXT" />
             </cursor>
         </TextField>
-        <Button id="btnEntra" layoutX="401.0" layoutY="363.0" mnemonicParsing="false" onAction="#controllaLogIn" style="-fx-background-color: #53B0BD#53B0BD; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 2, 2);" text="ENTRA" textFill="WHITE">
+        <Button id="btnEntra" layoutX="612.0" layoutY="327.0" mnemonicParsing="false" onAction="#controllaLogIn" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 2, 2);" text="ACCEDI" textFill="WHITE">
             <font>
                 <Font name="Montserrat Regular" size="17.0" />
             </font>
@@ -46,7 +43,7 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <PasswordField id="fieldPass" fx:id="passwordField" alignment="CENTER" layoutX="326.0" layoutY="287.0" prefHeight="39.0" prefWidth="250.0" promptText="Password" style="-fx-background-color: #FFFFFF#FFFFFF; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 2, 2);">
+        <PasswordField id="fieldPass" fx:id="passwordField" alignment="CENTER" layoutX="537.0" layoutY="251.0" prefHeight="39.0" prefWidth="250.0" promptText="Password" style="-fx-background-color: 255, 255, 255; -fx-background-radius: 05; -fx-effect: dropshadow(three-pass-box, rgba(10, 0, 2, 2)">
             <padding>
                 <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
             </padding>
@@ -62,7 +59,7 @@
                 <Font size="18.0" />
             </font>
         </Text>
-        <Button id="btnOspite" layoutX="377.0" layoutY="495.0" mnemonicParsing="false" onAction="#logInOspite" style="-fx-border-style: none; -fx-background-color: transparent; " text="Accedi come ospite" textFill="#53b0bd" underline="true">
+        <Button id="btnOspite" layoutX="596.0" layoutY="446.0" mnemonicParsing="false" onAction="#logInOspite" style="-fx-border-style: none; -fx-background-color: transparent; " text="Accedi come ospite" textFill="#787474" underline="true">
             <font>
                 <Font name="Montserrat Regular" size="13.0" />
             </font>
@@ -70,7 +67,7 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Button id="btnReset" layoutX="28.0" layoutY="548.0" mnemonicParsing="false" onAction="#vaiAImpostazioni" prefHeight="31.0" prefWidth="95.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="Impostazioni" textAlignment="CENTER" textFill="#53b0bd">
+        <Button id="btnReset" layoutX="181.0" layoutY="360.0" mnemonicParsing="false" onAction="#vaiAImpostazioni" prefHeight="31.0" prefWidth="95.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="Impostazioni" textAlignment="CENTER" textFill="#787474">
             <font>
                 <Font name="Microsoft Sans Serif" size="11.0" />
             </font>
@@ -81,7 +78,7 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-      <Button id="btnRegistrati" layoutX="378.0" layoutY="427.0" mnemonicParsing="false" onAction="#vaiARegistra" prefHeight="42.0" prefWidth="146.0" style="-fx-background-color: #12646F#12646F; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 2, 2);" text="REGISTRATI" textFill="WHITE">
+      <Button id="btnRegistrati" layoutX="589.0" layoutY="391.0" mnemonicParsing="false" onAction="#vaiARegistra" prefHeight="42.0" prefWidth="146.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 2, 2);" text="REGISTRATI" textFill="WHITE">
          <font>
             <Font name="Montserrat Regular" size="17.0" />
          </font>
@@ -92,10 +89,10 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Text fill="#53b0bd" layoutX="372.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="COVID-19">
+      <Text fill="#f2b705" layoutX="157.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="COVID-19">
          <font>
             <Font name="Montserrat Bold" size="32.0" />
          </font>
       </Text>
     </children>
-</Pane>
+</AnchorPane>

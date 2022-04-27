@@ -9,6 +9,8 @@ import javafx.scene.control.TextField;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 /**
  * InterfacciaConnessione
@@ -55,6 +57,11 @@ public class InterfacciaConnessione extends Interfaccia {
         } catch (IOException e) {
             return false;
         }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+
     }
 
     /**

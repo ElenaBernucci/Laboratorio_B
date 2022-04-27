@@ -8,18 +8,25 @@ import clientCV.condivisi.Controlli;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 import serverCV.InformazioniServer;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.net.URL;
 import java.sql.SQLException;
+import java.time.Duration;
 import java.util.Objects;
+import java.util.ResourceBundle;
 
 /**
  * InterfacciaLogIn
@@ -27,7 +34,9 @@ import java.util.Objects;
  * @author Bernucci Elena 740283 VA
  * @author Clementi Luca 740350 VA
  */
-public class InterfacciaLogIn extends Interfaccia {
+public class InterfacciaLogIn extends Interfaccia implements Initializable {
+    @FXML
+    private MediaView mediaView;
     @FXML
     private TextField usernameField;
     @FXML
@@ -124,12 +133,24 @@ public class InterfacciaLogIn extends Interfaccia {
         }
     }
 
+
+
+    @Override
+
+    public void initialize (URL url, ResourceBundle rb){
+
+        Media media = new Media("file:///C:/Users/User/OneDrive/Desktop/sfondoAnimatoVideo.mp4");
+        MediaPlayer player = new MediaPlayer(media);
+        mediaView.setMediaPlayer(player);
+        player.setVolume(0);
+        player.play();
+    }
+
     /**
      * Imposta l'utente corrente
      *
      * @param utente
      */
-    @Override
     public void setUtente(Utente utente) {
         this.utente = utente;
     }
