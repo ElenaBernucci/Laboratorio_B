@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.URL;
+import java.nio.file.FileSystems;
 import java.sql.SQLException;
 import java.time.Duration;
 import java.util.Objects;
@@ -139,9 +140,11 @@ public class InterfacciaLogIn extends Interfaccia implements Initializable {
 
     public void initialize (URL url, ResourceBundle rb){
 
-        Media media = new Media("file:///C:/Users/User/OneDrive/Desktop/sfondoAnimatoVideo.mp4");
+        String absolutePath = FileSystems.getDefault().getPath("src/main/resources/Images/sfondoAnimatoVideo.mp4").normalize().toAbsolutePath().toUri().toString();
+        Media media = new Media(absolutePath);
         MediaPlayer player = new MediaPlayer(media);
         mediaView.setMediaPlayer(player);
+        player.setCycleCount(MediaPlayer.INDEFINITE);
         player.setVolume(0);
         player.play();
     }

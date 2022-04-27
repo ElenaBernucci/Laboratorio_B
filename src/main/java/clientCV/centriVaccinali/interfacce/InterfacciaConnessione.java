@@ -5,6 +5,9 @@ import clientCV.condivisi.InformazioniServer;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -24,6 +27,8 @@ public class InterfacciaConnessione extends Interfaccia {
     private TextField portField, ipField;
     @FXML
     private Label infoLabel;
+    @FXML
+    private MediaView mediaView;
 
     /**
      * Controlla la connessione
@@ -59,9 +64,14 @@ public class InterfacciaConnessione extends Interfaccia {
         }
     }
 
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        Media media = new Media("file:///src/main/resources/Images/sfondoAnimatoVideo.mp4");
+        MediaPlayer player = new MediaPlayer(media);
+        mediaView.setMediaPlayer(player);
+        player.setVolume(0);
+        player.play();
     }
 
     /**

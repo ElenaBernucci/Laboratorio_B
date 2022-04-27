@@ -6,6 +6,9 @@ import clientCV.condivisi.Controlli;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 
 import java.io.IOException;
 import java.net.URL;
@@ -25,6 +28,8 @@ public class InterfacciaRegistraCittadino extends Interfaccia {
             fieldUsername, fieldEmail, fieldID;
     @FXML
     private PasswordField fieldPassword;
+    @FXML
+    private MediaView mediaView;
 
     private Utente utente;
     private Controlli check = new Controlli();
@@ -79,7 +84,11 @@ public class InterfacciaRegistraCittadino extends Interfaccia {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        Media media = new Media("file:///src/main/resources/Images/sfondoAnimatoVideo.mp4");
+        MediaPlayer player = new MediaPlayer(media);
+        mediaView.setMediaPlayer(player);
+        player.setVolume(0);
+        player.play();
     }
 
     /**

@@ -7,6 +7,9 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
@@ -28,6 +31,8 @@ public class InterfacciaPrincipaleCentri extends Interfaccia {
     private Text benvenutoText;
     @FXML
     private Button registraCentroBtn, registraVaccinatoBtn;
+    @FXML
+    private MediaView mediaView;
 
     /**
      * Vai alla schermata Registra Centro
@@ -79,7 +84,11 @@ public class InterfacciaPrincipaleCentri extends Interfaccia {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        Media media = new Media("file:///src/main/resources/Images/sfondoAnimatoVideo.mp4");
+        MediaPlayer player = new MediaPlayer(media);
+        mediaView.setMediaPlayer(player);
+        player.setVolume(0);
+        player.play();
     }
 
     /**

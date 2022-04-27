@@ -19,6 +19,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -48,6 +51,8 @@ public class InterfacciaCentro extends Interfaccia {
     private GridPane segnalazioniGrid;
     @FXML
     private ScrollPane segnalazioniScroll;
+    @FXML
+    private MediaView mediaView;
 
 
     /**

@@ -13,4 +13,9 @@
       <module name="Laboratorio B" target="16" />
     </bytecodeTargetLevel>
   </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Laboratorio B" options="--add-exports jdk.internal.vm.compiler/org.graalvm.compiler.debug=Laboratorio.B" />
+    </option>
+  </component>
 </project>

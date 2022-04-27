@@ -18,6 +18,9 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -39,6 +42,8 @@ public class InterfacciaPrincipaleCittadini extends Interfaccia {
     private Text benvenutoText;
     @FXML
     private Button logoutBtn, registratiBtn, cercaBtn;
+    @FXML
+    private MediaView mediaView;
 
     private Utente utente;
 
@@ -149,7 +154,11 @@ public class InterfacciaPrincipaleCittadini extends Interfaccia {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        Media media = new Media("file:///src/main/resources/Images/sfondoAnimatoVideo.mp4");
+        MediaPlayer player = new MediaPlayer(media);
+        mediaView.setMediaPlayer(player);
+        player.setVolume(0);
+        player.play();
     }
 
     /**
