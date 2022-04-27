@@ -183,7 +183,7 @@ public class InterfacciaCentro extends Interfaccia {
             for (int i = 0; i<segnalazioni.size(); i++) {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass()
                         .getClassLoader()
-                        .getResource(path + "SegnalazioneItem.fxml"));
+                        .getResource(path + "SegnalazioneOggetto.fxml"));
 
                 AnchorPane anchorPane = null;
                 try {

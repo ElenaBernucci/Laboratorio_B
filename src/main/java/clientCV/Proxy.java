@@ -5,7 +5,7 @@ import clientCV.centriVaccinali.modelli.*;
 import clientCV.cittadini.Cittadino;
 import clientCV.cittadini.Utente;
 import clientCV.condivisi.Controlli;
-import serverCV.ServerInfo;
+import serverCV.InformazioniServer;
 
 import java.io.*;
 import java.net.Socket;
@@ -35,7 +35,7 @@ public class Proxy implements FunzionalitaClient {
 
     public Proxy() throws IOException {
 
-        socket = new Socket(ServerInfo.getIPSERVER(), ServerInfo.getPORT());
+        socket = new Socket(InformazioniServer.getIPSERVER(), InformazioniServer.getPORT());
 
         try {
             in = new BufferedReader(

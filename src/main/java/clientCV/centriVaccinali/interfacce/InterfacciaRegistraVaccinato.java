@@ -68,7 +68,7 @@ public class InterfacciaRegistraVaccinato extends Interfaccia implements Initial
      * @throws IOException
      */
     public void vaiAHome(ActionEvent event) throws IOException {
-        cambiaSchermataConUtente("HomeCentri.fxml", utente, event);
+        cambiaSchermataConUtente("PrincipaleCentri.fxml", utente, event);
     }
 
     /**

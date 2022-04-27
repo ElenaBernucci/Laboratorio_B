@@ -69,7 +69,7 @@ public class InterfacciaCerca extends Interfaccia implements Initializable {
     }
 
     public void vaiAHome(ActionEvent event) throws IOException {
-        cambiaSchermataConUtente("HomeCittadini.fxml", utente, event);
+        cambiaSchermataConUtente("PrincipaleCittadini.fxml", utente, event);
     }
 
     /**
@@ -145,7 +145,7 @@ public class InterfacciaCerca extends Interfaccia implements Initializable {
                 for (int i = 0; i<centrivaccinali.size(); i++) {
                     FXMLLoader fxmlLoader = new FXMLLoader(getClass()
                             .getClassLoader()
-                            .getResource(path + "CentroSearchItem.fxml"));
+                            .getResource(path + "CercaCentro.fxml"));
 
                     AnchorPane anchorPane = fxmlLoader.load();
 
@@ -185,7 +185,7 @@ public class InterfacciaCerca extends Interfaccia implements Initializable {
             for (int i = 0; i<centrivaccinali.size(); i++) {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass()
                         .getClassLoader()
-                        .getResource(path + "CentroSearchItem.fxml"));
+                        .getResource(path + "CercaCentro.fxml"));
 
                 AnchorPane anchorPane = fxmlLoader.load();
 
@@ -310,7 +310,7 @@ public class InterfacciaCerca extends Interfaccia implements Initializable {
             for (int i = 0; i<centrivaccinali.size(); i++) {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass()
                         .getClassLoader()
-                        .getResource(path + "CentroSearchItem.fxml"));
+                        .getResource(path + "CercaCentro.fxml"));
 
                 AnchorPane anchorPane = fxmlLoader.load();
 

@@ -13,7 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import serverCV.ServerInfo;
+import serverCV.InformazioniServer;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -79,7 +79,7 @@ public class InterfacciaLogIn extends Interfaccia {
         if(!tryConnection())
             return;
 
-        cambiaSchermataConUtente("HomeCittadini.fxml", null, event);
+        cambiaSchermataConUtente("PrincipaleCittadini.fxml", null, event);
     }
 
     /**
@@ -114,11 +114,11 @@ public class InterfacciaLogIn extends Interfaccia {
             mostraWarning("Utente non trovato", "Username e Password non corrispondono a nessun utente");
         } else {
             if(utente instanceof Cittadino) {
-                cambiaSchermataConUtente("HomeCittadini.fxml", utente, event);
+                cambiaSchermataConUtente("PrincipaleCittadini.fxml", utente, event);
 
             }
             else {
-                cambiaSchermataConUtente("HomeCentri.fxml", utente, event);
+                cambiaSchermataConUtente("PrincipaleCentri.fxml", utente, event);
 
             }
         }
@@ -144,7 +144,7 @@ public class InterfacciaLogIn extends Interfaccia {
     public boolean tryConnection() throws IOException, SQLException {
         boolean connected;
 
-        connected = pingHost(ServerInfo.getIPSERVER(), ServerInfo.getPORT());
+        connected = pingHost(InformazioniServer.getIPSERVER(), InformazioniServer.getPORT());
         if (!connected) {
             vaiAImpostazioni();
             return false;
