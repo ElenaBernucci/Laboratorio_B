@@ -13,7 +13,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
- * Proxy
+ * Proxyy
  *
  * @author Bernucci Elena 740283 VA
  * @author Clementi Luca 740350 VA
