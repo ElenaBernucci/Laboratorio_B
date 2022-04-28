@@ -7,14 +7,25 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="598.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientCV.centriVaccinali.interfacce.InterfacciaConnessione">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="598.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientCV.centriVaccinali.interfacce.InterfacciaConnessione">
     <children>
-        <ImageView fitHeight="400.0" fitWidth="598.0" pickOnBounds="true" preserveRatio="true">
+        <TextField id="fieldNome" fx:id="ipField" alignment="CENTER" layoutX="257.0" layoutY="106.0" prefHeight="49.0" prefWidth="242.0" promptText="Inserisci indirizzo IP" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(10, 0, 2, 2);" text="localhost">
+            <padding>
+                <Insets bottom="13.0" left="6.0" right="6.0" top="13.0" />
+            </padding>
+            <font>
+                <Font name="Montserrat Regular" size="18.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="TEXT" />
+            </cursor>
+        </TextField>
+        <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="280.0" layoutY="30.0">
             <image>
-                <Image url="@../Images/Background.jpg" />
+                <Image url="@../Images/Logo.png" />
             </image>
         </ImageView>
-        <TextField id="fieldNome" fx:id="ipField" alignment="CENTER" layoutX="257.0" layoutY="106.0" prefHeight="49.0" prefWidth="242.0" promptText="Inserisci indirizzo IP" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="localhost">
+        <TextField id="fieldNome" fx:id="portField" alignment="CENTER" layoutX="257.0" layoutY="200.0" prefHeight="49.0" prefWidth="242.0" promptText="Inserisci porta" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(10, 0, 2, 2);" text="7070">
             <padding>
                 <Insets bottom="13.0" left="6.0" right="6.0" top="13.0" />
             </padding>
@@ -25,18 +36,7 @@
                 <Cursor fx:constant="TEXT" />
             </cursor>
         </TextField>
-        <TextField id="fieldNome" fx:id="portField" alignment="CENTER" layoutX="257.0" layoutY="200.0" prefHeight="49.0" prefWidth="242.0" promptText="Inserisci porta" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="7070">
-            <padding>
-                <Insets bottom="13.0" left="6.0" right="6.0" top="13.0" />
-            </padding>
-            <font>
-                <Font name="Montserrat Regular" size="18.0" />
-            </font>
-            <cursor>
-                <Cursor fx:constant="TEXT" />
-            </cursor>
-        </TextField>
-        <Button id="btnRisultati" fx:id="btnConferma" layoutX="302.0" layoutY="310.0" mnemonicParsing="false" onAction="#connetti" style="-fx-background-color: #12646F; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="CONFERMA" textFill="WHITE">
+        <Button id="btnRisultati" fx:id="btnConferma" layoutX="314.0" layoutY="302.0" mnemonicParsing="false" onAction="#connetti" style="-fx-background-color: #d91e85; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 2, 2);" text="CONFERMA" textFill="WHITE">
             <font>
                 <Font name="Montserrat Regular" size="18.0" />
             </font>
@@ -47,7 +47,7 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Button fx:id="btnDefault" layoutX="137.0" layoutY="308.0" mnemonicParsing="false" onAction="#setDefault" style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="DEFAULT" textFill="#12646f">
+        <Button fx:id="btnDefault" layoutX="143.0" layoutY="302.0" mnemonicParsing="false" onAction="#setDefault" prefHeight="57.0" prefWidth="145.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 2, 2);" text="DEFAULT" textFill="WHITE">
             <font>
                 <Font name="Montserrat Regular" size="18.0" />
             </font>

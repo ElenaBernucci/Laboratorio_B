@@ -11,7 +11,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientCV.centriVaccinali.interfacce.InterfacciaPrincipaleCittadini">
     <children>
-      <MediaView fitHeight="200.0" fitWidth="200.0" layoutY="98.0" />
+      <MediaView fitHeight="600.0" fitWidth="900.0" layoutY="98.0" />
       <MediaView fitHeight="200.0" fitWidth="200.0" layoutY="98.0" >
           <mediaPlayer></mediaPlayer>
       </MediaView>
@@ -20,10 +20,10 @@
                 <Image url="@../Images/Logo.png" />
             </image>
         </ImageView>
-        <Rectangle arcWidth="5.0" fill="#12646f" height="98.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="900.0" />
-        <Text fx:id="benvenutoText" fill="WHITE" layoutX="14.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ciao, " wrappingWidth="202.78929138183594">
+        <Rectangle arcWidth="5.0" fill="WHITE" height="600.0" opacity="0.2" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="275.0" />
+        <Text fx:id="benvenutoText" fill="#787474" layoutX="14.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ciao, " wrappingWidth="202.78929138183594">
             <font>
-                <Font name="Montserrat Regular" size="18.0" />
+                <Font size="24.0" />
             </font>
         </Text>
         <Button id="btnCerca" fx:id="cercaBtn" alignment="CENTER" layoutX="223.0" layoutY="23.0" mnemonicParsing="false" onAction="#vaiACerca" prefWidth="220.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Cerca" textFill="#53b0bd">
