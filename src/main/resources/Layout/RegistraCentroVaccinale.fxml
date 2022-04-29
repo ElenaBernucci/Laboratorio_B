@@ -34,7 +34,7 @@
                 <Cursor fx:constant="CLOSED_HAND" />
             </cursor>
         </Button>
-        <Button fx:id="registraVaccinatoBtn" alignment="CENTER" layoutX="26.0" layoutY="456.0" mnemonicParsing="false" onAction="#vaiARegistraVaccinato" prefHeight="57.0" prefWidth="173.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: #787474;" text="Registra Vaccinato" textFill="WHITE">
+        <Button fx:id="registraVaccinatoBtn" alignment="CENTER" layoutX="26.0" layoutY="456.0" mnemonicParsing="false" onAction="#vaiARegistraVaccinato" prefHeight="57.0" prefWidth="173.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="Registra Vaccinato" textFill="WHITE">
             <font>
                 <Font name="Montserrat Regular" size="18.0" />
             </font>
@@ -109,7 +109,7 @@
                 <Font name="Montserrat Bold" size="17.0" />
             </font>
         </Text>
-        <ComboBox fx:id="tipologiaCombo" accessibleText="Seleziona tipologia" layoutX="597.0" layoutY="177.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="57.0" prefWidth="274.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(10, 0, 2, 2) dropshadow(three-pass-box, rgba(10, 0, 2, 2);">
+        <ComboBox fx:id="tipologiaCombo" accessibleText="Seleziona tipologia" layoutX="597.0" layoutY="177.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="57.0" prefWidth="274.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(10, 0, 2, 2);">
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor>
