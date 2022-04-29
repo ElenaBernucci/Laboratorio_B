@@ -20,11 +20,15 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.FileSystems;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -57,6 +61,9 @@ public class InterfacciaCerca extends Interfaccia implements Initializable {
     private ScrollPane centriScroll;
     @FXML
     private GridPane centriGrid;
+    @FXML
+    private MediaView mediaView;
+
 
     /**
      * Vai alla schermata Registrati
@@ -337,6 +344,14 @@ public class InterfacciaCerca extends Interfaccia implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        String absolutePath = FileSystems.getDefault().getPath("src/main/resources/Images/sfondoAnimatoVideo.mp4").normalize().toAbsolutePath().toUri().toString();
+        Media media = new Media(absolutePath);
+        MediaPlayer player = new MediaPlayer(media);
+        mediaView.setMediaPlayer(player);
+        player.setCycleCount(MediaPlayer.INDEFINITE);
+        player.setVolume(0);
+        player.play();
+
         String[] tipo = {Tipologia.OSPEDALIERO.toString(), Tipologia.HUB.toString(), Tipologia.AZIENDALE.toString()};
         tipologiaCBox.getItems().addAll(tipo);
         centriScroll.setStyle("-fx-background: transparent; -fx-background-color: transparent; ");

@@ -27,8 +27,6 @@ public class InterfacciaConnessione extends Interfaccia {
     private TextField portField, ipField;
     @FXML
     private Label infoLabel;
-    @FXML
-    private MediaView mediaView;
 
     /**
      * Controlla la connessione
@@ -64,14 +62,9 @@ public class InterfacciaConnessione extends Interfaccia {
         }
     }
 
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        Media media = new Media("file:///src/main/resources/Images/sfondoAnimatoVideo.mp4");
-        MediaPlayer player = new MediaPlayer(media);
-        mediaView.setMediaPlayer(player);
-        player.setVolume(0);
-        player.play();
+
     }
 
     /**

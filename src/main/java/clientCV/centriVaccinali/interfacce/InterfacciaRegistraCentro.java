@@ -12,10 +12,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.FileSystems;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -36,6 +40,8 @@ public class InterfacciaRegistraCentro extends Interfaccia implements Initializa
     private ComboBox<String> qualificatoreCombo, tipologiaCombo;
     @FXML
     private Text benvenutoText;
+    @FXML
+    private MediaView mediaView;
 
     /**
      * Vai alla schermata Registra Vaccinato
@@ -223,6 +229,15 @@ public class InterfacciaRegistraCentro extends Interfaccia implements Initializa
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        String absolutePath = FileSystems.getDefault().getPath("src/main/resources/Images/sfondoAnimatoVideo.mp4").normalize().toAbsolutePath().toUri().toString();
+        Media media = new Media(absolutePath);
+        MediaPlayer player = new MediaPlayer(media);
+        mediaView.setMediaPlayer(player);
+        player.setCycleCount(MediaPlayer.INDEFINITE);
+        player.setVolume(0);
+        player.play();
+
         String[] tipologia = {
                 Tipologia.AZIENDALE.toString(),
                 Tipologia.HUB.toString(),
