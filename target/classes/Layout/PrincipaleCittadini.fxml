@@ -11,10 +11,6 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientCV.centriVaccinali.interfacce.InterfacciaPrincipaleCittadini">
     <children>
-      <MediaView fitHeight="600.0" fitWidth="900.0" layoutY="98.0" />
-      <MediaView fitHeight="200.0" fitWidth="200.0" layoutY="98.0" >
-          <mediaPlayer></mediaPlayer>
-      </MediaView>
         <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="411.0" layoutY="229.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../Images/Logo.png" />

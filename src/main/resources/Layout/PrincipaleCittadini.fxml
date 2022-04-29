@@ -1,32 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.media.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientCV.centriVaccinali.interfacce.InterfacciaPrincipaleCittadini">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientCV.centriVaccinali.interfacce.InterfacciaPrincipaleCittadini">
     <children>
-      <MediaView fitHeight="600.0" fitWidth="900.0" layoutY="98.0" />
-      <MediaView fitHeight="200.0" fitWidth="200.0" layoutY="98.0" >
-          <mediaPlayer></mediaPlayer>
-      </MediaView>
-        <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="411.0" layoutY="229.0" pickOnBounds="true" preserveRatio="true">
+      <MediaView fx:id="mediaView" fitHeight="600.0" fitWidth="900.0" />
+        <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="240.0" layoutY="186.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../Images/Logo.png" />
             </image>
         </ImageView>
-        <Rectangle arcWidth="5.0" fill="WHITE" height="600.0" opacity="0.2" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="275.0" />
-        <Text fx:id="benvenutoText" fill="#787474" layoutX="14.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ciao, " wrappingWidth="202.78929138183594">
+        <Text fx:id="benvenutoText" fill="#787474" layoutX="574.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ciao, " wrappingWidth="202.78929138183594">
             <font>
                 <Font size="24.0" />
             </font>
         </Text>
-        <Button id="btnCerca" fx:id="cercaBtn" alignment="CENTER" layoutX="223.0" layoutY="23.0" mnemonicParsing="false" onAction="#vaiACerca" prefWidth="220.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Cerca" textFill="#53b0bd">
+        <Button id="btnCerca" fx:id="cercaBtn" alignment="CENTER" layoutX="574.0" layoutY="311.0" mnemonicParsing="false" onAction="#vaiACerca" prefHeight="57.0" prefWidth="192.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="Cerca" textFill="WHITE">
             <font>
                 <Font name="Montserrat Regular" size="18.0" />
             </font>
@@ -37,7 +34,7 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Button id="btnRegistrati" fx:id="registratiBtn" alignment="CENTER" layoutX="468.0" layoutY="23.0" mnemonicParsing="false" onAction="#vaiARegistrati" prefWidth="220.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Registrati" textFill="#53b0bd">
+        <Button id="btnRegistrati" fx:id="registratiBtn" alignment="CENTER" layoutX="574.0" layoutY="244.0" mnemonicParsing="false" onAction="#vaiARegistrati" prefHeight="57.0" prefWidth="192.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="Registrati" textFill="WHITE">
             <font>
                 <Font name="Montserrat Regular" size="18.0" />
             </font>
@@ -48,7 +45,7 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Button id="btnLogout" fx:id="logoutBtn" alignment="CENTER" layoutX="751.0" layoutY="23.0" mnemonicParsing="false" onAction="#logoutBtnImpl" prefHeight="53.0" prefWidth="117.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Logout" textFill="#12646f">
+        <Button id="btnLogout" fx:id="logoutBtn" alignment="BASELINE_LEFT" layoutX="574.0" layoutY="375.0" mnemonicParsing="false" onAction="#logoutBtnImpl" prefWidth="126.0" style="-fx-border-style: none; -fx-background-color: transparent; " text="Logout" textFill="#787474" underline="true">
             <font>
                 <Font name="Montserrat Regular" size="18.0" />
             </font>
@@ -59,12 +56,12 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Text fill="#12646f" layoutX="310.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CENTRI VACCINALI">
+        <Text fill="#d91e85" layoutX="127.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CENTRI VACCINALI">
             <font>
-                <Font name="Montserrat Bold" size="28.0" />
+                <Font size="35.0" />
             </font>
         </Text>
-        <Text layoutX="211.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cerca un centro vaccinale, registrarti o crea una segnalazione per un sintomo avverso della vaccinazione." textAlignment="CENTER" wrappingWidth="477.3622131347656">
+        <Text fill="#787474" layoutX="36.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrarti, cerca un centro vaccinale, o crea una segnalazione per un sintomo." textAlignment="CENTER" wrappingWidth="477.3622131347656">
             <font>
                 <Font name="Montserrat Regular" size="18.0" />
             </font>

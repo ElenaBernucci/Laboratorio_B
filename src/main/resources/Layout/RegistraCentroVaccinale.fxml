@@ -1,31 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientCV.centriVaccinali.interfacce.InterfacciaRegistraCentro">
     <children>
-        <ImageView fitHeight="600.0" fitWidth="900.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+      <MediaView fx:id="mediaView" fitHeight="600.0" fitWidth="900.0" />
+        <Rectangle arcWidth="5.0" fill="WHITE" height="600.0" opacity="0.2" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="275.0" />
+        <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="316.0" layoutY="38.0">
             <image>
-                <Image url="@../Images/Background.jpg" />
+                <Image url="@../Images/Logo.png" />
             </image>
         </ImageView>
-        <Rectangle arcWidth="5.0" fill="#12646f" height="98.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="901.0" />
-        <Text fx:id="benvenutoText" fill="WHITE" layoutX="14.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ciao, " wrappingWidth="163.78929138183594">
+        <Text fx:id="benvenutoText" fill="#787474" layoutX="27.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ciao, " wrappingWidth="163.78929138183594">
             <font>
-                <Font name="Montserrat Regular" size="18.0" />
+                <Font size="24.0" />
             </font>
         </Text>
-        <Button id="btnRegistraCentro" fx:id="registraCentroBtn" alignment="CENTER" layoutX="223.0" layoutY="23.0" mnemonicParsing="false" prefWidth="220.0" style="-fx-background-color: #53B0BD; -fx-background-radius: 10;" text="Registra Centro" textFill="WHITE">
+        <Button id="btnRegistraCentro" fx:id="registraCentroBtn" alignment="CENTER" layoutX="26.0" layoutY="390.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="173.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="Registra Centro" textFill="WHITE">
             <font>
                 <Font name="Montserrat Regular" size="18.0" />
             </font>
@@ -36,7 +34,7 @@
                 <Cursor fx:constant="CLOSED_HAND" />
             </cursor>
         </Button>
-        <Button fx:id="registraVaccinatoBtn" alignment="CENTER" layoutX="468.0" layoutY="23.0" mnemonicParsing="false" onAction="#vaiARegistraVaccinato" prefWidth="220.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Registra Vaccinato" textFill="#53b0bd">
+        <Button fx:id="registraVaccinatoBtn" alignment="CENTER" layoutX="26.0" layoutY="456.0" mnemonicParsing="false" onAction="#vaiARegistraVaccinato" prefHeight="57.0" prefWidth="173.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: #787474;" text="Registra Vaccinato" textFill="WHITE">
             <font>
                 <Font name="Montserrat Regular" size="18.0" />
             </font>
@@ -47,7 +45,7 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Button fx:id="logoutBtn" alignment="CENTER" layoutX="751.0" layoutY="23.0" mnemonicParsing="false" onAction="#logoutBtnImpl" prefWidth="126.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Logout" textFill="#12646f">
+        <Button fx:id="logoutBtn" alignment="BASELINE_LEFT" layoutX="27.0" layoutY="513.0" mnemonicParsing="false" onAction="#logoutBtnImpl" prefHeight="43.0" prefWidth="105.0" style="-fx-border-style: none; -fx-background-color: transparent; " text="Logout" textFill="#787474" underline="true">
             <font>
                 <Font name="Montserrat Regular" size="18.0" />
             </font>
@@ -58,12 +56,12 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Text fill="#53b0bd" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REGISTRA CENTRO VACCINALE" textAlignment="CENTER" wrappingWidth="900.0">
+        <Text fill="#d91e85" layoutX="350.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REGISTRA CENTRO VACCINALE" textAlignment="CENTER" wrappingWidth="465.0">
             <font>
-                <Font name="Montserrat Bold" size="31.0" />
+                <Font size="32.0" />
             </font>
         </Text>
-        <TextField fx:id="nomeField" alignment="CENTER" layoutX="115.0" layoutY="230.0" prefHeight="53.0" prefWidth="361.0" promptText="Nome" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);">
+        <TextField fx:id="nomeField" alignment="CENTER" layoutX="297.0" layoutY="177.0" prefHeight="57.0" prefWidth="274.0" promptText="Nome" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(10, 0, 2, 2);">
             <padding>
                 <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
             </padding>
@@ -74,17 +72,17 @@
                 <Cursor fx:constant="TEXT" />
             </cursor>
         </TextField>
-        <Text fill="#13636e" layoutX="120.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inserisci i dati" wrappingWidth="148.8333740234375">
+        <Text fill="#787474" layoutX="299.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inserisci i dati" wrappingWidth="148.8333740234375">
             <font>
                 <Font name="Montserrat Bold" size="17.0" />
             </font>
         </Text>
-        <Text fill="#13636e" layoutX="118.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Indirizzo centro vaccinale:" wrappingWidth="250.0">
+        <Text fill="#787474" layoutX="297.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Indirizzo centro vaccinale:" wrappingWidth="250.0">
             <font>
                 <Font name="Montserrat Bold" size="17.0" />
             </font>
         </Text>
-        <Button fx:id="registratiBtn" layoutX="345.0" layoutY="502.0" mnemonicParsing="false" onAction="#registraCentro" style="-fx-background-color: #53B0BD; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 2, 2);" text="REGISTRA ORA" textFill="WHITE">
+        <Button fx:id="registratiBtn" layoutX="495.0" layoutY="485.0" mnemonicParsing="false" onAction="#registraCentro" prefHeight="57.0" prefWidth="173.0" style="-fx-background-color: #f2b705; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="CONFERMA" textFill="WHITE">
             <font>
                 <Font name="Montserrat Regular" size="18.0" />
             </font>
@@ -95,7 +93,7 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <TextField fx:id="stradaField" alignment="CENTER" layoutX="301.0" layoutY="340.0" prefHeight="53.0" prefWidth="300.0" promptText="Strada" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);">
+        <TextField fx:id="stradaField" alignment="CENTER" layoutX="444.0" layoutY="309.0" prefHeight="57.0" prefWidth="274.0" promptText="Strada" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(10, 0, 2, 2);">
             <padding>
                 <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
             </padding>
@@ -106,12 +104,12 @@
                 <Cursor fx:constant="TEXT" />
             </cursor>
         </TextField>
-        <Text fill="#13636e" layoutX="504.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipologia:" wrappingWidth="130.0">
+        <Text fill="#787474" layoutX="597.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipologia:" wrappingWidth="130.0">
             <font>
                 <Font name="Montserrat Bold" size="17.0" />
             </font>
         </Text>
-        <ComboBox fx:id="tipologiaCombo" accessibleText="Seleziona tipologia" layoutX="504.0" layoutY="229.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="57.0" prefWidth="274.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);">
+        <ComboBox fx:id="tipologiaCombo" accessibleText="Seleziona tipologia" layoutX="597.0" layoutY="177.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="57.0" prefWidth="274.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(10, 0, 2, 2) dropshadow(three-pass-box, rgba(10, 0, 2, 2);">
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor>
@@ -119,7 +117,7 @@
                 <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
             </padding>
         </ComboBox>
-        <ComboBox fx:id="qualificatoreCombo" accessibleText="Seleziona tipologia" layoutX="116.0" layoutY="343.0" prefHeight="50.0" prefWidth="155.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);">
+        <ComboBox fx:id="qualificatoreCombo" accessibleText="Seleziona tipologia" layoutX="297.0" layoutY="312.0" prefHeight="50.0" prefWidth="121.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(10, 0, 2, 2);">
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor>
@@ -127,7 +125,7 @@
                 <Insets bottom="11.0" left="10.0" right="10.0" top="13.0" />
             </padding>
         </ComboBox>
-        <TextField fx:id="civicoField" alignment="CENTER" layoutX="632.0" layoutY="340.0" prefHeight="53.0" prefWidth="147.0" promptText="Civico" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);">
+        <TextField fx:id="civicoField" alignment="CENTER" layoutX="747.0" layoutY="309.0" prefHeight="57.0" prefWidth="121.0" promptText="Civico" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(10, 0, 2, 2);">
             <padding>
                 <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
             </padding>
@@ -138,7 +136,7 @@
                 <Cursor fx:constant="TEXT" />
             </cursor>
         </TextField>
-        <TextField fx:id="comuneField" alignment="CENTER" layoutX="115.0" layoutY="425.0" prefHeight="53.0" prefWidth="330.0" promptText="Comune" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);">
+        <TextField fx:id="comuneField" alignment="CENTER" layoutX="294.0" layoutY="390.0" prefHeight="57.0" prefWidth="274.0" promptText="Comune" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(10, 0, 2, 2);">
             <padding>
                 <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
             </padding>
@@ -149,7 +147,7 @@
                 <Cursor fx:constant="TEXT" />
             </cursor>
         </TextField>
-        <TextField fx:id="provField" alignment="CENTER" layoutX="462.0" layoutY="423.0" prefHeight="53.0" prefWidth="121.0" promptText="Provincia" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);">
+        <TextField fx:id="provField" alignment="CENTER" layoutX="599.0" layoutY="390.0" prefHeight="57.0" prefWidth="121.0" promptText="Provincia" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(10, 0, 2, 2);">
             <padding>
                 <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
             </padding>
@@ -160,7 +158,7 @@
                 <Cursor fx:constant="TEXT" />
             </cursor>
         </TextField>
-        <TextField fx:id="capField" alignment="CENTER" layoutX="600.0" layoutY="423.0" prefHeight="53.0" prefWidth="181.0" promptText="CAP" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);">
+        <TextField fx:id="capField" alignment="CENTER" layoutX="753.0" layoutY="390.0" prefHeight="57.0" prefWidth="121.0" promptText="CAP" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(10, 0, 2, 2);">
             <padding>
                 <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
             </padding>
@@ -171,7 +169,7 @@
                 <Cursor fx:constant="TEXT" />
             </cursor>
         </TextField>
-      <Button id="btnIndietro" fx:id="tornaBtn" layoutX="69.0" layoutY="129.0" mnemonicParsing="false" onAction="#vaiAHome" style="-fx-background-color: #53B0BD; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="◄ Torna" textFill="WHITE">
+      <Button id="btnIndietro" fx:id="tornaBtn" layoutX="19.0" layoutY="37.0" mnemonicParsing="false" onAction="#vaiAHome" prefHeight="43.0" prefWidth="107.0" style="-fx-border-style: none; -fx-background-color: transparent; " text="◄ Indietro" textFill="#787474" underline="true">
          <padding>
             <Insets bottom="3.0" left="10.0" right="12.0" top="3.0" />
          </padding>

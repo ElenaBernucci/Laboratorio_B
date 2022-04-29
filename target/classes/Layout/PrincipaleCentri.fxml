@@ -6,21 +6,19 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.media.*?>
-<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientCV.centriVaccinali.interfacce.InterfacciaPrincipaleCentri">
    <MediaView fitHeight="600.0" fitWidth="900.0" />
-    <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="551.0" layoutY="177.0" pickOnBounds="true" preserveRatio="true">
+    <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="226.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true">
         <Image url="@../Images/Logo.png" />
     </ImageView>
-    <Rectangle arcWidth="5.0" fill="WHITE" height="600.0" opacity="0.2" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="275.0" />
-    <Text fx:id="benvenutoText" fill="#787474" layoutX="27.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ciao, " wrappingWidth="191.78929138183594">
+    <Text fx:id="benvenutoText" fill="#787474" layoutX="572.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ciao, " wrappingWidth="191.78929138183594">
         <font>
             <Font size="24.0" />
         </font>
     </Text>
-    <Button id="registraCentroBtn" fx:id="registraCentroBtn" alignment="CENTER" layoutX="21.0" layoutY="376.0" mnemonicParsing="false" onAction="#vaiARegistraCentro" prefHeight="57.0" prefWidth="192.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="Registra Centro" textFill="WHITE">
+    <Button id="registraCentroBtn" fx:id="registraCentroBtn" alignment="CENTER" layoutX="572.0" layoutY="244.0" mnemonicParsing="false" onAction="#vaiARegistraCentro" prefHeight="57.0" prefWidth="192.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="Registra Centro" textFill="WHITE">
         <font>
             <Font name="Montserrat Regular" size="18.0" />
         </font>
@@ -31,7 +29,7 @@
             <Cursor fx:constant="HAND" />
         </cursor>
     </Button>
-    <Button id="registraVaccinatoBtn" fx:id="registraVaccinatoBtn" alignment="CENTER" layoutX="21.0" layoutY="443.0" mnemonicParsing="false" onAction="#vaiARegistraVaccinato" prefHeight="57.0" prefWidth="192.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="Registra Vaccinato" textFill="WHITE">
+    <Button id="registraVaccinatoBtn" fx:id="registraVaccinatoBtn" alignment="CENTER" layoutX="572.0" layoutY="313.0" mnemonicParsing="false" onAction="#vaiARegistraVaccinato" prefHeight="57.0" prefWidth="192.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="Registra Vaccinato" textFill="WHITE">
         <font>
             <Font name="Montserrat Regular" size="18.0" />
         </font>
@@ -42,7 +40,7 @@
             <Cursor fx:constant="HAND" />
         </cursor>
     </Button>
-    <Button id="logoutBtn" fx:id="logoutBtn" alignment="BASELINE_LEFT" layoutX="21.0" layoutY="508.0" mnemonicParsing="false" onAction="#logoutBtnImpl" prefWidth="126.0" style="-fx-border-style: none; -fx-background-color: transparent; " text="Logout" textFill="#787474" underline="true">
+    <Button id="logoutBtn" fx:id="logoutBtn" alignment="BASELINE_LEFT" layoutX="572.0" layoutY="371.0" mnemonicParsing="false" onAction="#logoutBtnImpl" prefWidth="126.0" style="-fx-border-style: none; -fx-background-color: transparent; " text="Logout" textFill="#787474" underline="true">
         <font>
             <Font name="Montserrat Regular" size="18.0" />
         </font>
@@ -53,19 +51,19 @@
             <Cursor fx:constant="HAND" />
         </cursor>
     </Button>
-    <Text fill="#787474" layoutX="468.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CENTRI VACCINALI">
+    <Text fill="#d91e85" layoutX="113.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CENTRI VACCINALI">
         <font>
-            <Font name="Montserrat Bold" size="29.0" />
+            <Font size="35.0" />
         </font>
     </Text>
-    <Text fill="#787474" layoutX="352.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registra un nuovo centro o un nuovo vaccinato utilizzando il menù." textAlignment="CENTER" wrappingWidth="477.3622131347656">
+    <Text fill="#787474" layoutX="61.0" layoutY="383.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registra un nuovo centro o un nuovo vaccinato." textAlignment="CENTER" wrappingWidth="399.3622131347656">
         <font>
             <Font name="Montserrat Regular" size="18.0" />
         </font>
     </Text>
-   <Text fill="#787474" layoutX="515.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OPERATORI" textAlignment="CENTER">
+   <Text fill="#f2b705" layoutX="169.0" layoutY="351.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OPERATORI" textAlignment="CENTER">
       <font>
-         <Font name="Montserrat Regular" size="29.0" />
+         <Font size="35.0" />
       </font>
    </Text>
 </Pane>
