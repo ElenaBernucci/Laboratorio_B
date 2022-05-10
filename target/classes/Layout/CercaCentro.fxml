@@ -27,14 +27,14 @@
             <Font name="Montserrat Bold" size="15.0" />
          </font>
       </Text>
-      <Text fx:id="tipoText" fill="#787474" layoutX="322.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipologia" wrappingWidth="199.0">
+      <Text fx:id="tipoText" fill="#787474" layoutX="322.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipologia" wrappingWidth="260.0">
          <font>
-            <Font name="Montserrat Regular" size="13.0" />
+            <Font size="15.0" />
          </font>
       </Text>
       <Text fx:id="indirizzoText" fill="#787474" layoutX="28.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Indirizzo" wrappingWidth="489.0">
          <font>
-            <Font name="Montserrat Regular" size="12.0" />
+            <Font size="15.0" />
          </font>
       </Text>
    </children>

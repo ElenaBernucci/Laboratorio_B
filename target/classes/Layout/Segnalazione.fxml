@@ -1,29 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientCV.centriVaccinali.interfacce.InterfacciaSegnalazione">
-    <ImageView fitHeight="600.0" fitWidth="900.0" pickOnBounds="true" preserveRatio="true">
-        <Image url="@../Images/Background.jpg" />
+    <MediaView fx:id="mediaView" fitHeight="600.0" fitWidth="900.0" />
+    <Rectangle arcWidth="5.0" fill="WHITE" height="600.0" opacity="0.2" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="275.0" />
+    <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="394.0" layoutY="49.0">
+        <image>
+            <Image url="@../Images/Logo.png" />
+        </image>
     </ImageView>
-    <Rectangle arcWidth="5.0" fill="#12646f" height="98.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="900.0" />
-    <Text fx:id="benvenutoText" fill="WHITE" layoutX="14.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ciao, " wrappingWidth="177.78929138183594">
+    <Text fx:id="benvenutoText" fill="#787474" layoutX="27.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ciao, " wrappingWidth="177.78929138183594">
         <font>
-            <Font name="Montserrat Regular" size="18.0" />
+            <Font size="24.0" />
         </font>
     </Text>
-    <Button id="btnCerca" fx:id="cercaBtn" alignment="CENTER" layoutX="223.0" layoutY="23.0" mnemonicParsing="false" onAction="#vaiACerca" prefWidth="220.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Cerca" textFill="#53b0bd">
+    <Button id="btnCerca" fx:id="cercaBtn" alignment="CENTER" layoutX="26.0" layoutY="390.0" mnemonicParsing="false" onAction="#vaiACerca" prefHeight="57.0" prefWidth="117.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="Cerca" textFill="WHITE">
         <font>
             <Font name="Montserrat Regular" size="18.0" />
         </font>
@@ -34,7 +33,7 @@
             <Cursor fx:constant="HAND" />
         </cursor>
     </Button>
-    <Button id="btnRegistrati" fx:id="registratiBtn" alignment="CENTER" layoutX="468.0" layoutY="23.0" mnemonicParsing="false" prefWidth="220.0" style="-fx-background-color: #53B0BD; -fx-background-radius: 10;" text="Registrati" textFill="WHITE">
+    <Button id="btnRegistrati" fx:id="registratiBtn" alignment="CENTER" layoutX="26.0" layoutY="458.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="117.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="Registrati" textFill="WHITE">
         <font>
             <Font name="Montserrat Regular" size="18.0" />
         </font>
@@ -45,7 +44,7 @@
             <Cursor fx:constant="HAND" />
         </cursor>
     </Button>
-    <Button id="btnLogout" fx:id="logoutBtn" alignment="CENTER" layoutX="751.0" layoutY="23.0" mnemonicParsing="false" onAction="#logoutBtnImpl" prefHeight="53.0" prefWidth="117.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Logout" textFill="#12646f">
+    <Button id="btnLogout" fx:id="logoutBtn" alignment="BASELINE_LEFT" layoutX="27.0" layoutY="517.0" mnemonicParsing="false" onAction="#logoutBtnImpl" prefHeight="43.0" prefWidth="105.0" style="-fx-border-style: none; -fx-background-color: transparent; " text="Logout" textFill="#787474" underline="true">
         <font>
             <Font name="Montserrat Regular" size="18.0" />
         </font>
@@ -56,12 +55,12 @@
             <Cursor fx:constant="HAND" />
         </cursor>
     </Button>
-    <Text id="txtNomeCV" fill="#53b0bd" layoutX="49.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NUOVA SEGNALAZIONE" wrappingWidth="447.0">
+    <Text id="txtNomeCV" fill="#d91e85" layoutX="438.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NUOVA SEGNALAZIONE" wrappingWidth="355.0">
         <font>
             <Font name="Montserrat Regular" size="32.0" />
         </font>
     </Text>
-    <Button id="btnIndietro" fx:id="tornaBtn" layoutX="59.0" layoutY="119.0" mnemonicParsing="false" onAction="#vaiAVisualizzaCentro" style="-fx-background-color: #53B0BD; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="◄ Torna" textFill="WHITE">
+    <Button id="btnIndietro" fx:id="tornaBtn" layoutX="19.0" layoutY="37.0" mnemonicParsing="false" onAction="#vaiAVisualizzaCentro" prefHeight="43.0" prefWidth="107.0" style="-fx-border-style: none; -fx-background-color: transparent; " text="◄ Indietro" textFill="#787474" underline="true">
         <padding>
             <Insets bottom="3.0" left="10.0" right="12.0" top="3.0" />
         </padding>
@@ -72,7 +71,7 @@
             <Cursor fx:constant="HAND" />
         </cursor>
     </Button>
-   <Button id="btnLogout" fx:id="segnalaBtn" alignment="CENTER" layoutX="356.0" layoutY="534.0" mnemonicParsing="false" onAction="#inviaSegnalazione" prefHeight="52.0" prefWidth="195.0" style="-fx-background-color: #12646f; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="Invia Segnalazione" textFill="WHITE">
+   <Button id="btnLogout" fx:id="segnalaBtn" alignment="CENTER" layoutX="503.0" layoutY="502.0" mnemonicParsing="false" onAction="#inviaSegnalazione" prefHeight="57.0" prefWidth="195.0" style="-fx-background-color: #f2b705; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2) dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="INVIA SEGNALAZIONE" textFill="WHITE">
       <font>
          <Font name="Montserrat Regular" size="17.0" />
       </font>
@@ -83,32 +82,34 @@
          <Cursor fx:constant="HAND" />
       </cursor>
    </Button>
-   <Text id="txtNomeCV" fx:id="nomeCentroText" fill="#53b0bd" layoutX="49.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOME CENTRO" wrappingWidth="810.0">
+   <Text id="txtNomeCV" fx:id="nomeCentroText" fill="#f2b705" layoutX="325.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOME CENTRO" textAlignment="CENTER" wrappingWidth="552.0">
       <font>
-         <Font name="Montserrat Bold" size="32.0" />
+         <Font size="24.0" />
       </font>
    </Text>
-   <ComboBox fx:id="sintomoCombo" layoutX="49.0" layoutY="299.0" prefHeight="39.0" prefWidth="265.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" />
-   <Text fx:id="selezionaSintomoTxt" fill="#12646f" layoutX="49.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seleziona il Sintomo" wrappingWidth="195.0">
+   <ComboBox fx:id="sintomoCombo" layoutX="350.0" layoutY="186.0" prefHeight="39.0" prefWidth="265.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(10, 0, 2, 2);" />
+   <Text fx:id="selezionaSintomoTxt" fill="#787474" layoutX="350.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seleziona il Sintomo" wrappingWidth="195.0">
       <font>
          <Font name="Montserrat Regular" size="18.0" />
       </font>
    </Text>
-   <Label fx:id="descrizioneText" alignment="TOP_LEFT" layoutX="49.0" layoutY="385.0" prefHeight="128.0" prefWidth="265.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="Sintomo" textFill="#000000c6" wrapText="true">
-      <font>
-         <Font name="Montserrat Regular" size="15.0" />
-      </font>
-      <opaqueInsets>
-         <Insets />
-      </opaqueInsets>
-      <cursor>
-         <Cursor fx:constant="TEXT" />
-      </cursor>
-      <padding>
-         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-      </padding>
-   </Label>
-   <TextArea fx:id="noteAggiuntiveTextArea" layoutX="345.0" layoutY="385.0" prefHeight="128.0" prefWidth="515.0" promptText="Note Aggiuntive" wrapText="true">
+
+    <Label fx:id="descrizioneText" alignment="TOP_LEFT" layoutX="354.0" layoutY="277.0" prefHeight="67.0" prefWidth="515.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="Sintomo" textFill="#000000c6" wrapText="true">
+        <font>
+            <Font name="Montserrat Regular" size="15.0" />
+        </font>
+        <opaqueInsets>
+            <Insets />
+        </opaqueInsets>
+        <cursor>
+            <Cursor fx:constant="TEXT" />
+        </cursor>
+        <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+        </padding>
+    </Label>
+
+   <TextArea fx:id="noteAggiuntiveTextArea" layoutX="354.0" layoutY="394.0" prefHeight="67.0" prefWidth="515.0" promptText="Note Aggiuntive" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(10, 0, 2, 2);" wrapText="true">
       <font>
          <Font name="Montserrat Regular" size="15.0" />
       </font>
@@ -119,18 +120,18 @@
          <Insets bottom="1.0" right="1.0" top="1.0" />
       </padding>
    </TextArea>
-   <Text fx:id="intensitaSintomoTxt" fill="#12646f" layoutX="344.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Intensità del sintomo" wrappingWidth="206.78929138183594">
+   <Text fx:id="intensitaSintomoTxt" fill="#787474" layoutX="645.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Intensità del sintomo" wrappingWidth="206.78929138183594">
       <font>
          <Font name="Montserrat Regular" size="18.0" />
       </font>
    </Text>
-   <Text fx:id="noteAggiuntiveTxt" fill="#12646f" layoutX="345.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Note Aggiuntive" wrappingWidth="245.78929138183594">
+   <Text fx:id="noteAggiuntiveTxt" fill="#787474" layoutX="350.0" layoutY="378.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Note Aggiuntive:" wrappingWidth="245.78929138183594">
       <font>
-         <Font name="Montserrat Regular" size="18.0" />
+         <Font size="17.0" />
       </font>
    </Text>
-   <ComboBox fx:id="severitaCombo" layoutX="344.0" layoutY="299.0" prefHeight="39.0" prefWidth="70.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" />
-   <Text fx:id="descrizioneSintomoTxt" fill="#12646f" layoutX="49.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descrizione del Sintomo" wrappingWidth="236.0">
+   <ComboBox fx:id="severitaCombo" layoutX="645.0" layoutY="186.0" prefHeight="39.0" prefWidth="70.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(10, 0, 2, 2);" />
+   <Text fx:id="descrizioneSintomoTxt" fill="#787474" layoutX="349.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descrizione del Sintomo" wrappingWidth="236.0">
       <font>
          <Font name="Montserrat Regular" size="17.0" />
       </font>

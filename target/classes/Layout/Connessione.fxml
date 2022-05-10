@@ -9,7 +9,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="598.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientCV.centriVaccinali.interfacce.InterfacciaConnessione">
     <children>
-        <TextField id="fieldNome" fx:id="ipField" alignment="CENTER" layoutX="257.0" layoutY="106.0" prefHeight="49.0" prefWidth="242.0" promptText="Inserisci indirizzo IP" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(10, 0, 2, 2);" text="localhost">
+        <TextField id="fieldNome" fx:id="ipField" alignment="CENTER" layoutX="257.0" layoutY="106.0" prefHeight="49.0" prefWidth="242.0" promptText="Inserisci indirizzo IP" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(10, 0, 2, 2);" text="localhost">
             <padding>
                 <Insets bottom="13.0" left="6.0" right="6.0" top="13.0" />
             </padding>
@@ -20,7 +20,7 @@
                 <Cursor fx:constant="TEXT" />
             </cursor>
         </TextField>
-        <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="268.0" layoutY="30.0">
+        <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="279.0" layoutY="36.0">
             <image>
                 <Image url="@../Images/Logo.png" />
             </image>
