@@ -27,6 +27,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.FileSystems;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -115,7 +116,13 @@ public class InterfacciaCentro extends Interfaccia {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        String absolutePath = FileSystems.getDefault().getPath("src/main/resources/Images/sfondoAnimatoVideo.mp4").normalize().toAbsolutePath().toUri().toString();
+        Media media = new Media(absolutePath);
+        MediaPlayer player = new MediaPlayer(media);
+        mediaView.setMediaPlayer(player);
+        player.setCycleCount(MediaPlayer.INDEFINITE);
+        player.setVolume(0);
+        player.play();
     }
 
     /**

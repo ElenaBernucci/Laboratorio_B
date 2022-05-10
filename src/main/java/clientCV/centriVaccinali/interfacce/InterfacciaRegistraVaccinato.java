@@ -8,10 +8,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.FileSystems;
 import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -49,6 +53,9 @@ public class InterfacciaRegistraVaccinato extends Interfaccia implements Initial
 
     @FXML
     private DatePicker dataField;
+
+    @FXML
+    private MediaView mediaView;
 
 
     /**
@@ -243,6 +250,14 @@ public class InterfacciaRegistraVaccinato extends Interfaccia implements Initial
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        String absolutePath = FileSystems.getDefault().getPath("src/main/resources/Images/sfondoAnimatoVideo.mp4").normalize().toAbsolutePath().toUri().toString();
+        Media media = new Media(absolutePath);
+        MediaPlayer player = new MediaPlayer(media);
+        mediaView.setMediaPlayer(player);
+        player.setCycleCount(MediaPlayer.INDEFINITE);
+        player.setVolume(0);
+        player.play();
+
         Proxy proxy;
         ArrayList<String> nomiCentri;
         String query = "SELECT * FROM centrivaccinali";
