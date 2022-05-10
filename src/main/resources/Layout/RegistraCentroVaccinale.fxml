@@ -158,7 +158,7 @@
                 <Cursor fx:constant="TEXT" />
             </cursor>
         </TextField>
-        <TextField fx:id="capField" alignment="CENTER" layoutX="753.0" layoutY="390.0" prefHeight="57.0" prefWidth="121.0" promptText="CAP" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(10, 0, 2, 2);">
+        <TextField fx:id="capField" alignment="CENTER" layoutX="747.0" layoutY="390.0" prefHeight="57.0" prefWidth="121.0" promptText="CAP" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(10, 0, 2, 2);">
             <padding>
                 <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
             </padding>

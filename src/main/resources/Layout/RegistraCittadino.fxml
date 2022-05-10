@@ -18,7 +18,7 @@
                 <Image url="@../Images/Logo.png" />
             </image>
         </ImageView>
-        <Button id="btnRegistraCentro" fx:id="cercaBtn" alignment="BASELINE_LEFT" layoutX="20.0" layoutY="518.0" mnemonicParsing="false" onAction="#vaiACerca" prefHeight="57.0" prefWidth="191.0" style="-fx-border-style: none; -fx-background-color: transparent; " text="Continua come ospite" textFill="#787474" underline="true">
+        <Button id="btnRegistraCentro" fx:id="cercaBtn" alignment="BASELINE_LEFT" layoutX="14.0" layoutY="519.0" mnemonicParsing="false" onAction="#vaiACerca" prefHeight="57.0" prefWidth="191.0" style="-fx-border-style: none; -fx-background-color: transparent; " text="Continua come ospite" textFill="#787474" underline="true">
             <font>
                 <Font name="Montserrat Regular" size="17.0" />
             </font>
