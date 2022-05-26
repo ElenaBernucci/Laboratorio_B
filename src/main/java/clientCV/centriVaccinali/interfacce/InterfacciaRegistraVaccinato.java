@@ -1,6 +1,6 @@
 package clientCV.centriVaccinali.interfacce;
 
-import clientCV.Proxy;
+import clientCV.RMI;
 import clientCV.centriVaccinali.modelli.Vaccino;
 import clientCV.cittadini.Utente;
 import clientCV.condivisi.Controlli;
@@ -16,15 +16,13 @@ import javafx.scene.text.Text;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.FileSystems;
+import java.rmi.NotBoundException;
 import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Random;
-import java.util.ResourceBundle;
+import java.util.*;
 
 /**
  * InterfacciaRegistraVaccinato
@@ -127,7 +125,7 @@ public class InterfacciaRegistraVaccinato extends Interfaccia implements Initial
      * @throws SQLException
      * @throws InterruptedException
      */
-    public void registraVaccinato(ActionEvent event) throws ParseException, IOException, SQLException, InterruptedException {
+    public void registraVaccinato(ActionEvent event) throws ParseException, IOException, SQLException, InterruptedException, NotBoundException {
         String nome = nomeField.getText();
         String cognome = cognomeField.getText();
         String CF = codFiscaleField.getText();
@@ -168,14 +166,14 @@ public class InterfacciaRegistraVaccinato extends Interfaccia implements Initial
 
         if(nuovoVaccinato(CF)) {
             String insertIntoIdunivoci = "INSERT INTO idunivoci VALUES('"+idvaccino+"', '"+CF+"', '" + centrovaccinale.toLowerCase() + "')";
-            Proxy proxy1 = new Proxy();
-            proxy1.inserireInDb(insertIntoIdunivoci);
+            RMI RMI1 = new RMI();
+            RMI1.inserireInDb(insertIntoIdunivoci);
 
             Thread.sleep(100);
 
             String query = "INSERT INTO vaccinati_" + check.nomeTabella(centrovaccinale.toLowerCase()) + " VALUES('"+nome+"', '"+cognome+"','"+CF+"','"+sqlDate+"','"+vaccino+"', '"+idvaccino+"')";
-            Proxy proxy = new Proxy();
-            proxy.inserireInDb(query);
+            RMI RMI = new RMI();
+            RMI.inserireInDb(query);
 
             System.out.println("Vaccinato Registrato! Id Vaccinazione: " + ": " + idvaccino);
             mostraWarning("Cittadino registrato", "Cittadino si è registrato con ID: " + idvaccino);
@@ -197,14 +195,14 @@ public class InterfacciaRegistraVaccinato extends Interfaccia implements Initial
         String getCF = "SELECT codicefiscale " +
                         "FROM idunivoci " +
                         "WHERE codicefiscale = '"+codfisc+"'";
-        ArrayList<String> tmpCF = new ArrayList<>();
+        List<String> tmpCF = new ArrayList<>();
 
-        Proxy proxy;
+        RMI RMI;
 
         try {
-            proxy = new Proxy();
-            tmpCF = proxy.riceviValoriIndividuali(getCF, "codicefiscale");
-        } catch (IOException e) {
+            RMI = new RMI();
+            tmpCF = RMI.riceviValoriIndividuali(getCF, "codicefiscale");
+        } catch (IOException | NotBoundException | SQLException e) {
             e.printStackTrace();
         }
         return tmpCF.isEmpty();
@@ -215,10 +213,10 @@ public class InterfacciaRegistraVaccinato extends Interfaccia implements Initial
      * @return
      */
     private int generaUID() {
-        ArrayList<String> tmpID = new ArrayList<>();
+        List<String> tmpID = new ArrayList<>();
         Random rand = new Random();
         int idvacc = -1;
-        Proxy proxy;
+        RMI RMI;
 
         while(true) {
             idvacc = rand.nextInt(Short.MAX_VALUE);
@@ -226,9 +224,9 @@ public class InterfacciaRegistraVaccinato extends Interfaccia implements Initial
                                 "FROM idunivoci " +
                                 "WHERE idvaccinazione = '"+idvacc+"'";
             try {
-                proxy = new Proxy();
-                tmpID = proxy.riceviValoriIndividuali(getIDquery, "idvaccinazione");
-            } catch (IOException e) {
+                RMI = new RMI();
+                tmpID = RMI.riceviValoriIndividuali(getIDquery, "idvaccinazione");
+            } catch (IOException | NotBoundException | SQLException e) {
                 e.printStackTrace();
             }
 
@@ -258,8 +256,8 @@ public class InterfacciaRegistraVaccinato extends Interfaccia implements Initial
         player.setVolume(0);
         player.play();
 
-        Proxy proxy;
-        ArrayList<String> nomiCentri;
+        RMI RMI;
+        List<String> nomiCentri;
         String query = "SELECT * FROM centrivaccinali";
 
         String[] vaccini = {Vaccino.ASTRAZENECA.toString(),
@@ -270,10 +268,10 @@ public class InterfacciaRegistraVaccinato extends Interfaccia implements Initial
         vaccinoCombo.getItems().addAll(vaccini);
 
         try {
-            proxy = new Proxy();
-            nomiCentri = proxy.riceviValoriIndividuali(query, "nome");
+            RMI = new RMI();
+            nomiCentri = RMI.riceviValoriIndividuali(query, "nome");
             centrivaccinaliCombo.getItems().addAll(nomiCentri);
-        } catch (IOException e) {
+        } catch (IOException | NotBoundException | SQLException e) {
             e.printStackTrace();
         }
     }

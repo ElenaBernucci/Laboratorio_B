@@ -1,6 +1,6 @@
 package clientCV.centriVaccinali.interfacce;
 
-import clientCV.Proxy;
+import clientCV.RMI;
 import clientCV.centriVaccinali.modelli.CentroVaccinale;
 import clientCV.centriVaccinali.modelli.Qualificatore;
 import clientCV.centriVaccinali.modelli.Tipologia;
@@ -20,8 +20,10 @@ import javafx.scene.text.Text;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.FileSystems;
+import java.rmi.NotBoundException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 /**
@@ -108,7 +110,7 @@ public class InterfacciaRegistraCentro extends Interfaccia implements Initializa
      * @throws IOException
      * @throws SQLException
      */
-    public void registraCentro(ActionEvent event) throws IOException, SQLException {
+    public void registraCentro(ActionEvent event) throws IOException, SQLException, NotBoundException {
         String nomeCentro = nomeField.getText().trim();
         String tipologia = tipologiaCombo.getValue();
         String qualificatore = qualificatoreCombo.getValue();
@@ -158,18 +160,18 @@ public class InterfacciaRegistraCentro extends Interfaccia implements Initializa
                 + provincia.toUpperCase() + "', '"
                 + cap + "')";
 
-        Proxy proxy = new Proxy();
-        Proxy proxy1 = new Proxy();
+        RMI RMI = new RMI();
+        RMI RMI1 = new RMI();
 
-        if (controlaCentro())
+        if (controllaCentro())
             mostraWarning("Centro già registrato", "Questo centro è già stato registrato");
         else {
             if(provinciaValida())
                 mostraWarning("Provincia non valida", "Inserisci una provincia valida");
             //Se il centro e stato registrato correttamente
             else{
-                proxy.inserireInDb(query);
-                proxy1.registraNuovoCentro(nomeCentro);
+                RMI.inserireInDb(query);
+                RMI1.registraNuovoCentro(nomeCentro);
                 mostraWarning("Successo", "Centro registrato correttamente!");
                 vaiAHome(event);
             }
@@ -182,16 +184,16 @@ public class InterfacciaRegistraCentro extends Interfaccia implements Initializa
      * @return boolean
      */
     private boolean provinciaValida() {
-        Proxy proxy;
-        ArrayList<String> province = new ArrayList<>();
+        RMI RMI;
+        List<String> province = new ArrayList<>();
         String prov = provField.getText().trim().toUpperCase();
 
         String query = "SELECT * FROM province " +
                 "WHERE sigla = '" + prov + "'";
         try {
-            proxy = new Proxy();
-            province = proxy.riceviValoriIndividuali(query,"sigla");
-        } catch (IOException e) {
+            RMI = new RMI();
+            province = RMI.riceviValoriIndividuali(query,"sigla");
+        } catch (IOException | NotBoundException | SQLException e) {
             e.printStackTrace();
         }
 
@@ -202,18 +204,18 @@ public class InterfacciaRegistraCentro extends Interfaccia implements Initializa
      * Controlla che il centro non esista già
      * @return boolean
      */
-    private boolean controlaCentro() {
-        Proxy proxy;
-        ArrayList<CentroVaccinale> centriVaccinali = new ArrayList<>();
+    private boolean controllaCentro() {
+        RMI RMI;
+        List<CentroVaccinale> centriVaccinali = new ArrayList<>();
         String centro = nomeField.getText().trim().toLowerCase();
 
         String query = "SELECT * FROM centrivaccinali " +
                         "WHERE nome = '" + centro + "'";
 
         try {
-            proxy = new Proxy();
-            centriVaccinali = proxy.filtra(query);
-        } catch (IOException | SQLException e) {
+            RMI = new RMI();
+            centriVaccinali = RMI.filtra(query);
+        } catch (IOException | SQLException | NotBoundException e) {
             e.printStackTrace();
         }
 

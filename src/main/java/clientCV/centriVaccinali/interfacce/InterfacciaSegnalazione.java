@@ -1,7 +1,7 @@
 package clientCV.centriVaccinali.interfacce;
 
 import clientCV.CentriVaccinali;
-import clientCV.Proxy;
+import clientCV.RMI;
 import clientCV.centriVaccinali.modelli.CentroVaccinale;
 import clientCV.centriVaccinali.modelli.Segnalazione;
 import clientCV.centriVaccinali.modelli.Sintomo;
@@ -26,6 +26,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.FileSystems;
+import java.rmi.NotBoundException;
 import java.sql.SQLException;
 import java.util.*;
 
@@ -158,13 +159,13 @@ public class InterfacciaSegnalazione extends Interfaccia implements Initializabl
                     "WHERE userid = '"+utente.getUsername()+"'";
 
 
-        Proxy proxy;
+        RMI RMI;
 
         try {
-            proxy = new Proxy();
-                proxy.inserireInDb(query);
+            RMI = new RMI();
+                RMI.inserireInDb(query);
 
-        } catch (SQLException e) {
+        } catch (SQLException | NotBoundException e) {
             e.printStackTrace();
         }
 
@@ -197,16 +198,16 @@ public class InterfacciaSegnalazione extends Interfaccia implements Initializabl
         benvenutoText.setText("Ciao, " + utente.getUsername());
         registratiBtn.setText("Invia Segnalazione");
 
-        Proxy proxy;
-        ArrayList<Segnalazione> segnalazione;
+        RMI RMI;
+        List<Segnalazione> segnalazione;
 
         try {
-            proxy = new Proxy();
+            RMI = new RMI();
             String query = "SELECT * " +
                     "FROM segnalazioni " +
                     "JOIN sintomi ON (sintomi.idsintomo = segnalazioni.idsintomo) " +
                     "WHERE userid = '" + utente.getUsername() + "'";
-            segnalazione = proxy.riceviSegnalazione(query);
+            segnalazione = RMI.riceviSegnalazione(query);
 
             if (segnalazione.size() > 0) {
                 mostraWarning("Hai già fatto una segnalazione in precedenza", "Se modifichi la tua segnalazione, quella precedente \nsarà rimossa");
@@ -217,7 +218,7 @@ public class InterfacciaSegnalazione extends Interfaccia implements Initializabl
                 stampaDescrizioneSintomo();
                 nuovaSegnalazione = false;
             }
-        } catch (IOException e){
+        } catch (IOException | NotBoundException | SQLException e){
             e.printStackTrace();
         }
     }
@@ -228,16 +229,16 @@ public class InterfacciaSegnalazione extends Interfaccia implements Initializabl
     public void stampaDescrizioneSintomo() {
         String sintomoComboTxt = sintomoCombo.getValue();
         String query = "SELECT * FROM sintomi WHERE sintomo = '" + sintomoComboTxt + "'";
-        Proxy proxy;
-        ArrayList<Sintomo> sintomi;
+        RMI RMI;
+        List<Sintomo> sintomi;
 
         try {
-            proxy = new Proxy();
-            sintomi = proxy.riceviSintomi(query);
+            RMI = new RMI();
+            sintomi = RMI.riceviSintomi(query);
             if(sintomi.size() > 0)
                 descrizioneText.setText(sintomi.get(0).getDescrizione());
 
-        } catch (IOException | SQLException e) {
+        } catch (IOException | SQLException | NotBoundException e) {
             e.printStackTrace();
         }
     }
@@ -262,20 +263,20 @@ public class InterfacciaSegnalazione extends Interfaccia implements Initializabl
 
         String query = "SELECT * " +
                         "FROM sintomi";
-        ArrayList<Sintomo> sintomi;
-        Proxy proxy;
+        List<Sintomo> sintomi;
+        RMI RMI;
         idSintomo = new HashMap<>();
 
         try {
-            proxy = new Proxy();
-            sintomi = proxy.riceviSintomi(query);
+            RMI = new RMI();
+            sintomi = RMI.riceviSintomi(query);
 
             for (Sintomo sintomo: sintomi) {
                 sintomoCombo.getItems().add(sintomo.getNome());
                 idSintomo.put(sintomo.getNome(), sintomo.getIdsintomo());
             }
 
-        } catch (IOException | SQLException e) {
+        } catch (IOException | SQLException | NotBoundException e) {
             e.printStackTrace();
         }
 
@@ -299,11 +300,11 @@ public class InterfacciaSegnalazione extends Interfaccia implements Initializabl
      * @return
      */
     private int generaIdSegnalazione() {
-        ArrayList<String> tmpID = new ArrayList<>();
+        List<String> tmpID = new ArrayList<>();
         Random rand = new Random();
         int uIDSegnalazione = -1;
 
-        Proxy proxy;
+        RMI RMI;
 
         while(true) {
             uIDSegnalazione = rand.nextInt(Short.MAX_VALUE);
@@ -311,9 +312,9 @@ public class InterfacciaSegnalazione extends Interfaccia implements Initializabl
                     "FROM segnalazioni " +
                     "WHERE idsegnalazione = '"+uIDSegnalazione+"'";
             try {
-                proxy = new Proxy();
-                tmpID = proxy.riceviValoriIndividuali(getIDquery, "idsegnalazione");
-            } catch (IOException e) {
+                RMI = new RMI();
+                tmpID = RMI.riceviValoriIndividuali(getIDquery, "idsegnalazione");
+            } catch (IOException | NotBoundException | SQLException e) {
                 e.printStackTrace();
             }
 

@@ -7,8 +7,10 @@ import clientCV.centriVaccinali.modelli.Vaccinato;
 import clientCV.cittadini.Utente;
 
 import java.io.IOException;
+import java.rmi.Remote;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * OperazioniClient
@@ -16,14 +18,7 @@ import java.util.ArrayList;
  * @author Bernucci Elena 740283 VA
  * @author Clementi Luca 740350 VA
  */
-public interface FunzionalitaClient {
-
-    /**
-     * Metodo Close, chiude il collegamento
-     *
-     * @throws IOException
-     */
-    void close() throws IOException;
+public interface FunzionalitaClient extends Remote {
 
     /**
      * Metodo LogIn, prende un utente dal database e determina se è un vaccinato o un operatore
@@ -31,7 +26,7 @@ public interface FunzionalitaClient {
      * @throws IOException
      * @throws SQLException
      */
-    Utente login(String query, String User) throws IOException;
+    Utente login(String query, String User) throws IOException, SQLException;
 
     /**
      * Metodo filtra
@@ -39,7 +34,7 @@ public interface FunzionalitaClient {
      * @throws IOException
      * @throws SQLException
      */
-    ArrayList<CentroVaccinale> filtra(String query) throws IOException, SQLException;
+    List<CentroVaccinale> filtra(String query) throws IOException, SQLException;
 
     /**
      * Metodo registraNuovoCentro, registra un Centro Vaccinale
@@ -47,7 +42,7 @@ public interface FunzionalitaClient {
      * @throws IOException
      * @throws SQLException
      */
-    void registraNuovoCentro(String nomeCentro) throws IOException, SQLException;
+    Boolean registraNuovoCentro(String nomeCentro) throws IOException, SQLException;
 
     /**
      * Metodo inserireInDb, Inserisce nel db un commando specifico
@@ -55,7 +50,7 @@ public interface FunzionalitaClient {
      * @throws IOException
      * @throws SQLException
      */
-    void inserireInDb(String query) throws IOException, SQLException;
+    Boolean inserireInDb(String query) throws IOException, SQLException;
 
     /**
      * Metodo riceviVaccinati, prende i cittadini vaccinati dal DB
@@ -63,7 +58,7 @@ public interface FunzionalitaClient {
      * @throws IOException
      * @throws SQLException
      */
-    ArrayList<Vaccinato> riceviVaccinati(String query) throws IOException, SQLException;
+    List<Vaccinato> riceviVaccinati(String query) throws IOException, SQLException;
 
     /**
      * Metodo riceviSintomi, prelieva i sintomi dal database
@@ -71,7 +66,7 @@ public interface FunzionalitaClient {
      * @throws IOException
      * @throws SQLException
      */
-    ArrayList<Sintomo> riceviSintomi(String query) throws IOException, SQLException;
+    List<Sintomo> riceviSintomi(String query) throws IOException, SQLException;
 
     /**
      * Metodo riceviSegnalazione, prende segnalazioni dal db
@@ -79,7 +74,7 @@ public interface FunzionalitaClient {
      * @throws IOException
      * @throws SQLException
      */
-    ArrayList<Segnalazione> riceviSegnalazione(String query) throws IOException;
+    List<Segnalazione> riceviSegnalazione(String query) throws IOException, SQLException;
 
     /**
      * Metodo riceviValoriIndividuali, prelieva valori individuali dal db
@@ -87,6 +82,6 @@ public interface FunzionalitaClient {
      * @throws IOException
      * @throws SQLException
      */
-    ArrayList<String> riceviValoriIndividuali(String query, String colonna) throws IOException;
+    List<String> riceviValoriIndividuali(String query, String colonna) throws IOException, SQLException;
 
     }

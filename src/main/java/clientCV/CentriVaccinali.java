@@ -26,6 +26,8 @@ public class CentriVaccinali extends Application {
         primaryStage.setTitle("Centri Vaccinali");
         primaryStage.show();
 
+
+
     }
 
     /**

@@ -1,6 +1,6 @@
 package clientCV.centriVaccinali.interfacce;
 
-import clientCV.Proxy;
+import clientCV.RMI;
 import clientCV.cittadini.Utente;
 import clientCV.condivisi.Controlli;
 import javafx.event.ActionEvent;
@@ -13,8 +13,10 @@ import javafx.scene.media.MediaView;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.FileSystems;
+import java.rmi.NotBoundException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 /**
@@ -110,7 +112,7 @@ public class InterfacciaRegistraCittadino extends Interfaccia {
      * @throws SQLException
      * @throws InterruptedException
      */
-    public void registraCittadino() throws IOException, SQLException, InterruptedException {
+    public void registraCittadino() throws IOException, SQLException, InterruptedException, NotBoundException {
         String nome = fieldNome.getText();
         String cognome = fieldCognome.getText();
         String user = fieldUsername.getText();
@@ -149,15 +151,15 @@ public class InterfacciaRegistraCittadino extends Interfaccia {
         }
 
         String insertAsUtente = "INSERT INTO utenti VALUES('"+user+"','"+password+"','"+CF+"','"+nome+"','"+cognome+"')";
-        Proxy proxyUtenti = new Proxy();
-        proxyUtenti.inserireInDb(insertAsUtente);
+        RMI RMIUtenti = new RMI();
+        RMIUtenti.inserireInDb(insertAsUtente);
 
         Thread.sleep(100);
 
         int IDvaccinazione = Integer.parseInt(id);
         String insertAsCittadino = "INSERT INTO cittadinivaccinati VALUES('"+user+"','"+email+"','"+IDvaccinazione+"')";
-        Proxy proxyCittadini = new Proxy();
-        proxyCittadini.inserireInDb(insertAsCittadino);
+        RMI RMICittadini = new RMI();
+        RMICittadini.inserireInDb(insertAsCittadino);
 
         mostraWarning("Sei registrato!", "Adesso puoi accedere");
 
@@ -170,18 +172,18 @@ public class InterfacciaRegistraCittadino extends Interfaccia {
      * @return
      * @throws IOException
      */
-    private boolean controllaID(String id) throws IOException {
+    private boolean controllaID(String id) throws IOException, NotBoundException, SQLException {
 
         if(id.matches("^[a-zA-Z]+$"))
             return false;
 
         int IDUnivocoVaccinazione = Integer.parseInt(id);
-        ArrayList<String> ids;
+        List<String> ids;
         String query = "SELECT * FROM idunivoci WHERE idvaccinazione = '"+IDUnivocoVaccinazione+"'";
 
 
-        Proxy proxy = new Proxy();
-        ids = proxy.riceviValoriIndividuali(query, "idvaccinazione");
+        RMI RMI = new RMI();
+        ids = RMI.riceviValoriIndividuali(query, "idvaccinazione");
 
             return !ids.isEmpty();
 
@@ -193,13 +195,13 @@ public class InterfacciaRegistraCittadino extends Interfaccia {
      * @return
      * @throws IOException
      */
-    private boolean controllaCodiceFiscale(String cf) throws IOException {
-        ArrayList<String> cfs;
+    private boolean controllaCodiceFiscale(String cf) throws IOException, NotBoundException, SQLException {
+        List<String> cfs;
         String query = "SELECT * FROM idunivoci WHERE codicefiscale = '"+cf+"'";
 
 
-        Proxy proxy = new Proxy();
-        cfs = proxy.riceviValoriIndividuali(query, "codicefiscale");
+        RMI RMI = new RMI();
+        cfs = RMI.riceviValoriIndividuali(query, "codicefiscale");
 
         return cfs.isEmpty();
     }

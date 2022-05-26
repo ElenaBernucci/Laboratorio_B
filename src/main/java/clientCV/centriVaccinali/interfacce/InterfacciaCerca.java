@@ -1,7 +1,7 @@
 package clientCV.centriVaccinali.interfacce;
 
 import clientCV.CentriVaccinali;
-import clientCV.Proxy;
+import clientCV.RMI;
 import clientCV.centriVaccinali.modelli.CentroVaccinale;
 import clientCV.centriVaccinali.modelli.Tipologia;
 import clientCV.centriVaccinali.modelli.Vaccinato;
@@ -29,8 +29,10 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.FileSystems;
+import java.rmi.NotBoundException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 /**
@@ -43,8 +45,8 @@ public class InterfacciaCerca extends Interfaccia implements Initializable {
     private CentroVaccinale centroVaccinale;
     private Utente utente;
     private Controlli check = new Controlli();
-    private Proxy proxy;
-    private ArrayList<CentroVaccinale> centrivaccinali;
+    private RMI RMI;
+    private List<CentroVaccinale> centrivaccinali;
 
 
     @FXML
@@ -126,7 +128,7 @@ public class InterfacciaCerca extends Interfaccia implements Initializable {
      * @throws IOException
      * @throws SQLException
      */
-    public void mostraCentriVaccinali() throws IOException, SQLException {
+    public void mostraCentriVaccinali() throws IOException, SQLException, NotBoundException {
 
         if(radNome.isSelected()) {
             String nome = nomeField.getText().trim();
@@ -137,11 +139,11 @@ public class InterfacciaCerca extends Interfaccia implements Initializable {
             }
 
             //Cerca centro per nome
-            proxy = new Proxy();
+            RMI = new RMI();
             String query = "SELECT * " +
                     "FROM centrivaccinali " +
                     "WHERE nome LIKE '%" + nome.toLowerCase() + "%'";
-            centrivaccinali = proxy.filtra(query);
+            centrivaccinali = RMI.filtra(query);
 
             if(centrivaccinali.size() == 0)
                 mostraWarning("Nessun centro trovato", "Non ci sono centri vaccinali registrati con questo nome");
@@ -176,14 +178,14 @@ public class InterfacciaCerca extends Interfaccia implements Initializable {
             }
 
             //ricerca per comune e tipologia
-            proxy = new Proxy();
+            RMI = new RMI();
 
             String query = "SELECT * " +
                     "FROM centrivaccinali " +
                     "WHERE comune LIKE '%" + comune + "%' " +
                     "AND tipologia='" + tipologia + "'";
 
-            centrivaccinali = proxy.filtra(query);
+            centrivaccinali = RMI.filtra(query);
 
             if(centrivaccinali.size() == 0)
                 mostraWarning("Nessun centro trovato", "Non esistono centri vaccinali registrati \n corrispondenti ai criteri di ricerca");
@@ -217,15 +219,15 @@ public class InterfacciaCerca extends Interfaccia implements Initializable {
     }
 
     public void saltaASegnalazione(ActionEvent event) throws IOException {
-        Proxy proxy, proxy2;
+        RMI RMI, RMI2;
 
 
         String query = "SELECT * FROM centrivaccinali WHERE nome = (SELECT centrovaccinale FROM idunivoci WHERE codicefiscale = '"+ utente.getCF() +"')";
 
         try {
-            proxy = new Proxy();
-            centroVaccinale = proxy.filtra(query).get(0);
-        } catch (IOException | SQLException e) {
+            RMI = new RMI();
+            centroVaccinale = RMI.filtra(query).get(0);
+        } catch (IOException | SQLException | NotBoundException e) {
             e.printStackTrace();
         }
 
@@ -235,14 +237,14 @@ public class InterfacciaCerca extends Interfaccia implements Initializable {
         String query2 = "SELECT * FROM vaccinati_" + check.nomeTabella(centroVaccinale.getNome()) + " WHERE idvaccinazione = " + cittadino.getIdVaccinazione();
 
         try {
-            proxy2 = new Proxy();
-            ArrayList<Vaccinato> vaccinati = proxy2.riceviVaccinati(query2);
+            RMI2 = new RMI();
+            List<Vaccinato> vaccinati = RMI2.riceviVaccinati(query2);
 
             if(vaccinati.isEmpty()) {
                 mostraWarning("Non sei registrato a questo centro vaccinale", "Puoi segnalare eventi avversi solo presso il centro \nvaccinale in cui ti è stato somministrato il vaccino");
                 return;
             }
-        } catch (IOException | SQLException e) {
+        } catch (IOException | SQLException | NotBoundException e) {
             e.printStackTrace();
         }
 
@@ -312,8 +314,8 @@ public class InterfacciaCerca extends Interfaccia implements Initializable {
         String query = "SELECT * FROM centrivaccinali";
 
         try {
-            proxy = new Proxy();
-            centrivaccinali = proxy.filtra(query);
+            RMI = new RMI();
+            centrivaccinali = RMI.filtra(query);
             for (int i = 0; i<centrivaccinali.size(); i++) {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass()
                         .getClassLoader()
@@ -330,7 +332,7 @@ public class InterfacciaCerca extends Interfaccia implements Initializable {
 
             }
 
-        } catch (IOException | SQLException e) {
+        } catch (IOException | SQLException | NotBoundException e) {
             e.printStackTrace();
         }
 

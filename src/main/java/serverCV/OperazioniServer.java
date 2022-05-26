@@ -1,8 +1,17 @@
 package serverCV;
 
+import clientCV.centriVaccinali.modelli.CentroVaccinale;
+import clientCV.centriVaccinali.modelli.Segnalazione;
+import clientCV.centriVaccinali.modelli.Sintomo;
+import clientCV.centriVaccinali.modelli.Vaccinato;
+import clientCV.condivisi.*;
+
 import java.io.IOException;
 import java.net.Socket;
+import java.rmi.Remote;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * OperazioniServer, descrive tutte le operazioni che realizza il RisorsePerServer
@@ -10,7 +19,7 @@ import java.sql.SQLException;
  * @author Bernucci Elena 740283 VA
  * @author Clementi Luca 740350 VA
  */
-public interface OperazioniServer {
+public interface OperazioniServer extends Remote {
 
     /**
      * Metodo LogIn, prende un utente dal database e determina se è un vaccinato o un operatore
@@ -18,15 +27,7 @@ public interface OperazioniServer {
      * @throws IOException
      * @throws SQLException
      */
-    void login() throws IOException, SQLException;
-
-    /**
-     * Metodo Close, chiude il collegamento
-     *
-     * @param socket
-     * @throws IOException
-     */
-    void close(Socket socket) throws IOException;
+    OggettoLogin login(RichiestaServer richiestaServer) throws IOException, SQLException;
 
     /**
      * Metodo riceviSintomi, prelieva i sintomi dal database
@@ -34,7 +35,7 @@ public interface OperazioniServer {
      * @throws IOException
      * @throws SQLException
      */
-    void riceviSintomi() throws IOException, SQLException;
+    List<Sintomo> riceviSintomi(RichiestaServer richiestaServer) throws IOException, SQLException;
 
     /**
      * Metodo inserireInDb, Inserisce nel db un commando specifico
@@ -42,7 +43,7 @@ public interface OperazioniServer {
      * @throws IOException
      * @throws SQLException
      */
-    void inserireInDb() throws IOException, SQLException;
+    Boolean inserireInDb(RichiestaServer richiestaServer) throws IOException, SQLException;
 
     /**
      * Metodo registraNuovoCentro, registra un Centro Vaccinale
@@ -50,7 +51,7 @@ public interface OperazioniServer {
      * @throws IOException
      * @throws SQLException
      */
-    void registraNuovoCentro() throws IOException, SQLException;
+    Boolean registraNuovoCentro(RichiestaServer richiestaServer) throws IOException, SQLException;
 
     /**
      * Metodo riceviValoriIndividuali, prelieva valori individuali dal db
@@ -58,7 +59,7 @@ public interface OperazioniServer {
      * @throws IOException
      * @throws SQLException
      */
-    void riceviValoriIndividuali() throws IOException, SQLException;
+    List<String> riceviValoriIndividuali(RichiestaServer richiestaServer) throws IOException, SQLException;
 
     /**
      * Metodo riceviVaccinati, prende i cittadini vaccinati dal DB
@@ -66,7 +67,7 @@ public interface OperazioniServer {
      * @throws IOException
      * @throws SQLException
      */
-    void riceviVaccinati() throws IOException, SQLException;
+    List<Vaccinato> riceviVaccinati(RichiestaServer richiestaServer) throws IOException, SQLException;
 
     /**
      * Metodo filtra
@@ -74,7 +75,7 @@ public interface OperazioniServer {
      * @throws IOException
      * @throws SQLException
      */
-    void filtra() throws IOException, SQLException;
+    List<CentroVaccinale> filtra(RichiestaServer richiestaServer) throws IOException, SQLException;
 
     /**
      * Metodo riceviSegnalazione, prende segnalazioni dal db
@@ -82,5 +83,5 @@ public interface OperazioniServer {
      * @throws IOException
      * @throws SQLException
      */
-    void riceviSegnalazione() throws IOException, SQLException;
+    List<Segnalazione> riceviSegnalazione(RichiestaServer richiestaServer) throws IOException, SQLException;
     }

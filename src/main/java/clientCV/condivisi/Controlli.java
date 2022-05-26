@@ -1,12 +1,14 @@
 package clientCV.condivisi;
 
-import clientCV.Proxy;
+import clientCV.RMI;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.rmi.NotBoundException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -85,12 +87,12 @@ public class Controlli {
      * @throws IOException
      * @throws SQLException
      */
-    public boolean databaseVuoto() throws IOException, SQLException {
-        Proxy proxyCheck = new Proxy();
-        Proxy proxyPopulate = new Proxy();
+    public boolean databaseVuoto() throws IOException, SQLException, NotBoundException {
+        RMI RMICheck = new RMI();
+        RMI RMIPopulate = new RMI();
 
         String queryCheck = "SELECT idsegnalazione FROM segnalazioni";
-        ArrayList<String> segnalazioni = proxyCheck.riceviValoriIndividuali(queryCheck, "idsegnalazione");
+        List<String> segnalazioni = RMICheck.riceviValoriIndividuali(queryCheck, "idsegnalazione");
 
         if(segnalazioni.size() > 9)
             return false;
@@ -108,7 +110,7 @@ public class Controlli {
             e.printStackTrace();
         }
 
-        proxyPopulate.inserireInDb(query.toString());
+        RMIPopulate.inserireInDb(query.toString());
 
                 System.out.println("Database vuoti -> Data di default generata");
         return true;

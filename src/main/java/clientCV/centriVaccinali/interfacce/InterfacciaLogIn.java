@@ -1,7 +1,7 @@
 package clientCV.centriVaccinali.interfacce;
 
 import clientCV.CentriVaccinali;
-import clientCV.Proxy;
+import clientCV.RMI;
 import clientCV.cittadini.Cittadino;
 import clientCV.cittadini.Utente;
 import clientCV.condivisi.Controlli;
@@ -24,8 +24,8 @@ import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.URL;
 import java.nio.file.FileSystems;
+import java.rmi.NotBoundException;
 import java.sql.SQLException;
-import java.time.Duration;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -70,7 +70,7 @@ public class InterfacciaLogIn extends Interfaccia implements Initializable {
      * @param event
      * @throws IOException
      */
-    public void vaiARegistra(ActionEvent event) throws IOException, SQLException {
+    public void vaiARegistra(ActionEvent event) throws IOException, SQLException, NotBoundException {
 
         if(!tryConnection())
             return;
@@ -84,7 +84,7 @@ public class InterfacciaLogIn extends Interfaccia implements Initializable {
      * @param event
      * @throws IOException
      */
-    public void logInOspite(ActionEvent event) throws IOException, SQLException {
+    public void logInOspite(ActionEvent event) throws IOException, SQLException, NotBoundException {
 
         if(!tryConnection())
             return;
@@ -99,7 +99,7 @@ public class InterfacciaLogIn extends Interfaccia implements Initializable {
      * @throws IOException
      * @throws SQLException
      */
-    public void controllaLogIn(ActionEvent event) throws IOException, SQLException {
+    public void controllaLogIn(ActionEvent event) throws IOException, SQLException, NotBoundException {
 
         if(!tryConnection())
             return;
@@ -112,12 +112,12 @@ public class InterfacciaLogIn extends Interfaccia implements Initializable {
             return;
         }
 
-        Proxy proxy = new Proxy();
+        RMI RMI = new RMI();
         String query = "SELECT * " +
                 "FROM utenti " +
                 "WHERE userid = '" + username+
                 "'AND pass = '" + password +"'";
-        utente = proxy.login(query, username);
+        utente = RMI.login(query, username);
 
         if(utente == null) {
 
@@ -165,7 +165,7 @@ public class InterfacciaLogIn extends Interfaccia implements Initializable {
      * @throws IOException
      * @throws SQLException
      */
-    public boolean tryConnection() throws IOException, SQLException {
+    public boolean tryConnection() throws IOException, SQLException, NotBoundException {
         boolean connected;
 
         connected = pingHost(InformazioniServer.getIPSERVER(), InformazioniServer.getPORT());
