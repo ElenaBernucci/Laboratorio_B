@@ -71,7 +71,7 @@
             <Cursor fx:constant="HAND" />
         </cursor>
     </Button>
-   <Button id="btnLogout" fx:id="segnalaBtn" alignment="CENTER" layoutX="503.0" layoutY="502.0" mnemonicParsing="false" onAction="#inviaSegnalazione" prefHeight="57.0" prefWidth="195.0" style="-fx-background-color: #f2b705; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2) dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="INVIA SEGNALAZIONE" textFill="WHITE">
+   <Button id="btnLogout" fx:id="segnalaBtn" alignment="CENTER" layoutX="503.0" layoutY="495.0" mnemonicParsing="false" onAction="#inviaSegnalazione" prefHeight="57.0" prefWidth="195.0" style="-fx-background-color: #f2b705; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2) dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="INVIA SEGNALAZIONE" textFill="WHITE">
       <font>
          <Font name="Montserrat Regular" size="17.0" />
       </font>
@@ -122,7 +122,7 @@
    </TextArea>
    <Text fx:id="intensitaSintomoTxt" fill="#787474" layoutX="645.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Intensità del sintomo" wrappingWidth="206.78929138183594">
       <font>
-         <Font size="17.0" />
+         <Font name="Montserrat Regular" size="18.0" />
       </font>
    </Text>
    <Text fx:id="noteAggiuntiveTxt" fill="#787474" layoutX="350.0" layoutY="378.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Note Aggiuntive:" wrappingWidth="245.78929138183594">

@@ -83,7 +83,7 @@ public class Server extends UnicastRemoteObject implements OperazioniServer{
             }
 
         }catch (Exception e){
-            System.out.println("Server err: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 

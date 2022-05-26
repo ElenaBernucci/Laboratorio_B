@@ -12,4 +12,5 @@ module Laboratorio.B {
 
     opens clientCV.centriVaccinali.interfacce;
     exports clientCV.condivisi;
+    exports serverCV;
 }
