@@ -98,7 +98,7 @@ public class InterfacciaCerca extends Interfaccia implements Initializable {
      */
     public void logoutBtnImpl(ActionEvent event){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Conferma LogOut");
+        alert.setTitle("Attenzione:");
         alert.setHeaderText("Stai per eseguire il LogOut");
         alert.setContentText("Vuoi Continuare?");
         ButtonType noButton = new ButtonType("No", ButtonBar.ButtonData.NO);
@@ -134,7 +134,7 @@ public class InterfacciaCerca extends Interfaccia implements Initializable {
             String nome = nomeField.getText().trim();
 
             if(nome.isBlank()) {
-                mostraWarning("Campi mancanti", "Inserire il nome del centro per effettuare la ricerca");
+                mostraWarning("Riempire tutti i campi", "É necessario inserire il nome del centro \nvaccinale per effettuare la ricerca");
                 return;
             }
 
@@ -172,7 +172,7 @@ public class InterfacciaCerca extends Interfaccia implements Initializable {
             String tipologia = tipologiaCBox.getValue();
 
             if(comune.isBlank() || tipologia == null) {
-                mostraWarning("Campi mancanti", "Inserire il comune e la tipologia\nper effettuare la ricerca");
+                mostraWarning("Riempire tutti i campi", "É necessario inserire il comune e \nla tipologia per effettuare la ricerca");
                 return;
             }
 
@@ -187,7 +187,7 @@ public class InterfacciaCerca extends Interfaccia implements Initializable {
             centrivaccinali = RMI.filtra(query);
 
             if(centrivaccinali.size() == 0)
-                mostraWarning("Nessun centro trovato", "Non esistono centri vaccinali registrati \n corrispondenti ai criteri di ricerca");
+                mostraWarning("Nessun centro trovato", "Non esistono centri vaccinali \ncorrispondenti ai criteri di ricerca");
 
             centriGrid.getChildren().clear();
             for (int i = 0; i<centrivaccinali.size(); i++) {
@@ -239,7 +239,7 @@ public class InterfacciaCerca extends Interfaccia implements Initializable {
             List<Vaccinato> vaccinati = RMI2.riceviVaccinati(query2);
 
             if(vaccinati.isEmpty()) {
-                mostraWarning("Non sei registrato a questo centro vaccinale", "Puoi segnalare eventi avversi solo presso il centro \nvaccinale in cui ti è stato somministrato il vaccino");
+                mostraWarning("Non sei registrato come paziente presso questo centro vaccinale", "Puoi segnalare eventi avversi solo presso il centro \nvaccinale in cui ti è stato somministrato il vaccino");
                 return;
             }
         } catch (IOException | SQLException | NotBoundException | InterruptedException e) {

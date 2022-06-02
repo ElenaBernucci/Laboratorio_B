@@ -83,7 +83,7 @@ public class InterfacciaRegistraVaccinato extends Interfaccia implements Initial
      */
     public void logoutBtnImpl(ActionEvent event){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Conferma LogOut");
+        alert.setTitle("Attenzione:");
         alert.setHeaderText("Stai per eseguire il LogOut");
         alert.setContentText("Vuoi Continuare?");
         ButtonType noButton = new ButtonType("No", ButtonBar.ButtonData.NO);
@@ -139,20 +139,18 @@ public class InterfacciaRegistraVaccinato extends Interfaccia implements Initial
         //Controllo del nome, cognome e CF
         if(nome.isBlank() || cognome.isBlank() || CF.isBlank()
                 || vaccino == null || centrovaccinale == null || date == null) {
-            mostraWarning("Campi mancanti",
-                    "Inserire tutti i campi richiesti");
+            mostraWarning("Riempire tutti i campi", "É necessario inserire tutti i dati richiesti per poter proseguire");
             return;
         }
 
         //Controllo della data
         if(date.isAfter(LocalDate.now())) {
-            mostraWarning("Data errata",
-                    "Inserire una data corretta");
+            mostraWarning("Attenzione:", "La data inserita non é corretta");
             return;
         }
 
         if(!check.cfValido(CF)) {
-            mostraWarning("Codice fiscale errato", "Il codice fiscale inserito è errato, riprovare");
+            mostraWarning("Attenzione:", "Il codice fiscale inserito è errato");
             return;
         }
 

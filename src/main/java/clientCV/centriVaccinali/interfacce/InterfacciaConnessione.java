@@ -40,7 +40,7 @@ public class InterfacciaConnessione extends Interfaccia {
         connected = pingHost(InformazioniServer.getIPSERVER(), InformazioniServer.getPORT());
 
         if (connected)
-            infoLabel.setText("Connesso!");
+            infoLabel.setText("Connessione eseguita correttamente");
         else
             infoLabel.setText("Non connesso, riprova");
 

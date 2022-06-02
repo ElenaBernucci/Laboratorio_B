@@ -124,30 +124,30 @@ public class InterfacciaRegistraCittadino extends Interfaccia implements Initial
 
         if(nome.isBlank() || cognome.isBlank() || CF.isBlank() ||
                 user.isBlank() || password.isBlank() || email.isBlank() || fieldID.getText().isBlank()) {
-            mostraWarning("Campi mancanti", "Inserire tutti i campi richiesti");
+            mostraWarning("Riempire tutti i campi", "É necessario inserire tutti i dati richiesti per poter proseguire");
             return;
         }
 
         //controllo codice fiscale
         if(!check.cfValido(CF)) {
-            mostraWarning("Codice fiscale errato", "Il codice fiscale inserito è errato, riprovare");
+            mostraWarning("Attenzione:", "Il codice fiscale inserito è errato");
             return;
         }
 
         //controllo email
         if(!check.emailValida(email)) {
-            mostraWarning("Email errato", "L'email inserita è errata, riprovare");
+            mostraWarning("Attenzione:", "L'email inserita è errata");
             return;
         }
 
         // controllo id univoco
         if(!controllaID(id)) {
-            mostraWarning("ID univoco errato", "L'ID univoco di vaccinazione viene fornito dall'operatore ed è \nformato da sole cifre");
+            mostraWarning("Attenzione:", "L'ID univoco di vaccinazione é errato.\nViene fornito dall'operatore ed è formato da sole cifre");
             return;
         }
 
         if(controllaCodiceFiscale(CF)){
-            mostraWarning("CF errato", "Il codice fiscale inserito non è corretto");
+            mostraWarning("Attenzione", "Il codice fiscale inserito non è corretto");
             return;
         }
 
@@ -162,7 +162,7 @@ public class InterfacciaRegistraCittadino extends Interfaccia implements Initial
         RMI RMICittadini = new RMI();
         RMICittadini.inserireInDb(insertAsCittadino);
 
-        mostraWarning("Sei registrato!", "Adesso puoi accedere");
+        mostraWarning("Complimenti!", "La registrazione é avvenuta con successo!\nAdesso puoi eseguire l'accesso");
 
 
     }

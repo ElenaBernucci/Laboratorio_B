@@ -55,7 +55,7 @@ public class InterfacciaLogIn extends Interfaccia implements Initializable {
 
         stage.setScene(scene);
         stage.setResizable(false);
-        stage.setTitle("Impostazioni connessione");
+        stage.setTitle("Impostazioni di connessione");
         stage.show();
     }
 
@@ -98,7 +98,7 @@ public class InterfacciaLogIn extends Interfaccia implements Initializable {
         String password = passwordField.getText();
 
         if (username.isBlank() || password.isBlank()) {
-            mostraWarning("Campi vuoti", "Inserire username e password per accedere");
+            mostraWarning("Riempire tutti i campi", "É necessatio inserire username e password per accedere");
             return;
         }
 
@@ -111,7 +111,7 @@ public class InterfacciaLogIn extends Interfaccia implements Initializable {
 
         if(utente == null) {
 
-            mostraWarning("Utente non trovato", "Username e Password non corrispondono a nessun utente");
+            mostraWarning("Utente non trovato", "Username e Password non corrispondono a nessun utente registrato");
         } else {
             if(utente instanceof Cittadino) {
                 cambiaSchermataConUtente("PrincipaleCittadini.fxml", utente, event);
@@ -163,12 +163,4 @@ public class InterfacciaLogIn extends Interfaccia implements Initializable {
             //Se non ci sono valori sul database, allora riempi i database con i dati di default
         check.databaseVuoto();
     }
-
-    /**
-     * Ping Host
-     *
-     * @param host
-     * @param port
-     * @return boolean
-     */
 }

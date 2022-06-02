@@ -95,7 +95,7 @@ public class InterfacciaCentro extends Interfaccia {
      */
     public void logoutBtnImpl(ActionEvent event){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Conferma LogOut");
+        alert.setTitle("Attenzione:");
         alert.setHeaderText("Stai per eseguire il LogOut");
         alert.setContentText("Vuoi Continuare?");
         ButtonType noButton = new ButtonType("No", ButtonBar.ButtonData.NO);
@@ -138,7 +138,7 @@ public class InterfacciaCentro extends Interfaccia {
         this.utente = utente;
 
         if (utente == null) {
-            benvenutoText.setText("Accesso come ospite");
+            benvenutoText.setText("Accesso eseguito come ospite");
             segnalaBtn.setDisable(true);
             logoutBtn.setText("Accedi");
             logoutBtn.setOnAction(new EventHandler<ActionEvent>() {
@@ -257,7 +257,7 @@ public class InterfacciaCentro extends Interfaccia {
             List<Vaccinato> vaccinati = RMI.riceviVaccinati(query);
 
             if(vaccinati.isEmpty()) {
-                mostraWarning("Non sei registrato a questo centro vaccinale", "Puoi segnalare eventi avversi solo presso il centro \nvaccinale in cui ti è stato somministrato il vaccino");
+                mostraWarning("Non sei registrato come paziente presso questo centro vaccinale", "Puoi segnalare eventi avversi solo presso il centro \nvaccinale in cui ti è stato somministrato il vaccino");
                 return;
             }
         } catch (IOException | SQLException | NotBoundException | InterruptedException e) {
@@ -303,7 +303,7 @@ public class InterfacciaCentro extends Interfaccia {
             List<Vaccinato> vaccinati = RMI2.riceviVaccinati(query2);
 
             if(vaccinati.isEmpty()) {
-                mostraWarning("Non sei registrato a questo centro vaccinale", "Puoi segnalare eventi avversi solo presso il centro \nvaccinale in cui ti è stato somministrato il vaccino");
+                mostraWarning("Non sei registrato come paziente presso questo centro vaccinale", "Puoi segnalare eventi avversi solo presso il centro \nvaccinale in cui ti è stato somministrato il vaccino");
                 return;
             }
         } catch (IOException | SQLException | NotBoundException | InterruptedException e) {

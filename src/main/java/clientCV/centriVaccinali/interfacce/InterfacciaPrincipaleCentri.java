@@ -63,7 +63,7 @@ public class InterfacciaPrincipaleCentri extends Interfaccia implements Initiali
      */
     public void logoutBtnImpl(ActionEvent event){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Conferma LogOut");
+        alert.setTitle("Attenzione");
         alert.setHeaderText("Stai per eseguire il LogOut");
         alert.setContentText("Vuoi Continuare?");
         ButtonType noButton = new ButtonType("No", ButtonBar.ButtonData.NO);

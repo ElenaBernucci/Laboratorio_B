@@ -72,7 +72,7 @@ public class InterfacciaRegistraCentro extends Interfaccia implements Initializa
      */
     public void logoutBtnImpl(ActionEvent event){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Conferma LogOut");
+        alert.setTitle("Attenzione:");
         alert.setHeaderText("Stai per eseguire il LogOut");
         alert.setContentText("Vuoi Continuare?");
         ButtonType noButton = new ButtonType("No", ButtonBar.ButtonData.NO);
@@ -125,28 +125,28 @@ public class InterfacciaRegistraCentro extends Interfaccia implements Initializa
         if(nomeCentro.isBlank() || qualificatore == null || strada.isBlank() ||
                 civico.isBlank() || comune.isBlank() || provincia.isBlank()
                 || tipologia == null) {
-            mostraWarning("Campi mancanti", "Inserire tutti i campi richiesti");
+            mostraWarning("Riempire tutti i campi", "É necessario inserire tutti i dati richiesti per poter proseguire");
             return;
         }
 
         // CAP
         if(!cap.matches("[0-9]+")) {
-            mostraWarning("Errore nei dati", "Il CAP inserito non è valido");
+            mostraWarning("Attenzione:", "Il CAP inserito non è valido");
             return;
         } else if(cap.length() != 5 || Integer.parseInt(cap) < 10) {
-            mostraWarning("Errore nei dati", "Il CAP inserito è errato o non esistente");
+            mostraWarning("Attenzione:", "Il CAP inserito è errato o non esistente");
             return;
         }
 
         // controllo provincia
         if(provincia.length() != 2 || !provincia.matches("^[a-zA-Z]+$")) {
-            mostraWarning("Errore nei dati", "La provincia inserita è errata");
+            mostraWarning("Attenzione:", "La provincia inserita è errata");
             return;
         }
 
         // controllo civico
         if(civico.length()  > 5) {
-            mostraWarning("Errore nei dati", "Il numero civico inserito è errato");
+            mostraWarning("Attenzione:", "Il numero civico inserito è errato");
             return;
         }
 
@@ -164,15 +164,15 @@ public class InterfacciaRegistraCentro extends Interfaccia implements Initializa
         RMI RMI1 = new RMI();
 
         if (controllaCentro())
-            mostraWarning("Centro già registrato", "Questo centro è già stato registrato");
+            mostraWarning("Attenzione:", "Questo centro è già stato registrato in precedenza");
         else {
             if(provinciaValida())
-                mostraWarning("Provincia non valida", "Inserisci una provincia valida");
+                mostraWarning("Attenzione:", "La provincia inserita non é valida");
             //Se il centro e stato registrato correttamente
             else{
                 RMI.inserireInDb(query);
                 RMI1.registraNuovoCentro(nomeCentro);
-                mostraWarning("Successo", "Centro registrato correttamente!");
+                mostraWarning("Complimenti!", "Il centro vaccinale é stato registrato correttamente!");
                 vaiAHome(event);
             }
         }

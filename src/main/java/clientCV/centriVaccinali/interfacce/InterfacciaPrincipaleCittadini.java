@@ -94,7 +94,7 @@ public class InterfacciaPrincipaleCittadini extends Interfaccia implements Initi
             List<Vaccinato> vaccinati = RMI2.riceviVaccinati(query2);
 
             if(vaccinati.isEmpty()) {
-                mostraWarning("Non sei registrato a questo centro vaccinale", "Puoi segnalare eventi avversi solo presso il centro \nvaccinale in cui ti è stato somministrato il vaccino");
+                mostraWarning("Non sei registrato come paziente presso questo centro vaccinale", "Puoi segnalare eventi avversi solo presso il centro \nvaccinale in cui ti è stato somministrato il vaccino");
                 return;
             }
         } catch (IOException | SQLException | NotBoundException | InterruptedException e) {
@@ -135,7 +135,7 @@ public class InterfacciaPrincipaleCittadini extends Interfaccia implements Initi
      */
     public void logoutBtnImpl(ActionEvent event){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Conferma LogOut");
+        alert.setTitle("Attenzione:");
         alert.setHeaderText("Stai per eseguire il LogOut");
         alert.setContentText("Vuoi Continuare?");
         ButtonType noButton = new ButtonType("No", ButtonBar.ButtonData.NO);
@@ -178,7 +178,7 @@ public class InterfacciaPrincipaleCittadini extends Interfaccia implements Initi
     public void setUtente(Utente utente) {
         this.utente = utente;
         if (utente == null) {
-            benvenutoText.setText("Accesso come ospite");
+            benvenutoText.setText("Accesso eseguito come ospite");
             registratiBtn.setDisable(false);
             logoutBtn.setText("Accedi");
             logoutBtn.setOnAction(new EventHandler<ActionEvent>() {
@@ -194,7 +194,7 @@ public class InterfacciaPrincipaleCittadini extends Interfaccia implements Initi
         }
         else {
             benvenutoText.setText("Ciao, " + utente.getUsername());
-            logoutBtn.setText("Logout");
+            logoutBtn.setText("LogOut");
             registratiBtn.setText("Invia Segnalazione");
 
             registratiBtn.setOnAction(new EventHandler<ActionEvent>() {

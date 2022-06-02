@@ -84,7 +84,7 @@ public class InterfacciaSegnalazione extends Interfaccia implements Initializabl
      */
     public void logoutBtnImpl(ActionEvent event){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Conferma LogOut");
+        alert.setTitle("Attenzione:");
         alert.setHeaderText("Stai per eseguire il LogOut");
         alert.setContentText("Vuoi Continuare?");
         ButtonType noButton = new ButtonType("No", ButtonBar.ButtonData.NO);
@@ -146,7 +146,7 @@ public class InterfacciaSegnalazione extends Interfaccia implements Initializabl
 
 
         if(descrizione.isBlank() || sintomoCombo.getValue() == null) {
-            mostraWarning("Campi vuoti", "Compilare tutti i campi per procedere");
+            mostraWarning("Riempire tutti i campi", "É necessario inserire tutti i dati richiesti per poter proseguire");
             return;
         }
 
@@ -171,7 +171,7 @@ public class InterfacciaSegnalazione extends Interfaccia implements Initializabl
 
         nuovaSegnalazione = false;
 
-            mostraWarning("Successo!", "La tua segnalazione è stata pubblicata!");
+            mostraWarning("Complimenti!", "La tua segnalazione è stata caricata!");
 
         vaiAVisualizzaCentro(event);
     }
@@ -210,7 +210,7 @@ public class InterfacciaSegnalazione extends Interfaccia implements Initializabl
             segnalazione = RMI.riceviSegnalazione(query);
 
             if (segnalazione.size() > 0) {
-                mostraWarning("Hai già fatto una segnalazione in precedenza", "Se modifichi la tua segnalazione, quella precedente \nsarà rimossa");
+                mostraWarning("Attenzione:", "Hai già fatto una segnalazione in precedenza.\nSe modifichi la tua segnalazione, quella precedente sarà rimossa");
                 sintomoCombo.setValue(segnalazione.get(0).getSintomo());
 
                     severitaCombo.setValue(Integer.toString(segnalazione.get(0).getSeverita()));
@@ -296,7 +296,7 @@ public class InterfacciaSegnalazione extends Interfaccia implements Initializabl
     }
 
     /**
-     * Genera un UID della segnalazione, verifica che non sia presente nel db
+     * Genera un UID della segnalazione, verifica che non sia giá presente nel db
      * @return
      */
     private int generaIdSegnalazione() {
