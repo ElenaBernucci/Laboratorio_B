@@ -52,15 +52,15 @@ public class RMI extends UnicastRemoteObject implements FunzionalitaClient {
      * @throws IOException
      */
 
-    public Utente login(String query, String User) throws IOException, SQLException {
+    public Utente login(String query, String User) throws IOException, SQLException, InterruptedException {
 
         RichiestaServer richiestaServer = new RichiestaServer(query, User, "login");
         OggettoLogin login = stub.login(richiestaServer);
 
-        if(login == null)
+        if(!login.isRegistrato())
             return null;
         else {
-
+            System.out.println("E' un operatore: " + login.isOperatore());
             if(login.isOperatore()) {
 
                 Utente u = new Utente(login.getNome(),
@@ -95,7 +95,7 @@ public class RMI extends UnicastRemoteObject implements FunzionalitaClient {
      * @throws SQLException
      */
 
-    public List<CentroVaccinale> filtra(String query) throws IOException, SQLException {
+    public List<CentroVaccinale> filtra(String query) throws IOException, SQLException, InterruptedException {
         RichiestaServer richiesta = new RichiestaServer(query, "filtra");
         List<CentroVaccinale> centrivaccinali = stub.filtra(richiesta);
 
@@ -110,7 +110,7 @@ public class RMI extends UnicastRemoteObject implements FunzionalitaClient {
      * @throws SQLException
      */
 
-    public Boolean registraNuovoCentro(String nomeCentro) throws SQLException, IOException {
+    public Boolean registraNuovoCentro(String nomeCentro) throws SQLException, IOException, InterruptedException {
         Controlli check = new Controlli();
         String query = "CREATE TABLE vaccinati_" + check.nomeTabella(nomeCentro) +
                 " (" +
@@ -135,7 +135,7 @@ public class RMI extends UnicastRemoteObject implements FunzionalitaClient {
      * @throws SQLException
      */
 
-    public Boolean inserireInDb(String query) throws IOException, SQLException {
+    public Boolean inserireInDb(String query) throws IOException, SQLException, InterruptedException {
         RichiestaServer richiesta = new RichiestaServer(query, "inserireInDb");
         return stub.inserireInDb(richiesta);
     }
@@ -149,7 +149,7 @@ public class RMI extends UnicastRemoteObject implements FunzionalitaClient {
      * @throws SQLException
      */
 
-    public List<Vaccinato> riceviVaccinati(String query) throws IOException, SQLException {
+    public List<Vaccinato> riceviVaccinati(String query) throws IOException, SQLException, InterruptedException {
 
         RichiestaServer richiesta = new RichiestaServer(query, "riceviVaccinati");
         return stub.riceviVaccinati(richiesta);
@@ -164,7 +164,7 @@ public class RMI extends UnicastRemoteObject implements FunzionalitaClient {
      * @throws SQLException
      */
 
-    public List<Sintomo> riceviSintomi(String query) throws IOException, SQLException {
+    public List<Sintomo> riceviSintomi(String query) throws IOException, SQLException, InterruptedException {
 
         RichiestaServer richiesta = new RichiestaServer(query, "riceviSintomi");
         return stub.riceviSintomi(richiesta);
@@ -178,7 +178,7 @@ public class RMI extends UnicastRemoteObject implements FunzionalitaClient {
      * @throws IOException
      */
 
-    public List<Segnalazione> riceviSegnalazione(String query) throws IOException, SQLException {
+    public List<Segnalazione> riceviSegnalazione(String query) throws IOException, SQLException, InterruptedException {
 
         RichiestaServer richiesta = new RichiestaServer(query, "riceviSegnalazione");
         return stub.riceviSegnalazione(richiesta);

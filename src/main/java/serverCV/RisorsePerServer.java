@@ -44,7 +44,7 @@ public class RisorsePerServer{
      * @throws SQLException
      */
     public OggettoLogin login() throws IOException, SQLException {
-
+        System.out.println("Entrato in Login");
         login = new OggettoLogin();
         Statement statement = connection.createStatement();
 
@@ -64,7 +64,6 @@ public class RisorsePerServer{
             ResultSet resultSet1 = statement1.executeQuery(query1);
 
             boolean cittadino = false;
-            login.setOperatore(true);
 
             if (resultSet1.next()) {
                 // Non e operatore
@@ -75,17 +74,20 @@ public class RisorsePerServer{
                 login.setOperatore(true);
             }
 
+            System.out.println(login.isOperatore());
+            System.out.println((cittadino));
             login.setNome(resultSet.getString("nome"));
             login.setCognome(resultSet.getString("cognome"));
             login.setCodicefiscale(resultSet.getString("codicefiscale"));
             login.setUserid(resultSet.getString("userid"));
             login.setPassword(resultSet.getString("pass"));
 
-            if(cittadino)
-                login.setEmail(resultSet1.getString("email"));
 
-            if(cittadino)
+            if(cittadino) {
+                System.out.println(resultSet1.getString("email"));
+                login.setEmail(resultSet1.getString("email"));
                 login.setIdVaccinazione(Integer.parseInt(resultSet1.getString("idvaccinazione")));
+            }
         }
         else
             login.setRegistrato(false);
