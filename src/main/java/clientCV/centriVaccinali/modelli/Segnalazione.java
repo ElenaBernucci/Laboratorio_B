@@ -1,12 +1,14 @@
 package clientCV.centriVaccinali.modelli;
 
+import java.io.Serializable;
+
 /**
  * Segnalazione
  *
  * @author Bernucci Elena 740283 VA
  * @author Clementi Luca 740350 VA
  */
-public class Segnalazione {
+public class Segnalazione implements Serializable {
     private String userid, sintomo, descrizione, centroVaccinale;
     private int severita;
 
