@@ -5,6 +5,7 @@ import clientCV.cittadini.Utente;
 import clientCV.condivisi.Controlli;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -25,7 +26,7 @@ import java.util.ResourceBundle;
  * @author Bernucci Elena 740283 VA
  * @author Clementi Luca 740350 VA
  */
-public class InterfacciaRegistraCittadino extends Interfaccia {
+public class InterfacciaRegistraCittadino extends Interfaccia implements Initializable {
     @FXML
     private TextField fieldNome, fieldCognome, fieldCodiceFiscale,
             fieldUsername, fieldEmail, fieldID;

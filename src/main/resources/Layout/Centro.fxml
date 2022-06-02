@@ -11,7 +11,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientCV.centriVaccinali.interfacce.InterfacciaCentro">
    <MediaView fx:id="mediaView" fitHeight="600.0" fitWidth="900.0" />
-    <Rectangle arcWidth="5.0" fill="WHITE" height="600.0" opacity="0.2" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="275.0" />
+    <Rectangle arcWidth="5.0" fill="WHITE" height="600.0" opacity="0.8" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="275.0" />
     <Text fx:id="benvenutoText" fill="#787474" layoutX="27.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ciao, " wrappingWidth="208.0">
         <font>
             <Font size="24.0" />
