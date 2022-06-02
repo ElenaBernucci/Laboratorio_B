@@ -32,7 +32,7 @@
                 <Cursor fx:constant="TEXT" />
             </cursor>
         </TextField>
-        <Button id="btnEntra" layoutX="585.0" layoutY="361.0" mnemonicParsing="false" onAction="#controllaLogIn" prefHeight="46.0" prefWidth="146.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 2, 2);" text="ACCEDI" textFill="WHITE">
+        <Button id="btnEntra" layoutX="563.0" layoutY="361.0" mnemonicParsing="false" onAction="#controllaLogIn" prefHeight="46.0" prefWidth="192.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 2, 2);" text="ACCEDI" textFill="WHITE">
             <font>
                 <Font name="Montserrat Regular" size="17.0" />
             </font>
@@ -73,7 +73,7 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-      <Button id="btnRegistrati" layoutX="587.0" layoutY="421.0" mnemonicParsing="false" onAction="#vaiARegistra" prefHeight="42.0" prefWidth="146.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 2, 2);" text="REGISTRATI" textFill="WHITE">
+      <Button id="btnRegistrati" layoutX="565.0" layoutY="421.0" mnemonicParsing="false" onAction="#vaiARegistra" prefHeight="42.0" prefWidth="192.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 2, 2);" text="REGISTRATI" textFill="WHITE">
          <font>
             <Font name="Montserrat Regular" size="17.0" />
          </font>

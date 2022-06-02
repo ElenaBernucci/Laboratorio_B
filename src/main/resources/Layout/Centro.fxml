@@ -17,7 +17,7 @@
             <Font size="24.0" />
         </font>
     </Text>
-    <Button id="btnCerca" fx:id="cercaBtn" alignment="CENTER" layoutX="26.0" layoutY="390.0" mnemonicParsing="false" onAction="#vaiACerca" prefHeight="57.0" prefWidth="145.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="Cerca" textFill="WHITE">
+    <Button id="btnCerca" fx:id="cercaBtn" alignment="CENTER" layoutX="26.0" layoutY="390.0" mnemonicParsing="false" onAction="#vaiACerca" prefHeight="57.0" prefWidth="192.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="Cerca" textFill="WHITE">
         <font>
             <Font name="Montserrat Regular" size="18.0" />
         </font>
@@ -28,7 +28,7 @@
             <Cursor fx:constant="HAND" />
         </cursor>
     </Button>
-    <Button id="btnRegistrati" fx:id="registratiBtn" alignment="CENTER" layoutX="26.0" layoutY="455.0" mnemonicParsing="false" onAction="#vaiARegistrati" prefHeight="57.0" prefWidth="145.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="Registrati" textFill="WHITE">
+    <Button id="btnRegistrati" fx:id="registratiBtn" alignment="CENTER" layoutX="26.0" layoutY="455.0" mnemonicParsing="false" onAction="#vaiARegistrati" prefHeight="57.0" prefWidth="192.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="Registrati" textFill="WHITE">
         <font>
             <Font name="Montserrat Regular" size="18.0" />
         </font>

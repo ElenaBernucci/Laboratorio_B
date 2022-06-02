@@ -17,13 +17,13 @@
                 <Image url="@../Images/Logo.png" />
             </image>
         </ImageView>
-        <Rectangle arcWidth="5.0" fill="WHITE" height="600.0" opacity="0.2" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="235.0" />
+        <Rectangle arcWidth="5.0" fill="WHITE" height="600.0" opacity="0.2" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="246.0" />
         <Text fx:id="benvenutoText" fill="#787474" layoutX="27.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ciao, " wrappingWidth="187.78929138183594">
             <font>
                 <Font size="24.0" />
             </font>
         </Text>
-        <Button id="btnRegistraCentro" fx:id="registraCentroBtn" alignment="CENTER" layoutX="27.0" layoutY="395.0" mnemonicParsing="false" onAction="#vaiARegistraCentro" prefHeight="57.0" prefWidth="173.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="Registra Centro" textFill="WHITE">
+        <Button id="btnRegistraCentro" fx:id="registraCentroBtn" alignment="CENTER" layoutX="27.0" layoutY="395.0" mnemonicParsing="false" onAction="#vaiARegistraCentro" prefHeight="57.0" prefWidth="192.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="Registra Centro" textFill="WHITE">
             <font>
                 <Font name="Montserrat Regular" size="18.0" />
             </font>
@@ -34,7 +34,7 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Button id="btnRegistraVaccinato" fx:id="registraVaccinatoBtn" alignment="CENTER" layoutX="27.0" layoutY="460.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="173.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="Registra Vaccinato" textFill="WHITE">
+        <Button id="btnRegistraVaccinato" fx:id="registraVaccinatoBtn" alignment="CENTER" layoutX="27.0" layoutY="460.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="192.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="Registra Vaccinato" textFill="WHITE">
             <font>
                 <Font name="Montserrat Regular" size="18.0" />
             </font>
