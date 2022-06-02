@@ -9,7 +9,7 @@
 <?import javafx.scene.text.*?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientCV.centriVaccinali.interfacce.InterfacciaPrincipaleCentri">
-   <MediaView fitHeight="600.0" fitWidth="900.0" layoutY="13.0" />
+   <MediaView fx:id="mediaView" fitHeight="600.0" fitWidth="900.0" layoutY="13.0" />
     <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="226.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true">
         <Image url="@../Images/Logo.png" />
     </ImageView>
