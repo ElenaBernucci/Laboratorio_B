@@ -26,7 +26,7 @@ public interface FunzionalitaClient extends Remote {
      * @throws IOException
      * @throws SQLException
      */
-    Utente login(String query, String User) throws IOException, SQLException;
+    Utente login(String query, String User) throws IOException, SQLException, InterruptedException;
 
     /**
      * Metodo filtra
@@ -34,7 +34,7 @@ public interface FunzionalitaClient extends Remote {
      * @throws IOException
      * @throws SQLException
      */
-    List<CentroVaccinale> filtra(String query) throws IOException, SQLException;
+    List<CentroVaccinale> filtra(String query) throws IOException, SQLException, InterruptedException;
 
     /**
      * Metodo registraNuovoCentro, registra un Centro Vaccinale
@@ -42,7 +42,7 @@ public interface FunzionalitaClient extends Remote {
      * @throws IOException
      * @throws SQLException
      */
-    Boolean registraNuovoCentro(String nomeCentro) throws IOException, SQLException;
+    Boolean registraNuovoCentro(String nomeCentro) throws IOException, SQLException, InterruptedException;
 
     /**
      * Metodo inserireInDb, Inserisce nel db un commando specifico
@@ -50,7 +50,7 @@ public interface FunzionalitaClient extends Remote {
      * @throws IOException
      * @throws SQLException
      */
-    Boolean inserireInDb(String query) throws IOException, SQLException;
+    Boolean inserireInDb(String query) throws IOException, SQLException, InterruptedException;
 
     /**
      * Metodo riceviVaccinati, prende i cittadini vaccinati dal DB
@@ -58,7 +58,7 @@ public interface FunzionalitaClient extends Remote {
      * @throws IOException
      * @throws SQLException
      */
-    List<Vaccinato> riceviVaccinati(String query) throws IOException, SQLException;
+    List<Vaccinato> riceviVaccinati(String query) throws IOException, SQLException, InterruptedException;
 
     /**
      * Metodo riceviSintomi, prelieva i sintomi dal database
@@ -66,7 +66,7 @@ public interface FunzionalitaClient extends Remote {
      * @throws IOException
      * @throws SQLException
      */
-    List<Sintomo> riceviSintomi(String query) throws IOException, SQLException;
+    List<Sintomo> riceviSintomi(String query) throws IOException, SQLException, InterruptedException;
 
     /**
      * Metodo riceviSegnalazione, prende segnalazioni dal db
@@ -74,7 +74,7 @@ public interface FunzionalitaClient extends Remote {
      * @throws IOException
      * @throws SQLException
      */
-    List<Segnalazione> riceviSegnalazione(String query) throws IOException, SQLException;
+    List<Segnalazione> riceviSegnalazione(String query) throws IOException, SQLException, InterruptedException;
 
     /**
      * Metodo riceviValoriIndividuali, prelieva valori individuali dal db

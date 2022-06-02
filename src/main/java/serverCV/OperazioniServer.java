@@ -27,7 +27,7 @@ public interface OperazioniServer extends Remote {
      * @throws IOException
      * @throws SQLException
      */
-    OggettoLogin login(RichiestaServer richiestaServer) throws IOException, SQLException;
+    OggettoLogin login(RichiestaServer richiestaServer) throws IOException, SQLException, InterruptedException;
 
     /**
      * Metodo riceviSintomi, prelieva i sintomi dal database
@@ -35,7 +35,7 @@ public interface OperazioniServer extends Remote {
      * @throws IOException
      * @throws SQLException
      */
-    List<Sintomo> riceviSintomi(RichiestaServer richiestaServer) throws IOException, SQLException;
+    List<Sintomo> riceviSintomi(RichiestaServer richiestaServer) throws IOException, SQLException, InterruptedException;
 
     /**
      * Metodo inserireInDb, Inserisce nel db un commando specifico
@@ -43,7 +43,7 @@ public interface OperazioniServer extends Remote {
      * @throws IOException
      * @throws SQLException
      */
-    Boolean inserireInDb(RichiestaServer richiestaServer) throws IOException, SQLException;
+    Boolean inserireInDb(RichiestaServer richiestaServer) throws IOException, SQLException, InterruptedException;
 
     /**
      * Metodo registraNuovoCentro, registra un Centro Vaccinale
@@ -51,7 +51,7 @@ public interface OperazioniServer extends Remote {
      * @throws IOException
      * @throws SQLException
      */
-    Boolean registraNuovoCentro(RichiestaServer richiestaServer) throws IOException, SQLException;
+    Boolean registraNuovoCentro(RichiestaServer richiestaServer) throws IOException, SQLException, InterruptedException;
 
     /**
      * Metodo riceviValoriIndividuali, prelieva valori individuali dal db
@@ -67,7 +67,7 @@ public interface OperazioniServer extends Remote {
      * @throws IOException
      * @throws SQLException
      */
-    List<Vaccinato> riceviVaccinati(RichiestaServer richiestaServer) throws IOException, SQLException;
+    List<Vaccinato> riceviVaccinati(RichiestaServer richiestaServer) throws IOException, SQLException, InterruptedException;
 
     /**
      * Metodo filtra
@@ -75,7 +75,7 @@ public interface OperazioniServer extends Remote {
      * @throws IOException
      * @throws SQLException
      */
-    List<CentroVaccinale> filtra(RichiestaServer richiestaServer) throws IOException, SQLException;
+    List<CentroVaccinale> filtra(RichiestaServer richiestaServer) throws IOException, SQLException, InterruptedException;
 
     /**
      * Metodo riceviSegnalazione, prende segnalazioni dal db
@@ -83,5 +83,5 @@ public interface OperazioniServer extends Remote {
      * @throws IOException
      * @throws SQLException
      */
-    List<Segnalazione> riceviSegnalazione(RichiestaServer richiestaServer) throws IOException, SQLException;
+    List<Segnalazione> riceviSegnalazione(RichiestaServer richiestaServer) throws IOException, SQLException, InterruptedException;
     }

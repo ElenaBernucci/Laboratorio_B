@@ -34,20 +34,9 @@ public class ConnessioneServer extends Thread{
      * @param richiesta
      */
 
-    public ConnessioneServer(RichiestaServer richiesta, Semaphore sem, OggettoLogin login) {
+    public ConnessioneServer(RichiestaServer richiesta, Semaphore sem) {
         this.sem = sem;
         this.richiesta = richiesta;
-        this.login = login;
-    }
-    public ConnessioneServer(RichiestaServer richiesta, Semaphore sem, Boolean risultato){
-        this.sem = sem;
-        this.richiesta = richiesta;
-        this.risultato = risultato;
-    }
-    public ConnessioneServer(RichiestaServer richiesta, Semaphore sem, List<?> lista) {
-        this.sem = sem;
-        this.richiesta = richiesta;
-        this.lista = lista;
     }
 
 

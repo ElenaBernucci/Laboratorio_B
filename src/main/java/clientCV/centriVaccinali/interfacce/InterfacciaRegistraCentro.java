@@ -110,7 +110,7 @@ public class InterfacciaRegistraCentro extends Interfaccia implements Initializa
      * @throws IOException
      * @throws SQLException
      */
-    public void registraCentro(ActionEvent event) throws IOException, SQLException, NotBoundException {
+    public void registraCentro(ActionEvent event) throws IOException, SQLException, NotBoundException, InterruptedException {
         String nomeCentro = nomeField.getText().trim();
         String tipologia = tipologiaCombo.getValue();
         String qualificatore = qualificatoreCombo.getValue();
@@ -215,7 +215,7 @@ public class InterfacciaRegistraCentro extends Interfaccia implements Initializa
         try {
             RMI = new RMI();
             centriVaccinali = RMI.filtra(query);
-        } catch (IOException | SQLException | NotBoundException e) {
+        } catch (IOException | SQLException | NotBoundException | InterruptedException e) {
             e.printStackTrace();
         }
 

@@ -128,7 +128,7 @@ public class InterfacciaCerca extends Interfaccia implements Initializable {
      * @throws IOException
      * @throws SQLException
      */
-    public void mostraCentriVaccinali() throws IOException, SQLException, NotBoundException {
+    public void mostraCentriVaccinali() throws IOException, SQLException, NotBoundException, InterruptedException {
 
         if(radNome.isSelected()) {
             String nome = nomeField.getText().trim();
@@ -227,7 +227,7 @@ public class InterfacciaCerca extends Interfaccia implements Initializable {
         try {
             RMI = new RMI();
             centroVaccinale = RMI.filtra(query).get(0);
-        } catch (IOException | SQLException | NotBoundException e) {
+        } catch (IOException | SQLException | NotBoundException | InterruptedException e) {
             e.printStackTrace();
         }
 
@@ -244,7 +244,7 @@ public class InterfacciaCerca extends Interfaccia implements Initializable {
                 mostraWarning("Non sei registrato a questo centro vaccinale", "Puoi segnalare eventi avversi solo presso il centro \nvaccinale in cui ti è stato somministrato il vaccino");
                 return;
             }
-        } catch (IOException | SQLException | NotBoundException e) {
+        } catch (IOException | SQLException | NotBoundException | InterruptedException e) {
             e.printStackTrace();
         }
 
@@ -332,7 +332,7 @@ public class InterfacciaCerca extends Interfaccia implements Initializable {
 
             }
 
-        } catch (IOException | SQLException | NotBoundException e) {
+        } catch (IOException | SQLException | NotBoundException | InterruptedException e) {
             e.printStackTrace();
         }
 

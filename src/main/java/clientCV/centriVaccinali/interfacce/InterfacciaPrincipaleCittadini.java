@@ -80,7 +80,7 @@ public class InterfacciaPrincipaleCittadini extends Interfaccia implements Initi
         try {
             RMI = new RMI();
             centroVaccinale = RMI.filtra(query).get(0);
-        } catch (IOException | SQLException | NotBoundException e) {
+        } catch (IOException | SQLException | NotBoundException | InterruptedException e) {
             e.printStackTrace();
         }
 
@@ -97,7 +97,7 @@ public class InterfacciaPrincipaleCittadini extends Interfaccia implements Initi
                 mostraWarning("Non sei registrato a questo centro vaccinale", "Puoi segnalare eventi avversi solo presso il centro \nvaccinale in cui ti è stato somministrato il vaccino");
                 return;
             }
-        } catch (IOException | SQLException | NotBoundException e) {
+        } catch (IOException | SQLException | NotBoundException | InterruptedException e) {
             e.printStackTrace();
         }
 

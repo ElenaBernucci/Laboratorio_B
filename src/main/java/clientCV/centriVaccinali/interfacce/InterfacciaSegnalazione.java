@@ -165,7 +165,7 @@ public class InterfacciaSegnalazione extends Interfaccia implements Initializabl
             RMI = new RMI();
                 RMI.inserireInDb(query);
 
-        } catch (SQLException | NotBoundException e) {
+        } catch (SQLException | NotBoundException | InterruptedException e) {
             e.printStackTrace();
         }
 
@@ -218,7 +218,7 @@ public class InterfacciaSegnalazione extends Interfaccia implements Initializabl
                 stampaDescrizioneSintomo();
                 nuovaSegnalazione = false;
             }
-        } catch (IOException | NotBoundException | SQLException e){
+        } catch (IOException | NotBoundException | SQLException | InterruptedException e){
             e.printStackTrace();
         }
     }
@@ -238,7 +238,7 @@ public class InterfacciaSegnalazione extends Interfaccia implements Initializabl
             if(sintomi.size() > 0)
                 descrizioneText.setText(sintomi.get(0).getDescrizione());
 
-        } catch (IOException | SQLException | NotBoundException e) {
+        } catch (IOException | SQLException | NotBoundException | InterruptedException e) {
             e.printStackTrace();
         }
     }
@@ -276,7 +276,7 @@ public class InterfacciaSegnalazione extends Interfaccia implements Initializabl
                 idSintomo.put(sintomo.getNome(), sintomo.getIdsintomo());
             }
 
-        } catch (IOException | SQLException | NotBoundException e) {
+        } catch (IOException | SQLException | NotBoundException | InterruptedException e) {
             e.printStackTrace();
         }
 
