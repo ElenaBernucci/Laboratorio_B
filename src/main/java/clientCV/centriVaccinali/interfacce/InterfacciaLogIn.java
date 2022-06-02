@@ -17,11 +17,8 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
-import serverCV.InformazioniServer;
 
 import java.io.IOException;
-import java.net.InetSocketAddress;
-import java.net.Socket;
 import java.net.URL;
 import java.nio.file.FileSystems;
 import java.rmi.NotBoundException;
@@ -70,10 +67,9 @@ public class InterfacciaLogIn extends Interfaccia implements Initializable {
      * @param event
      * @throws IOException
      */
-    public void vaiARegistra(ActionEvent event) throws IOException, SQLException, NotBoundException {
+    public void vaiARegistra(ActionEvent event) throws IOException, SQLException, NotBoundException, InterruptedException {
 
-        if(!tryConnection())
-            return;
+        ControlliInserimento();
 
         cambiaSchermataConUtente("RegistraCittadino.fxml", null, event);
     }
@@ -86,9 +82,6 @@ public class InterfacciaLogIn extends Interfaccia implements Initializable {
      */
     public void logInOspite(ActionEvent event) throws IOException, SQLException, NotBoundException {
 
-        if(!tryConnection())
-            return;
-
         cambiaSchermataConUtente("PrincipaleCittadini.fxml", null, event);
     }
 
@@ -99,10 +92,9 @@ public class InterfacciaLogIn extends Interfaccia implements Initializable {
      * @throws IOException
      * @throws SQLException
      */
-    public void controllaLogIn(ActionEvent event) throws IOException, SQLException, NotBoundException {
+    public void controllaLogIn(ActionEvent event) throws IOException, SQLException, NotBoundException, InterruptedException {
 
-        if(!tryConnection())
-            return;
+        ControlliInserimento();
 
         String username = usernameField.getText();
         String password = passwordField.getText();
@@ -125,10 +117,12 @@ public class InterfacciaLogIn extends Interfaccia implements Initializable {
         } else {
             if(utente instanceof Cittadino) {
                 cambiaSchermataConUtente("PrincipaleCittadini.fxml", utente, event);
+                System.out.println("Cittadino");
 
             }
             else {
                 cambiaSchermataConUtente("PrincipaleCentri.fxml", utente, event);
+                System.out.println("Operatore");
 
             }
         }
@@ -139,7 +133,6 @@ public class InterfacciaLogIn extends Interfaccia implements Initializable {
     @Override
 
     public void initialize (URL url, ResourceBundle rb){
-
         String absolutePath = FileSystems.getDefault().getPath("src/main/resources/Images/sfondoAnimatoVideo.mp4").normalize().toAbsolutePath().toUri().toString();
         Media media = new Media(absolutePath);
         MediaPlayer player = new MediaPlayer(media);
@@ -165,21 +158,12 @@ public class InterfacciaLogIn extends Interfaccia implements Initializable {
      * @throws IOException
      * @throws SQLException
      */
-    public boolean tryConnection() throws IOException, SQLException, NotBoundException {
-        boolean connected;
-
-        connected = pingHost(InformazioniServer.getIPSERVER(), InformazioniServer.getPORT());
-        if (!connected) {
-            vaiAImpostazioni();
-            return false;
-        }
+    public void ControlliInserimento() throws IOException, SQLException, NotBoundException, InterruptedException {
 
         Controlli check = new Controlli();
 
             //Se non ci sono valori sul database, allora riempi i database con i dati di default
         check.databaseVuoto();
-
-        return true;
     }
 
     /**
@@ -189,15 +173,4 @@ public class InterfacciaLogIn extends Interfaccia implements Initializable {
      * @param port
      * @return boolean
      */
-    private static boolean pingHost(String host, int port) {
-        try (Socket socket = new Socket()) {
-            socket.connect(new InetSocketAddress(host, port), 2000);
-
-                return true;
-        } catch (IOException e) {
-            e.printStackTrace();
-                return false;
-        }
-    }
-
 }

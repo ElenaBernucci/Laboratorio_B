@@ -193,7 +193,7 @@ public class InterfacciaRegistraCentro extends Interfaccia implements Initializa
         try {
             RMI = new RMI();
             province = RMI.riceviValoriIndividuali(query,"sigla");
-        } catch (IOException | NotBoundException | SQLException e) {
+        } catch (IOException | NotBoundException | SQLException | InterruptedException e) {
             e.printStackTrace();
         }
 

@@ -314,7 +314,7 @@ public class InterfacciaSegnalazione extends Interfaccia implements Initializabl
             try {
                 RMI = new RMI();
                 tmpID = RMI.riceviValoriIndividuali(getIDquery, "idsegnalazione");
-            } catch (IOException | NotBoundException | SQLException e) {
+            } catch (IOException | NotBoundException | SQLException | InterruptedException e) {
                 e.printStackTrace();
             }
 

@@ -29,6 +29,7 @@ public class Server extends UnicastRemoteObject implements OperazioniServer{
 
     static Connection connection;
     Semaphore sem= new Semaphore(100);
+
     ConnessioneServer connessione;
 
     protected Server() throws RemoteException {
@@ -59,7 +60,7 @@ public class Server extends UnicastRemoteObject implements OperazioniServer{
                     InformazioniServer.getDBNAME(),
                     InformazioniServer.getIPSERVER(),
                     InformazioniServer.getDBPORT()) == null){
-                System.out.println("Errore nel inserimento di credenziali, riprova!");
+                System.out.println("Errore nell'inserimento di credenziali, riprova!");
 
                 System.out.println("DB Username: ");
                     InformazioniServer.setPGUSERNAME(scan.nextLine());
@@ -69,7 +70,7 @@ public class Server extends UnicastRemoteObject implements OperazioniServer{
 
             System.out.println("Connesso!");
 
-            try {
+            /*try {
                 while(true) {
                     //new ConessioneServer(sem, InformazioniServer.getPGUSERNAME(), InformazioniServer.getPGPASSWORD());
                     connection = tryConnection(InformazioniServer.getPGUSERNAME(),
@@ -80,7 +81,7 @@ public class Server extends UnicastRemoteObject implements OperazioniServer{
                 }
             } catch(Exception e)  {
                 e.printStackTrace();
-            }
+            }*/
 
         }catch (Exception e){
             e.printStackTrace();
@@ -106,49 +107,51 @@ public class Server extends UnicastRemoteObject implements OperazioniServer{
 
     public OggettoLogin login(RichiestaServer richiesta) throws IOException, SQLException {
         OggettoLogin login = new OggettoLogin();
-        connessione = new ConnessioneServer(richiesta, sem, login);
+        new ConnessioneServer(richiesta, sem, login);
         return login;
     }
 
     public List<Sintomo> riceviSintomi(RichiestaServer richiesta) throws IOException, SQLException {
         List<Sintomo> listaSintomi = new ArrayList<>();
-        connessione = new ConnessioneServer(richiesta, sem, listaSintomi);
+        new ConnessioneServer(richiesta, sem, listaSintomi);
         return listaSintomi;
     }
 
     public Boolean inserireInDb(RichiestaServer richiesta) throws IOException, SQLException {
         Boolean risultato = false;
-        connessione = new ConnessioneServer(richiesta, sem, risultato);
+        new ConnessioneServer(richiesta, sem, risultato).start();
         return risultato;
     }
 
     public Boolean registraNuovoCentro(RichiestaServer richiesta) throws IOException, SQLException {
         Boolean risultato = false;
-        connessione = new ConnessioneServer(richiesta, sem, risultato);
+        new ConnessioneServer(richiesta, sem, risultato);
         return risultato;
     }
 
-    public List<String> riceviValoriIndividuali(RichiestaServer richiesta) throws IOException, SQLException {
-        ArrayList<String> lista = new ArrayList<>();
+    public List<String> riceviValoriIndividuali(RichiestaServer richiesta) throws IOException, SQLException, InterruptedException {
+        List<String> lista = new ArrayList<>();
         connessione = new ConnessioneServer(richiesta, sem, lista);
-        return lista;
+        connessione.start();
+        connessione.join();
+        return (List<String>) connessione.getLista();
     }
 
     public List<Vaccinato> riceviVaccinati(RichiestaServer richiesta) throws IOException, SQLException {
         List<Vaccinato> lista = new ArrayList<>();
-        connessione = new ConnessioneServer(richiesta, sem, lista);
+        new ConnessioneServer(richiesta, sem, lista);
         return lista;
     }
 
     public List<CentroVaccinale> filtra(RichiestaServer richiesta) throws IOException, SQLException {
         List<CentroVaccinale> filtro = new ArrayList<>();
-        connessione = new ConnessioneServer(richiesta, sem, filtro);
+        new ConnessioneServer(richiesta, sem, filtro);
         return filtro;
     }
 
     public List<Segnalazione> riceviSegnalazione(RichiestaServer richiesta) throws IOException, SQLException {
         List<Segnalazione> listaSegnalazione = new ArrayList<>();
-        connessione = new ConnessioneServer(richiesta, sem, listaSegnalazione);
+        new ConnessioneServer(richiesta, sem, listaSegnalazione);
         return listaSegnalazione;
     }
 }

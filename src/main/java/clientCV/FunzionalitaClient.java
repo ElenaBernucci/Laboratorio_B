@@ -82,6 +82,6 @@ public interface FunzionalitaClient extends Remote {
      * @throws IOException
      * @throws SQLException
      */
-    List<String> riceviValoriIndividuali(String query, String colonna) throws IOException, SQLException;
+    List<String> riceviValoriIndividuali(String query, String colonna) throws IOException, SQLException, InterruptedException;
 
     }

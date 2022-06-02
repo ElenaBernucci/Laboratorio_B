@@ -59,7 +59,7 @@ public interface OperazioniServer extends Remote {
      * @throws IOException
      * @throws SQLException
      */
-    List<String> riceviValoriIndividuali(RichiestaServer richiestaServer) throws IOException, SQLException;
+    List<String> riceviValoriIndividuali(RichiestaServer richiestaServer) throws IOException, SQLException, InterruptedException;
 
     /**
      * Metodo riceviVaccinati, prende i cittadini vaccinati dal DB

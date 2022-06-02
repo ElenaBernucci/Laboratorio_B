@@ -38,22 +38,16 @@ public class ConnessioneServer extends Thread{
         this.sem = sem;
         this.richiesta = richiesta;
         this.login = login;
-
-        start();
     }
     public ConnessioneServer(RichiestaServer richiesta, Semaphore sem, Boolean risultato){
         this.sem = sem;
         this.richiesta = richiesta;
         this.risultato = risultato;
-
-        start();
     }
     public ConnessioneServer(RichiestaServer richiesta, Semaphore sem, List<?> lista) {
         this.sem = sem;
         this.richiesta = richiesta;
         this.lista = lista;
-
-        start();
     }
 
 
@@ -67,7 +61,7 @@ public class ConnessioneServer extends Thread{
 
     private void fetchFromDb(Connection c) throws IOException, SQLException {
 
-        RisorsePerServer eseguiRichiesta = new RisorsePerServer(c);
+        RisorsePerServer eseguiRichiesta = new RisorsePerServer(c, richiesta);
 
 
         switch (richiesta.getTipoRichiesta()) {
@@ -82,6 +76,18 @@ public class ConnessioneServer extends Thread{
             default -> {
             }
         }
+    }
+
+    public List<?> getLista() {
+        return lista;
+    }
+
+    public OggettoLogin getLogin() {
+        return login;
+    }
+
+    public Boolean getRisultato() {
+        return risultato;
     }
 
     public void run(){

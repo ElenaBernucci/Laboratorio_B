@@ -13,7 +13,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
 /**
@@ -26,7 +25,7 @@ public abstract class Interfaccia {
     /**
      * Path
      */
-    public static final String path = "Layout/";
+    public static final String path = "/Layout/";
 
     public abstract void initialize (URL url, ResourceBundle rb);
 
@@ -44,9 +43,10 @@ public abstract class Interfaccia {
      * @throws IOException
      */
     public void cambiaSchermata(String fxml, ActionEvent event) throws IOException {
-        Parent root = FXMLLoader
-                .load(Objects.requireNonNull(CentriVaccinali.class.getClassLoader()
-                .getResource(path + fxml)));
+        URL fxmlLocation = getClass().getResource(path + fxml);
+        FXMLLoader loader = new FXMLLoader(fxmlLocation);
+
+        Parent root = loader.load();
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
@@ -62,12 +62,12 @@ public abstract class Interfaccia {
      * @throws IOException
      */
     public void cambiaSchermataConUtente(String fxml, Utente utente, ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(CentriVaccinali.class.getClassLoader()
-                .getResource( path + fxml));
+        URL fxmlLocation = getClass().getResource(path + fxml);
+        FXMLLoader loader = new FXMLLoader(fxmlLocation);
 
-        Parent root = fxmlLoader.load();
+        Parent root = loader.load();
 
-        Interfaccia interfaccia = fxmlLoader.getController();
+        Interfaccia interfaccia = loader.getController();
         interfaccia.setUtente(utente);
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -79,7 +79,7 @@ public abstract class Interfaccia {
     }
 
     /**
-     * Impostazione di alerta
+     * Mostra avviso
      *
      * @param title
      * @param body

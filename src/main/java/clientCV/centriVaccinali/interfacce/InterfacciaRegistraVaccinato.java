@@ -202,7 +202,7 @@ public class InterfacciaRegistraVaccinato extends Interfaccia implements Initial
         try {
             RMI = new RMI();
             tmpCF = RMI.riceviValoriIndividuali(getCF, "codicefiscale");
-        } catch (IOException | NotBoundException | SQLException e) {
+        } catch (IOException | NotBoundException | SQLException | InterruptedException e) {
             e.printStackTrace();
         }
         return tmpCF.isEmpty();
@@ -226,7 +226,7 @@ public class InterfacciaRegistraVaccinato extends Interfaccia implements Initial
             try {
                 RMI = new RMI();
                 tmpID = RMI.riceviValoriIndividuali(getIDquery, "idvaccinazione");
-            } catch (IOException | NotBoundException | SQLException e) {
+            } catch (IOException | NotBoundException | SQLException | InterruptedException e) {
                 e.printStackTrace();
             }
 
@@ -271,7 +271,7 @@ public class InterfacciaRegistraVaccinato extends Interfaccia implements Initial
             RMI = new RMI();
             nomiCentri = RMI.riceviValoriIndividuali(query, "nome");
             centrivaccinaliCombo.getItems().addAll(nomiCentri);
-        } catch (IOException | NotBoundException | SQLException e) {
+        } catch (IOException | NotBoundException | SQLException | InterruptedException e) {
             e.printStackTrace();
         }
     }

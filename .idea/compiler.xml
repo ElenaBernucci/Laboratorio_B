@@ -15,7 +15,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Laboratorio B" options="--add-exports jdk.internal.vm.compiler/org.graalvm.compiler.debug=Laboratorio.B" />
+      <module name="Laboratorio B" options="--add-exports java.naming/com.sun.naming.internal=Laboratorio.B" />
     </option>
   </component>
 </project>

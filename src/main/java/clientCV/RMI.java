@@ -193,7 +193,7 @@ public class RMI extends UnicastRemoteObject implements FunzionalitaClient {
      * @throws IOException
      */
 
-    public List<String> riceviValoriIndividuali(String query, String colonna) throws IOException, SQLException {
+    public List<String> riceviValoriIndividuali(String query, String colonna) throws IOException, SQLException, InterruptedException {
         RichiestaServer richiesta = new RichiestaServer(query, colonna, "riceviValoriIndividuali");
         return stub.riceviValoriIndividuali(richiesta);
     }

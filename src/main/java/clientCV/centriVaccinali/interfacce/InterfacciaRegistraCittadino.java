@@ -134,7 +134,7 @@ public class InterfacciaRegistraCittadino extends Interfaccia {
         }
 
         //controllo email
-        if(!check.emailValido(email)) {
+        if(!check.emailValida(email)) {
             mostraWarning("Email errato", "L'email inserita è errata, riprovare");
             return;
         }
@@ -172,7 +172,7 @@ public class InterfacciaRegistraCittadino extends Interfaccia {
      * @return
      * @throws IOException
      */
-    private boolean controllaID(String id) throws IOException, NotBoundException, SQLException {
+    private boolean controllaID(String id) throws IOException, NotBoundException, SQLException, InterruptedException {
 
         if(id.matches("^[a-zA-Z]+$"))
             return false;
@@ -195,7 +195,7 @@ public class InterfacciaRegistraCittadino extends Interfaccia {
      * @return
      * @throws IOException
      */
-    private boolean controllaCodiceFiscale(String cf) throws IOException, NotBoundException, SQLException {
+    private boolean controllaCodiceFiscale(String cf) throws IOException, NotBoundException, SQLException, InterruptedException {
         List<String> cfs;
         String query = "SELECT * FROM idunivoci WHERE codicefiscale = '"+cf+"'";
 

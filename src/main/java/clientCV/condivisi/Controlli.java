@@ -52,7 +52,7 @@ public class Controlli {
      * @param email
      * @return boolean
      */
-    public boolean emailValido(String email) {
+    public boolean emailValida(String email) {
 
         String EMAIL_PATTERN = ("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
                 + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
@@ -87,7 +87,7 @@ public class Controlli {
      * @throws IOException
      * @throws SQLException
      */
-    public boolean databaseVuoto() throws IOException, SQLException, NotBoundException {
+    public boolean databaseVuoto() throws IOException, SQLException, NotBoundException, InterruptedException {
         RMI RMICheck = new RMI();
         RMI RMIPopulate = new RMI();
 
@@ -110,9 +110,10 @@ public class Controlli {
             e.printStackTrace();
         }
 
-        RMIPopulate.inserireInDb(query.toString());
+        boolean rispostaDB = RMIPopulate.inserireInDb(query.toString());
 
-                System.out.println("Database vuoti -> Data di default generata");
+                System.out.println("Database vuoti -> Dati di default generati");
+                System.out.println(rispostaDB);
         return true;
     }
 

@@ -11,7 +11,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientCV.centriVaccinali.interfacce.InterfacciaRegistraCittadino">
     <children>
-        <MediaView fx:id="mediaView" fitHeight="600.0" fitWidth="900.0" />
+        <MediaView fx:id="mediaView" fitHeight="600.0" fitWidth="900.0" layoutX="1.0" layoutY="5.0" nodeOrientation="INHERIT"/>
         <Rectangle arcWidth="5.0" fill="WHITE" height="600.0" opacity="0.2" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="275.0" />
         <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="480.0" layoutY="89.0">
             <image>

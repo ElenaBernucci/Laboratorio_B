@@ -20,9 +20,8 @@ public class RisorsePerServer{
     private Connection connection;
     private RichiestaServer richiesta;
     private OggettoLogin login;
-    private List<String> colonna;
+    private ArrayList<Object> lista;
     private CentroVaccinale centroVaccinale;
-    private List<CentroVaccinale> listaFiltrata;
 
 
     /**
@@ -32,8 +31,9 @@ public class RisorsePerServer{
      * @param connection
      */
 
-    public RisorsePerServer(Connection connection) {
+    public RisorsePerServer(Connection connection, RichiestaServer richiesta) {
         this.connection = connection;
+        this.richiesta = richiesta;
     }
 
     /**
@@ -98,8 +98,8 @@ public class RisorsePerServer{
      * @return
      * @throws SQLException
      */
-    public List<Sintomo> riceviSintomi() throws SQLException {
-        List<Sintomo> listaSintomi = new ArrayList<>();
+    public ArrayList riceviSintomi() throws SQLException {
+        lista = new ArrayList<>();
         String query= richiesta.getQuery();
         Statement statement= connection.createStatement();
         ResultSet resultSet = statement.executeQuery(query);
@@ -109,13 +109,13 @@ public class RisorsePerServer{
                 Sintomo sintomo = new Sintomo(resultSet.getInt("idsintomo"),
                         resultSet.getString("sintomo"),
                         resultSet.getString("descrizione"));
-                listaSintomi.add(sintomo);
+                lista.add(sintomo);
             }
         }
         catch(Exception e) {
             e.printStackTrace();
         }
-        return listaSintomi;
+        return lista;
     }
 
     /**
@@ -130,13 +130,9 @@ public class RisorsePerServer{
 
         Statement statement = connection.createStatement();
 
-        try {
-            statement.executeUpdate(query);
-            return true;
-        } catch(Exception e) {
-            e.printStackTrace();
-            return false;
-        }
+        statement.executeUpdate(query);
+        return true;
+
     }
 
     /**
@@ -173,8 +169,8 @@ public class RisorsePerServer{
      * @throws IOException
      * @throws SQLException
      */
-    public List<String> riceviValoriIndividuali() throws IOException, SQLException {
-        colonna = new ArrayList<>();
+    public ArrayList riceviValoriIndividuali() throws IOException, SQLException {
+        lista = new ArrayList<>();
         String query= richiesta.getQuery();
         String columnLabel = richiesta.getParam();
 
@@ -182,14 +178,13 @@ public class RisorsePerServer{
         ResultSet resultSet = statement.executeQuery(query);
         try {
             while (resultSet.next()) {
-                colonna.add(resultSet.getString(columnLabel));
+                lista.add(resultSet.getString(columnLabel));
             }
-            //out.println("exit");
         }
         catch(Exception e) {
             e.printStackTrace();
         }
-        return colonna;
+        return lista;
     }
 
     /**
@@ -197,8 +192,8 @@ public class RisorsePerServer{
      *
      * @throws SQLException
      */
-    public List<Vaccinato> riceviVaccinati() throws SQLException {
-        List<Vaccinato> listaVaccinati = new ArrayList<>();
+    public ArrayList riceviVaccinati() throws SQLException {
+        lista = new ArrayList<>();
         String query = richiesta.getQuery();
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(query);
@@ -212,13 +207,13 @@ public class RisorsePerServer{
                         null,
                         Vaccino.valueOf(resultSet.getString("vaccino")),
                         Integer.parseInt(resultSet.getString("idvaccinazione")));
-                listaVaccinati.add(vaccinato);
+                lista.add(vaccinato);
             }
         }
         catch(Exception e) {
             e.printStackTrace();
         }
-        return listaVaccinati;
+        return lista;
     }
 
     /**
@@ -227,8 +222,8 @@ public class RisorsePerServer{
      * @throws IOException
      * @throws SQLException
      */
-    public List<CentroVaccinale> filtra() throws IOException, SQLException {
-        listaFiltrata = new ArrayList<>();
+    public ArrayList filtra() throws IOException, SQLException {
+        lista = new ArrayList<>();
         String query= richiesta.getQuery();
         Statement statement= connection.createStatement();
         ResultSet resultSet = statement.executeQuery(query);
@@ -242,13 +237,13 @@ public class RisorsePerServer{
                         resultSet.getString("provincia"),
                         resultSet.getString("cap"));
                 centroVaccinale = new CentroVaccinale(resultSet.getString("nome"), indirizzo, Tipologia.valueOf(resultSet.getString("tipologia")));
-                listaFiltrata.add(centroVaccinale);
+                lista.add(centroVaccinale);
             }
         }
         catch (Exception e) {
             e.printStackTrace();
         }
-        return listaFiltrata;
+        return lista;
     }
 
     /**
@@ -257,8 +252,8 @@ public class RisorsePerServer{
      * @throws IOException
      * @throws SQLException
      */
-    public List<Segnalazione> riceviSegnalazione() throws SQLException {
-        List<Segnalazione> listaSegnalazioni = new ArrayList<>();
+    public ArrayList riceviSegnalazione() throws SQLException {
+        lista = new ArrayList<>();
         String query = richiesta.getQuery();
         Statement statement= connection.createStatement();
 
@@ -270,12 +265,12 @@ public class RisorsePerServer{
                         Integer.parseInt(resultSet.getString("severita")),
                         resultSet.getString("descrizione"),
                         resultSet.getString("centrovaccinale"));
-                listaSegnalazioni.add(segnalazione);
+                lista.add(segnalazione);
             }
         }
         catch(Exception e) {
             e.printStackTrace();
         }
-        return listaSegnalazioni;
+        return lista;
     }
 }
