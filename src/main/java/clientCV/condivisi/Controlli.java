@@ -5,6 +5,7 @@ import clientCV.RMI;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.Serializable;
 import java.rmi.NotBoundException;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -19,7 +20,7 @@ import java.util.regex.Pattern;
  * @author Bernucci Elena 740283 VA
  * @author Clementi Luca 740350 VA
  */
-public class Controlli {
+public class Controlli implements Serializable {
 
     /**
      * Verifica se il CF è valido

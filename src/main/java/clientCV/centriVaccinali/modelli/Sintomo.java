@@ -1,12 +1,14 @@
 package clientCV.centriVaccinali.modelli;
 
+import java.io.Serializable;
+
 /**
  * Sintomo
  *
  * @author Bernucci Elena 740283 VA
  * @author Clementi Luca 740350 VA
  */
-public class Sintomo {
+public class Sintomo implements Serializable {
     private String nome, descrizione;
     private int idsintomo;
 

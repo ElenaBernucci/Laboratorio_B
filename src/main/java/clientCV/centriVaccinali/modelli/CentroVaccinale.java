@@ -1,12 +1,14 @@
 package clientCV.centriVaccinali.modelli;
 
+import java.io.Serializable;
+
 /**
  * CentroVaccinale
  *
  * @author Bernucci Elena 740283 VA
  * @author Clementi Luca 740350 VA
  */
-public class CentroVaccinale {
+public class CentroVaccinale implements Serializable {
     private String nome;
     private Indirizzo indirizzo;
     private Tipologia tipologia;

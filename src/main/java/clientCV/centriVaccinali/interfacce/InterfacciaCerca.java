@@ -152,13 +152,12 @@ public class InterfacciaCerca extends Interfaccia implements Initializable {
             centriGrid.getChildren().clear();
             //Creazione dei Risultati
                 for (int i = 0; i<centrivaccinali.size(); i++) {
-                    FXMLLoader fxmlLoader = new FXMLLoader(getClass()
-                            .getClassLoader()
-                            .getResource(path + "CercaCentro.fxml"));
+                    URL fxmlLocation = getClass().getResource(path + "CercaCentro.fxml");
+                    FXMLLoader loader = new FXMLLoader(fxmlLocation);
 
-                    AnchorPane anchorPane = fxmlLoader.load();
+                    AnchorPane anchorPane = loader.load();
 
-                    InterfacciaCercaCentro interfacciaCercaCentro = fxmlLoader.getController();
+                    InterfacciaCercaCentro interfacciaCercaCentro = loader.getController();
                     interfacciaCercaCentro.setData(centrivaccinali.get(i), utente);
 
                     centriGrid.add(anchorPane,0, i);
@@ -192,13 +191,12 @@ public class InterfacciaCerca extends Interfaccia implements Initializable {
 
             centriGrid.getChildren().clear();
             for (int i = 0; i<centrivaccinali.size(); i++) {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass()
-                        .getClassLoader()
-                        .getResource(path + "CercaCentro.fxml"));
+                URL fxmlLocation = getClass().getResource(path + "CercaCentro.fxml");
+                FXMLLoader loader = new FXMLLoader(fxmlLocation);
 
-                AnchorPane anchorPane = fxmlLoader.load();
+                AnchorPane anchorPane = loader.load();
 
-                InterfacciaCercaCentro interfacciaCercaCentro = fxmlLoader.getController();
+                InterfacciaCercaCentro interfacciaCercaCentro = loader.getController();
                 interfacciaCercaCentro.setData(centrivaccinali.get(i), utente);
 
                 centriGrid.add(anchorPane,0, i);
@@ -248,9 +246,10 @@ public class InterfacciaCerca extends Interfaccia implements Initializable {
             e.printStackTrace();
         }
 
-        FXMLLoader loader = new
-                FXMLLoader(CentriVaccinali.class.getClassLoader().getResource(path + "Segnalazione.fxml"));
+        URL fxmlLocation = getClass().getResource(path + "Segnalazione.fxml");
+        FXMLLoader loader = new FXMLLoader(fxmlLocation);
         Parent root = loader.load();
+
 
         Interfaccia minterfaccia = loader.getController();
         InterfacciaSegnalazione interfacciaSegnalazione = loader.getController();
@@ -317,13 +316,12 @@ public class InterfacciaCerca extends Interfaccia implements Initializable {
             RMI = new RMI();
             centrivaccinali = RMI.filtra(query);
             for (int i = 0; i<centrivaccinali.size(); i++) {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass()
-                        .getClassLoader()
-                        .getResource(path + "CercaCentro.fxml"));
+                URL fxmlLocation = getClass().getResource(path + "CercaCentro.fxml");
+                FXMLLoader loader = new FXMLLoader(fxmlLocation);
 
-                AnchorPane anchorPane = fxmlLoader.load();
+                AnchorPane anchorPane = loader.load();
 
-                InterfacciaCercaCentro interfacciaCercaCentro = fxmlLoader.getController();
+                InterfacciaCercaCentro interfacciaCercaCentro = loader.getController();
                 interfacciaCercaCentro.setData(centrivaccinali.get(i), utente);
 
                 centriGrid.add(anchorPane,0, i);

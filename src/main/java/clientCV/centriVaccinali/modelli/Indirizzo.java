@@ -2,13 +2,15 @@ package clientCV.centriVaccinali.modelli;
 
 import clientCV.condivisi.Controlli;
 
+import java.io.Serializable;
+
 /**
  * Indirizzo
  *
  * @author Bernucci Elena 740283 VA
  * @author Clementi Luca 740350 VA
  */
-public class Indirizzo {
+public class Indirizzo implements Serializable {
     private String strada, civico, comune, provincia, CAP;
     private Qualificatore qualificatore;
 

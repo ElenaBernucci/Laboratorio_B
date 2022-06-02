@@ -2,6 +2,7 @@ package clientCV.centriVaccinali.modelli;
 
 import clientCV.cittadini.Persona;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 /**
@@ -11,7 +12,7 @@ import java.sql.Date;
  * @author Clementi Luca 740350 VA
  */
 
-public class Vaccinato extends Persona {
+public class Vaccinato extends Persona implements Serializable {
     private String centroVaccinale;
     private Vaccino vaccino;
     private Date data;
