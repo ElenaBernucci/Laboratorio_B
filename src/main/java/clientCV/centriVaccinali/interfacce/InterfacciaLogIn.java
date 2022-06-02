@@ -48,9 +48,7 @@ public class InterfacciaLogIn extends Interfaccia implements Initializable {
      * @throws IOException
      */
     public void vaiAImpostazioni() throws IOException {
-        Parent root = FXMLLoader.load(
-                Objects.requireNonNull(CentriVaccinali.class.getClassLoader().getResource(
-                        "Layout/Connessione.fxml")));
+        Parent root = FXMLLoader.load( Objects.requireNonNull(CentriVaccinali.class.getClassLoader().getResource("Layout/Connessione.fxml")));
 
         Stage stage = new Stage();
         Scene scene = new Scene(root);
@@ -86,7 +84,7 @@ public class InterfacciaLogIn extends Interfaccia implements Initializable {
     }
 
     /**
-     * Controlla il collegamento col proxy ed esegue il log in basandosi sul tipo di utente
+     * Controlla il collegamento col proxy ed esegue il log in
      *
      * @param event
      * @throws IOException

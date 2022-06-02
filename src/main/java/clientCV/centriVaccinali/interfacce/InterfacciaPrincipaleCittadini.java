@@ -11,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -39,7 +40,7 @@ import java.util.ResourceBundle;
  * @author Bernucci Elena 740283 VA
  * @author Clementi Luca 740350 VA
  */
-public class InterfacciaPrincipaleCittadini extends Interfaccia {
+public class InterfacciaPrincipaleCittadini extends Interfaccia implements Initializable {
     CentroVaccinale centroVaccinale;
     @FXML
     private Text benvenutoText;
@@ -173,6 +174,7 @@ public class InterfacciaPrincipaleCittadini extends Interfaccia {
      * @param utente
      */
     @Override
+
     public void setUtente(Utente utente) {
         this.utente = utente;
         if (utente == null) {

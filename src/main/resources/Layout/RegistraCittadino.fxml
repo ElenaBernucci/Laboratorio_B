@@ -11,9 +11,9 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientCV.centriVaccinali.interfacce.InterfacciaRegistraCittadino">
     <children>
-        <MediaView fx:id="mediaView" fitHeight="600.0" fitWidth="900.0" layoutX="1.0" layoutY="5.0" nodeOrientation="INHERIT"/>
-        <Rectangle arcWidth="5.0" fill="WHITE" height="600.0" opacity="0.2" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="275.0" />
-        <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="480.0" layoutY="89.0">
+        <MediaView fx:id="mediaView" fitHeight="600.0" fitWidth="900.0" layoutX="1.0" layoutY="5.0" nodeOrientation="INHERIT" />
+        <Rectangle arcWidth="5.0" fill="WHITE" height="600.0" opacity="0.7" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="235.0" />
+        <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="464.0" layoutY="90.0">
             <image>
                 <Image url="@../Images/Logo.png" />
             </image>
@@ -40,12 +40,12 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Text fill="#d91e85" layoutX="504.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REGISTRATI" textAlignment="CENTER" wrappingWidth="205.16275024414062">
+        <Text fill="#d91e85" layoutX="488.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REGISTRATI" textAlignment="CENTER" wrappingWidth="205.16275024414062">
             <font>
                 <Font size="32.0" />
             </font>
         </Text>
-        <TextField fx:id="fieldNome" alignment="CENTER" layoutX="327.0" layoutY="169.0" prefHeight="57.0" prefWidth="251.0" promptText="Nome" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(10, 0, 2, 2);">
+        <TextField fx:id="fieldNome" alignment="CENTER" layoutX="311.0" layoutY="170.0" prefHeight="57.0" prefWidth="251.0" promptText="Nome" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(10, 0, 2, 2);">
             <padding>
                 <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
             </padding>
@@ -56,7 +56,7 @@
                 <Cursor fx:constant="TEXT" />
             </cursor>
         </TextField>
-        <Button id="btnRegistraCentro" fx:id="registratiBtn" layoutX="527.0" layoutY="490.0" mnemonicParsing="false" onAction="#registraCittadino" prefHeight="57.0" style="-fx-background-color: #f2b705; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="CONFERMA" textFill="WHITE">
+        <Button id="btnRegistraCentro" fx:id="registratiBtn" layoutX="511.0" layoutY="491.0" mnemonicParsing="false" onAction="#registraCittadino" prefHeight="57.0" style="-fx-background-color: #f2b705; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="CONFERMA" textFill="WHITE">
             <font>
                 <Font name="Montserrat Regular" size="15.0" />
             </font>
@@ -67,7 +67,7 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <TextField fx:id="fieldCodiceFiscale" alignment="CENTER" layoutX="595.0" layoutY="242.0" prefHeight="57.0" prefWidth="251.0" promptText="Codice Fiscale" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(10, 0, 2, 2);">
+        <TextField fx:id="fieldCodiceFiscale" alignment="CENTER" layoutX="579.0" layoutY="243.0" prefHeight="57.0" prefWidth="251.0" promptText="Codice Fiscale" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(10, 0, 2, 2);">
             <padding>
                 <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
             </padding>
@@ -78,7 +78,7 @@
                 <Cursor fx:constant="TEXT" />
             </cursor>
         </TextField>
-        <PasswordField fx:id="fieldPassword" alignment="CENTER" layoutX="327.0" layoutY="315.0" prefHeight="57.0" prefWidth="251.0" promptText="Password" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(10, 0, 2, 2);">
+        <PasswordField fx:id="fieldPassword" alignment="CENTER" layoutX="311.0" layoutY="316.0" prefHeight="57.0" prefWidth="251.0" promptText="Password" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(10, 0, 2, 2);">
             <padding>
                 <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
             </padding>
@@ -89,7 +89,7 @@
                 <Cursor fx:constant="TEXT" />
             </cursor>
         </PasswordField>
-        <TextField fx:id="fieldUsername" alignment="CENTER" layoutX="327.0" layoutY="242.0" prefHeight="57.0" prefWidth="251.0" promptText="Username" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(10, 0, 2, 2);">
+        <TextField fx:id="fieldUsername" alignment="CENTER" layoutX="311.0" layoutY="243.0" prefHeight="57.0" prefWidth="251.0" promptText="Username" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(10, 0, 2, 2);">
             <padding>
                 <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
             </padding>
@@ -100,7 +100,7 @@
                 <Cursor fx:constant="TEXT" />
             </cursor>
         </TextField>
-        <TextField fx:id="fieldEmail" alignment="CENTER" layoutX="595.0" layoutY="315.0" prefHeight="57.0" prefWidth="251.0" promptText="Email" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(10, 0, 2, 2);">
+        <TextField fx:id="fieldEmail" alignment="CENTER" layoutX="579.0" layoutY="316.0" prefHeight="57.0" prefWidth="251.0" promptText="Email" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(10, 0, 2, 2);">
             <padding>
                 <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
             </padding>
@@ -111,7 +111,7 @@
                 <Cursor fx:constant="TEXT" />
             </cursor>
         </TextField>
-        <TextField fx:id="fieldID" alignment="CENTER" layoutX="461.0" layoutY="395.0" prefHeight="57.0" prefWidth="251.0" promptText="ID Vaccinazione" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(10, 0, 2, 2);">
+        <TextField fx:id="fieldID" alignment="CENTER" layoutX="445.0" layoutY="396.0" prefHeight="57.0" prefWidth="251.0" promptText="ID Vaccinazione" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(10, 0, 2, 2);">
             <padding>
                 <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
             </padding>
@@ -122,7 +122,7 @@
                 <Cursor fx:constant="TEXT" />
             </cursor>
         </TextField>
-        <TextField fx:id="fieldCognome" alignment="CENTER" layoutX="595.0" layoutY="169.0" prefHeight="57.0" prefWidth="251.0" promptText="Cognome" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(10, 0, 2, 2);">
+        <TextField fx:id="fieldCognome" alignment="CENTER" layoutX="579.0" layoutY="170.0" prefHeight="57.0" prefWidth="251.0" promptText="Cognome" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(10, 0, 2, 2);">
             <padding>
                 <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
             </padding>

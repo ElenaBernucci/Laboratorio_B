@@ -3,6 +3,7 @@ package clientCV.centriVaccinali.interfacce;
 import clientCV.cittadini.Utente;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
@@ -23,7 +24,7 @@ import java.util.ResourceBundle;
  * @author Bernucci Elena 740283 VA
  * @author Clementi Luca 740350 VA
  */
-public class InterfacciaPrincipaleCentri extends Interfaccia {
+public class InterfacciaPrincipaleCentri extends Interfaccia implements Initializable {
     private Utente utente;
 
     @FXML
