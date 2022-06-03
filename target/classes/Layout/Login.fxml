@@ -62,17 +62,6 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Button id="btnReset" layoutX="180.0" layoutY="361.0" mnemonicParsing="false" onAction="#vaiAImpostazioni" prefHeight="27.0" prefWidth="98.0" style="-fx-background-color: white; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="Impostazioni" textAlignment="CENTER" textFill="#787474">
-            <font>
-                <Font name="Microsoft Sans Serif" size="11.0" />
-            </font>
-            <padding>
-                <Insets bottom="5.0" left="8.0" right="8.0" top="5.0" />
-            </padding>
-            <cursor>
-                <Cursor fx:constant="HAND" />
-            </cursor>
-        </Button>
       <Button id="btnRegistrati" layoutX="565.0" layoutY="421.0" mnemonicParsing="false" onAction="#vaiARegistra" prefHeight="42.0" prefWidth="192.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 2, 2);" text="REGISTRATI" textFill="WHITE">
          <font>
             <Font name="Montserrat Regular" size="17.0" />
