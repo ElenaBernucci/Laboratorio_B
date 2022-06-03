@@ -202,18 +202,18 @@ public class InterfacciaCentro extends Interfaccia {
         }
 
             for (int i = 0; i<segnalazioni.size(); i++) {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass()
-                        .getClassLoader()
-                        .getResource(path + "SegnalazioneOggetto.fxml"));
+
+                URL fxmlLocation = getClass().getResource(path + "SegnalazioneOggetto.fxml");
+                FXMLLoader loader = new FXMLLoader(fxmlLocation);
 
                 AnchorPane anchorPane = null;
                 try {
-                    anchorPane = fxmlLoader.load();
+                    anchorPane = loader.load();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
 
-                InterfacciaSegnalazioneOggetto interfacciaSegnalazione = fxmlLoader.getController();
+                InterfacciaSegnalazioneOggetto interfacciaSegnalazione = loader.getController();
                 interfacciaSegnalazione.setData(segnalazioni.get(i));
 
                 segnalazioniGrid.add(anchorPane, 0, i);
@@ -264,8 +264,8 @@ public class InterfacciaCentro extends Interfaccia {
             e.printStackTrace();
         }
 
-        FXMLLoader loader = new
-                FXMLLoader(CentriVaccinali.class.getClassLoader().getResource(path + "Segnalazione.fxml"));
+        URL fxmlLocation = getClass().getResource(path + "Segnalazione.fxml");
+        FXMLLoader loader = new FXMLLoader(fxmlLocation);
         Parent root = loader.load();
 
         Interfaccia minterfaccia = loader.getController();

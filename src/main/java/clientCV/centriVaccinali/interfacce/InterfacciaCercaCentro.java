@@ -13,6 +13,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 
 /**
  * InterfacciaCercaCentro
@@ -50,9 +51,9 @@ public class InterfacciaCercaCentro {
         indirizzoText.setText("Indirizzo: " + centro.getIndirizzo().toString());
 
         entraBtn.setOnAction(event -> {
-            FXMLLoader loader = new FXMLLoader(getClass()
-                    .getClassLoader()
-                    .getResource(Interfaccia.path + "Centro.fxml"));
+
+            URL fxmlLocation = getClass().getResource(Interfaccia.path + "Centro.fxml");
+            FXMLLoader loader = new FXMLLoader(fxmlLocation);
             Parent root = null;
             try {
                 root = loader.load();
