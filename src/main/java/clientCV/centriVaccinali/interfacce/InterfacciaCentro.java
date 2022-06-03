@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -40,7 +41,7 @@ import java.util.ResourceBundle;
  * @author Bernucci Elena 740283 VA
  * @author Clementi Luca 740350 VA
  */
-public class InterfacciaCentro extends Interfaccia {
+public class InterfacciaCentro extends Interfaccia implements Initializable {
     private Utente utente;
     private CentroVaccinale centroVaccinale;
 

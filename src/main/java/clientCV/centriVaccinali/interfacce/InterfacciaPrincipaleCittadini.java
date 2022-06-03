@@ -100,9 +100,8 @@ public class InterfacciaPrincipaleCittadini extends Interfaccia implements Initi
         } catch (IOException | SQLException | NotBoundException | InterruptedException e) {
             e.printStackTrace();
         }
-
-        FXMLLoader loader = new
-                FXMLLoader(CentriVaccinali.class.getClassLoader().getResource(path + "Segnalazione.fxml"));
+        URL fxmlLocation = getClass().getResource(path + "Segnalazione.fxml");
+        FXMLLoader loader = new FXMLLoader(fxmlLocation);
         Parent root = loader.load();
 
         Interfaccia mInterfaccia = loader.getController();

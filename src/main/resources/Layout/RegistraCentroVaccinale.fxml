@@ -12,7 +12,7 @@
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientCV.centriVaccinali.interfacce.InterfacciaRegistraCentro">
     <children>
       <MediaView fx:id="mediaView" fitHeight="600.0" fitWidth="900.0" />
-        <Rectangle arcWidth="5.0" fill="WHITE" height="600.0" opacity="0.2" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="250.0" />
+        <Rectangle arcWidth="5.0" fill="#dddada" height="600.0" opacity="0.4" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="250.0" />
         <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="305.0" layoutY="39.0">
             <image>
                 <Image url="@../Images/Logo.png" />
@@ -23,7 +23,7 @@
                 <Font size="24.0" />
             </font>
         </Text>
-        <Button id="btnRegistraCentro" fx:id="registraCentroBtn" alignment="CENTER" layoutX="26.0" layoutY="390.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="192.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="Registra Centro" textFill="WHITE">
+        <Button id="btnRegistraCentro" fx:id="registraCentroBtn" alignment="CENTER" layoutX="26.0" layoutY="390.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="192.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="Registra Centro" textFill="WHITE" visible="false">
             <font>
                 <Font name="Montserrat Regular" size="18.0" />
             </font>

@@ -48,7 +48,10 @@ public class InterfacciaLogIn extends Interfaccia implements Initializable {
      * @throws IOException
      */
     public void vaiAImpostazioni() throws IOException {
-        Parent root = FXMLLoader.load( Objects.requireNonNull(CentriVaccinali.class.getClassLoader().getResource("Layout/Connessione.fxml")));
+
+        URL fxmlLocation = getClass().getResource("/Layout/Connessione.fxml");
+        FXMLLoader loader = new FXMLLoader(fxmlLocation);
+        Parent root = loader.load();
 
         Stage stage = new Stage();
         Scene scene = new Scene(root);

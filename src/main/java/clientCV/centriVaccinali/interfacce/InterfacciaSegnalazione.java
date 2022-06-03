@@ -112,8 +112,9 @@ public class InterfacciaSegnalazione extends Interfaccia implements Initializabl
      * @throws IOException
      */
     public void vaiAVisualizzaCentro(ActionEvent event) throws IOException {
-        FXMLLoader loader = new
-                FXMLLoader(CentriVaccinali.class.getClassLoader().getResource(path + "Centro.fxml"));
+
+        URL fxmlLocation = getClass().getResource(path + "Centro.fxml");
+        FXMLLoader loader = new FXMLLoader(fxmlLocation);
         Parent root = loader.load();
 
         Interfaccia mInterfaccia = loader.getController();

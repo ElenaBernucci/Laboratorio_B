@@ -11,7 +11,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientCV.centriVaccinali.interfacce.InterfacciaCentro">
    <MediaView fx:id="mediaView" fitHeight="600.0" fitWidth="900.0" />
-    <Rectangle arcWidth="5.0" fill="WHITE" height="600.0" opacity="0.8" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="275.0" />
+    <Rectangle arcWidth="5.0" fill="#dddada" height="600.0" opacity="0.4" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="275.0" />
     <Text fx:id="benvenutoText" fill="#787474" layoutX="27.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ciao, " wrappingWidth="208.0">
         <font>
             <Font size="24.0" />
@@ -50,12 +50,12 @@
             <Cursor fx:constant="HAND" />
         </cursor>
     </Button>
-    <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="451.0" layoutY="38.0">
+    <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="439.0" layoutY="39.0">
         <image>
             <Image url="@../Images/Logo.png" />
         </image>
     </ImageView>
-    <Text id="txtNomeCV" fx:id="nomeText" fill="#d91e85" layoutX="383.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome Centro" textAlignment="CENTER" wrappingWidth="420.0">
+    <Text id="txtNomeCV" fx:id="nomeText" fill="#d91e85" layoutX="383.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome Centro" textAlignment="CENTER" wrappingWidth="420.0">
         <font>
             <Font name="Montserrat Bold" size="32.0" />
         </font>
@@ -71,37 +71,37 @@
             <Cursor fx:constant="HAND" />
         </cursor>
     </Button>
-    <Text id="txtTipologia" fx:id="tipologiaText" fill="#000000a6" layoutX="27.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipologia: ">
+    <Text id="txtTipologia" fx:id="tipologiaText" fill="#787474a6" layoutX="27.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipologia: ">
         <font>
             <Font name="Montserrat Regular" size="18.0" />
         </font>
     </Text>
-    <Label id="txtIndirizzo" fx:id="indirizzoText" alignment="TOP_LEFT" layoutX="28.0" layoutY="185.0" maxHeight="89.0" maxWidth="481.0" prefHeight="89.0" prefWidth="208.0" text="Indirizzo: " textFill="#000000d0" wrapText="true">
+    <Label id="txtIndirizzo" fx:id="indirizzoText" alignment="TOP_LEFT" layoutX="28.0" layoutY="185.0" maxHeight="89.0" maxWidth="481.0" prefHeight="89.0" prefWidth="208.0" text="Indirizzo: " textFill="#787474d1" wrapText="true">
         <font>
             <Font name="Montserrat Regular" size="18.0" />
         </font>
     </Label>
-    <Text fill="#000000a5" layoutX="28.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Segnalazioni:">
+    <Text fill="#787474a6" layoutX="28.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Segnalazioni:">
         <font>
             <Font name="Montserrat Regular" size="18.0" />
         </font>
     </Text>
     <Text id="txtSegnalazioni" fx:id="numSegnalazioni" fill="#f2b705" layoutX="137.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="84.94200134277344">
         <font>
-            <Font name="Montserrat Regular" size="28.0" />
+            <Font size="20.0" />
         </font>
     </Text>
-    <Text fill="#000000a5" layoutX="28.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Severità media:">
+    <Text fill="#787474a6" layoutX="28.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Severità media:">
         <font>
             <Font name="Montserrat Regular" size="18.0" />
         </font>
     </Text>
-    <Text id="txtSeverità" fx:id="mediaSeverita" fill="#f2b705" layoutX="158.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0 / 5" wrappingWidth="145.3364004348697">
+    <Text id="txtSeverità" fx:id="mediaSeverita" fill="#f2b705" layoutX="151.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0 / 5" wrappingWidth="111.33640043486969">
         <font>
-            <Font name="Montserrat Regular" size="28.0" />
+            <Font size="20.0" />
         </font>
     </Text>
-   <Button id="btnLogout" fx:id="segnalaBtn" alignment="CENTER" layoutX="425.0" layoutY="512.0" mnemonicParsing="false" onAction="#vaiASegnalazione" prefHeight="56.0" prefWidth="336.0" style="-fx-border-style: none; -fx-background-color: transparent; " text="Crea una segnalazione per questo centro" textFill="#f2b705" underline="true">
+   <Button id="btnLogout" fx:id="segnalaBtn" alignment="CENTER" layoutX="425.0" layoutY="512.0" mnemonicParsing="false" onAction="#vaiASegnalazione" prefHeight="56.0" prefWidth="336.0" style="-fx-border-style: none; -fx-background-color: transparent; " text="Crea una segnalazione per questo centro" textFill="#787474" underline="true">
       <font>
          <Font name="Montserrat Regular" size="17.0" />
       </font>
@@ -112,7 +112,7 @@
          <Cursor fx:constant="HAND" />
       </cursor>
    </Button>
-   <ScrollPane fx:id="segnalazioniScroll" fitToWidth="true" hbarPolicy="NEVER" layoutX="325.0" layoutY="103.0" maxHeight="394.0" maxWidth="799.0" minHeight="232.0" minWidth="495.0" prefHeight="394.0" prefWidth="536.0" style="-fx-opacity: 50; -fx-border-radius: 0; -fx-background: #FFFFFF; -fx-background-color: #FFFFFF;">
+   <ScrollPane fx:id="segnalazioniScroll" fitToWidth="true" hbarPolicy="NEVER" layoutX="325.0" layoutY="135.0" maxHeight="394.0" maxWidth="799.0" minHeight="232.0" minWidth="495.0" prefHeight="362.0" prefWidth="536.0" style="-fx-opacity: 50; -fx-border-radius: 0; -fx-background: #FFFFFF; -fx-background-color: #FFFFFF;">
       <content>
          <GridPane fx:id="segnalazioniGrid" style="-fx-opacity: 50; -fx-background-color: #FFFFFF;">
             <columnConstraints>
@@ -124,4 +124,9 @@
          </GridPane>
       </content>
    </ScrollPane>
+   <Text fx:id="benvenutoText1" fill="#f2b705" layoutX="516.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Segnalazioni:" textAlignment="CENTER" wrappingWidth="154.0">
+      <font>
+         <Font size="24.0" />
+      </font>
+   </Text>
 </Pane>

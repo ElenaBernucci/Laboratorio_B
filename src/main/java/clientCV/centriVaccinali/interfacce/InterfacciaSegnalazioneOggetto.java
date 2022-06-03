@@ -33,12 +33,10 @@ public class InterfacciaSegnalazioneOggetto {
         for(int i = 1; i <= 5; i++) {
             if (i <= segnalazione.getSeverita())
                 severita.append("●");
-            else
-                severita.append("○");
         }
 
         sintomoText.setText("Sintomo: " + segnalazione.getSintomo());
-        severitaText.setText("Severità: " + severita);
+        severitaText.setText(" " + severita);
         descrizioneText.setText("Descrizione: " + segnalazione.getDescrizione());
 
     }

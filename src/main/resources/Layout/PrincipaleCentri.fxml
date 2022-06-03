@@ -13,7 +13,7 @@
     <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="226.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true">
         <Image url="@../Images/Logo.png" />
     </ImageView>
-    <Text fx:id="benvenutoText" fill="#787474" layoutX="572.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ciao, " wrappingWidth="191.78929138183594">
+    <Text fx:id="benvenutoText" fill="#787474" layoutX="572.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ciao, " wrappingWidth="191.78929138183594">
         <font>
             <Font size="24.0" />
         </font>
