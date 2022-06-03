@@ -22,9 +22,7 @@ public class ConnessioneServer extends Thread{
     private Semaphore sem;
     private RichiestaServer richiesta;
     private OggettoLogin login;
-    private OggettoSintomo sintomo;
     private List<?> lista;
-    private OggettoSegnalazione segnalazione;
     private Boolean risultato;
 
     /**

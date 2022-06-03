@@ -34,12 +34,6 @@ public class InformazioniServer {
         private static final String DBNAME = "centrivaccinali";
 
     /**
-     * Server Port
-     */
-
-        private static int PORT = 7070;
-
-    /**
      * Server ip
      */
 
@@ -47,47 +41,39 @@ public class InformazioniServer {
 
 
 
-            //Setters
-            public static void setPGUSERNAME(String PGUSERNAME) {
-                InformazioniServer.PGUSERNAME = PGUSERNAME;
-            }
+        //Setters
+        public static void setPGUSERNAME(String PGUSERNAME) {
+            InformazioniServer.PGUSERNAME = PGUSERNAME;
+        }
 
-            public static void setPGPASSWORD(String PGPASSWORD) {
-                InformazioniServer.PGPASSWORD = PGPASSWORD;
-            }
+        public static void setPGPASSWORD(String PGPASSWORD) {
+            InformazioniServer.PGPASSWORD = PGPASSWORD;
+        }
 
-            public static void setPORT(int PORT) {
-                InformazioniServer.PORT = PORT;
-            }
-
-            public static void setIPSERVER(String IPSERVER) {
-                InformazioniServer.IPSERVER = IPSERVER;
-            }
+        public static void setIPSERVER(String IPSERVER) {
+            InformazioniServer.IPSERVER = IPSERVER;
+        }
 
 
 
-            //Getters
-            public static int getDBPORT() {
-                return DBPORT;
-            }
+        //Getters
+        public static int getDBPORT() {
+            return DBPORT;
+        }
 
-            public static String getPGUSERNAME() {
-                return PGUSERNAME;
-            }
+        public static String getPGUSERNAME() {
+            return PGUSERNAME;
+        }
 
-            public static String getPGPASSWORD() {
-                return PGPASSWORD;
-            }
+        public static String getPGPASSWORD() {
+            return PGPASSWORD;
+        }
 
-            public static int getPORT() {
-                return PORT;
-            }
+        public static String getDBNAME() {
+            return DBNAME;
+        }
 
-            public static String getDBNAME() {
-                return DBNAME;
-            }
-
-            public static String getIPSERVER() {
-                return IPSERVER;
-            }
+        public static String getIPSERVER() {
+            return IPSERVER;
+        }
 }

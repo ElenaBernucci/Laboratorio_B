@@ -55,11 +55,11 @@ public class Server extends UnicastRemoteObject implements OperazioniServer{
             System.out.println("DB Password: ");
                 InformazioniServer.setPGPASSWORD(scan.nextLine());
 
-            while(tryConnection(InformazioniServer.getPGUSERNAME(),
+            while(!testConnessione(InformazioniServer.getPGUSERNAME(),
                     InformazioniServer.getPGPASSWORD(),
                     InformazioniServer.getDBNAME(),
                     InformazioniServer.getIPSERVER(),
-                    InformazioniServer.getDBPORT()) == null){
+                    InformazioniServer.getDBPORT())){
                 System.out.println("Errore nell'inserimento di credenziali, riprova!");
 
                 System.out.println("DB Username: ");
@@ -88,21 +88,24 @@ public class Server extends UnicastRemoteObject implements OperazioniServer{
         }
     }
 
-    public static Connection tryConnection(String username, String password, String database, String ipAddress, int port) throws ClassNotFoundException{
+    public static Boolean testConnessione(String username, String password, String database, String ipAddress, int port) throws ClassNotFoundException{
         Class.forName("org.postgresql.Driver");
-        Connection connection;
+        Boolean connessione = false;
         try{
+            Connection connection;
             connection = DriverManager
                     .getConnection("jdbc:postgresql://" + ipAddress + ":" +
-                            port + "/" +
-                            database +
-                            "?&useUnicode=true&characterEncoding=utf8",
+                                    port + "/" +
+                                    database +
+                                    "?&useUnicode=true&characterEncoding=utf8",
                             username,
                             password);
-        }catch (SQLException e){
-            return null;
+            connessione = true;
+            connection.close();
+            return connessione;
+        } catch (SQLException e) {
+            return connessione;
         }
-        return connection;
     }
 
     public OggettoLogin login(RichiestaServer richiesta) throws IOException, SQLException, InterruptedException {

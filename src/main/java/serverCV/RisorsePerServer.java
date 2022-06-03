@@ -44,7 +44,6 @@ public class RisorsePerServer{
      * @throws SQLException
      */
     public OggettoLogin login() throws IOException, SQLException {
-        System.out.println("Entrato in Login");
         login = new OggettoLogin();
         Statement statement = connection.createStatement();
 
@@ -88,9 +87,16 @@ public class RisorsePerServer{
                 login.setEmail(resultSet1.getString("email"));
                 login.setIdVaccinazione(Integer.parseInt(resultSet1.getString("idvaccinazione")));
             }
+            statement1.close();
+            resultSet1.close();
         }
         else
             login.setRegistrato(false);
+
+        statement.close();
+        resultSet.close();
+        connection.close();
+
         return login;
     }
 
@@ -117,6 +123,9 @@ public class RisorsePerServer{
         catch(Exception e) {
             e.printStackTrace();
         }
+        statement.close();
+        resultSet.close();
+        connection.close();
         return lista;
     }
 
@@ -133,6 +142,9 @@ public class RisorsePerServer{
         Statement statement = connection.createStatement();
 
         statement.executeUpdate(query);
+
+        statement.close();
+        connection.close();
         return true;
 
     }
@@ -158,6 +170,9 @@ public class RisorsePerServer{
                 // Se la tabella non esiste
                 statement.executeUpdate(createTableQuery);
             }
+            statement.close();
+            tables.close();
+            connection.close();
             return true;
         } catch(Exception e) {
             e.printStackTrace();
@@ -186,6 +201,9 @@ public class RisorsePerServer{
         catch(Exception e) {
             e.printStackTrace();
         }
+        statement.close();
+        resultSet.close();
+        connection.close();
         return lista;
     }
 
@@ -215,6 +233,9 @@ public class RisorsePerServer{
         catch(Exception e) {
             e.printStackTrace();
         }
+        statement.close();
+        resultSet.close();
+        connection.close();
         return lista;
     }
 
@@ -245,6 +266,9 @@ public class RisorsePerServer{
         catch (Exception e) {
             e.printStackTrace();
         }
+        statement.close();
+        resultSet.close();
+        connection.close();
         return lista;
     }
 
@@ -273,6 +297,9 @@ public class RisorsePerServer{
         catch(Exception e) {
             e.printStackTrace();
         }
+        statement.close();
+        resultSet.close();
+        connection.close();
         return lista;
     }
 }

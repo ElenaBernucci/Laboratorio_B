@@ -43,26 +43,6 @@ public class InterfacciaLogIn extends Interfaccia implements Initializable {
     private Utente utente;
 
     /**
-     * Vai alla schermata Impostazioni
-     *
-     * @throws IOException
-     */
-    public void vaiAImpostazioni() throws IOException {
-
-        URL fxmlLocation = getClass().getResource("/Layout/Connessione.fxml");
-        FXMLLoader loader = new FXMLLoader(fxmlLocation);
-        Parent root = loader.load();
-
-        Stage stage = new Stage();
-        Scene scene = new Scene(root);
-
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.setTitle("Impostazioni di connessione");
-        stage.show();
-    }
-
-    /**
      * Vai alla schermata Registrati
      *
      * @param event
