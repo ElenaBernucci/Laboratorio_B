@@ -7,6 +7,7 @@ module Laboratorio.B {
     requires java.sql;
     requires java.rmi;
     requires org.postgresql.jdbc;
+    requires org.apache.commons.text;
 
     exports clientCV.centriVaccinali.interfacce;
     exports clientCV;

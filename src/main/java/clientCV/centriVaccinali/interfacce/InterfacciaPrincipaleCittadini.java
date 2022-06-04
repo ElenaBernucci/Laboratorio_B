@@ -196,14 +196,11 @@ public class InterfacciaPrincipaleCittadini extends Interfaccia implements Initi
             logoutBtn.setText("LogOut");
             registratiBtn.setText("Invia Segnalazione");
 
-            registratiBtn.setOnAction(new EventHandler<ActionEvent>() {
-                @Override
-                public void handle(ActionEvent actionEvent) {
-                    try{
-                        saltaASegnalazione(actionEvent);
-                    }catch (IOException e){
-                        e.printStackTrace();
-                    }
+            registratiBtn.setOnAction(actionEvent -> {
+                try{
+                    saltaASegnalazione(actionEvent);
+                }catch (IOException e){
+                    e.printStackTrace();
                 }
             });
         }

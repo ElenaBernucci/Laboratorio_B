@@ -129,8 +129,8 @@ public class InterfacciaRegistraVaccinato extends Interfaccia implements Initial
         String nome = nomeField.getText();
         String cognome = cognomeField.getText();
         String CF = codFiscaleField.getText();
-        String vaccino = (String) vaccinoCombo.getValue();
-        String centrovaccinale = (String) centrivaccinaliCombo.getValue();
+        String vaccino = vaccinoCombo.getValue();
+        String centrovaccinale = centrivaccinaliCombo.getValue();
 
         LocalDate date = dataField.getValue();
 

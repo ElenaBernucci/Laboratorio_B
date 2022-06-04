@@ -1,6 +1,5 @@
 package clientCV.centriVaccinali.interfacce;
 
-import clientCV.CentriVaccinali;
 import clientCV.RMI;
 import clientCV.centriVaccinali.modelli.CentroVaccinale;
 import clientCV.centriVaccinali.modelli.Segnalazione;
@@ -65,16 +64,6 @@ public class InterfacciaSegnalazione extends Interfaccia implements Initializabl
      */
     public void vaiACerca(ActionEvent event) throws IOException {
         cambiaSchermataConUtente("Cerca.fxml", utente, event);
-    }
-
-    /**
-     * Vai alla schermata Registrati
-     *
-     * @param event
-     * @throws IOException
-     */
-    public void vaiARegistrati(ActionEvent event) throws IOException {
-        cambiaSchermataConUtente("RegistraCittadino.fxml", utente, event);
     }
 
     /**

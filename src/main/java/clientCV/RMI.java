@@ -28,8 +28,6 @@ import static java.lang.System.out;
  */
 
 public class RMI extends UnicastRemoteObject implements FunzionalitaClient {
-
-    private boolean operatore = false;
     OperazioniServer stub;
 
     /**

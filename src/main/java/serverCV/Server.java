@@ -70,19 +70,6 @@ public class Server extends UnicastRemoteObject implements OperazioniServer{
 
             System.out.println("Connesso!");
 
-            /*try {
-                while(true) {
-                    //new ConessioneServer(sem, InformazioniServer.getPGUSERNAME(), InformazioniServer.getPGPASSWORD());
-                    connection = tryConnection(InformazioniServer.getPGUSERNAME(),
-                            InformazioniServer.getPGPASSWORD(),
-                            InformazioniServer.getDBNAME(),
-                            InformazioniServer.getIPSERVER(),
-                            InformazioniServer.getDBPORT());
-                }
-            } catch(Exception e)  {
-                e.printStackTrace();
-            }*/
-
         }catch (Exception e){
             e.printStackTrace();
         }

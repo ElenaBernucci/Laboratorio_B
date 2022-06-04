@@ -1,6 +1,7 @@
 package clientCV.condivisi;
 
 import clientCV.RMI;
+import org.apache.commons.text.WordUtils;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -8,7 +9,6 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.rmi.NotBoundException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -44,7 +44,7 @@ public class Controlli implements Serializable {
         if (str.isBlank())
             return "";
 
-        return str.substring(0, 1).toUpperCase() + str.substring(1, str.length()).toLowerCase();
+        return WordUtils.capitalizeFully(str);
     }
 
     /**
@@ -95,7 +95,7 @@ public class Controlli implements Serializable {
         String queryCheck = "SELECT idsegnalazione FROM segnalazioni";
         List<String> segnalazioni = RMICheck.riceviValoriIndividuali(queryCheck, "idsegnalazione");
 
-        if(segnalazioni.size() > 9)
+        if(segnalazioni.size() > 2)
             return false;
 
         StringBuilder query = new StringBuilder();

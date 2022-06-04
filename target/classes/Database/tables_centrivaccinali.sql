@@ -4,6 +4,20 @@ CREATE TABLE province (
   sigla varchar(2) PRIMARY KEY
 );
 
+CREATE TABLE utenti (
+	  userid varchar PRIMARY KEY,
+	  pass varchar NOT NULL,
+	  codicefiscale varchar NOT NULL,
+	  nome varchar NOT NULL,
+	  cognome varchar NOT NULL
+);
+
+CREATE TABLE sintomi (
+	  idsintomo SERIAL PRIMARY KEY,
+	  sintomo varchar NOT NULL,
+	  descrizione varchar NOT NULL
+);
+
 CREATE TABLE centrivaccinali (
 	  nome varchar PRIMARY KEY,
 	  tipologia varchar NOT NULL,
@@ -16,14 +30,6 @@ CREATE TABLE centrivaccinali (
 	    FOREIGN KEY(provincia) REFERENCES province(sigla)
 );
 
-
-CREATE TABLE utenti (
-	  userid varchar PRIMARY KEY,
-	  pass varchar NOT NULL,
-	  codicefiscale varchar NOT NULL,
-	  nome varchar NOT NULL,
-	  cognome varchar NOT NULL
-);
 
 CREATE TABLE idunivoci (
 	  idvaccinazione SMALLINT PRIMARY KEY,
@@ -38,14 +44,6 @@ CREATE TABLE cittadinivaccinati (
 	  idvaccinazione SMALLINT NOT NULL,
 	        FOREIGN KEY(userid) REFERENCES utenti(userid),
 	        FOREIGN KEY(idvaccinazione) REFERENCES idunivoci(idvaccinazione)
-);
-
-
-
-CREATE TABLE sintomi (
-	  idsintomo SERIAL PRIMARY KEY,
-	  sintomo varchar NOT NULL,
-	  descrizione varchar NOT NULL
 );
 
 CREATE TABLE segnalazioni (

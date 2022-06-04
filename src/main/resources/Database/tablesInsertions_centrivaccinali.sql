@@ -107,83 +107,83 @@ INSERT INTO province VALUES ('Ogliastra', 10, 'OG');
 INSERT INTO province VALUES ('Olbia Tempio', 10, 'OT');
 
 
-INSERT INTO centrivaccinali VALUES('malpensa fiere', 'HUB', 'VIA', 'XI Settembre', '16', 'Busto Arsizio', 'VA', 21052);
-CREATE TABLE vaccinati_malpensa_fiere (nomecittadino varchar(50), cognomecittadino varchar(50), codicefiscale varchar(50), data DATE, vaccino varchar(20), idvaccinazione SMALLINT, PRIMARY KEY(codicefiscale), FOREIGN KEY(idvaccinazione) REFERENCES idunivoci(idvaccinazione), FOREIGN KEY(codicefiscale) REFERENCES idunivoci(codicefiscale));
+INSERT INTO centrivaccinali VALUES('cv gallarate aeronautica militare', 'HUB', 'VIA', 'Milano', '115', 'Gallarate', 'VA', 21013);
+CREATE TABLE vaccinati_cv_gallarate_aeronautica_militare (nomecittadino varchar(50), cognomecittadino varchar(50), codicefiscale varchar(50), data DATE, vaccino varchar(20), idvaccinazione SMALLINT, PRIMARY KEY(codicefiscale), FOREIGN KEY(idvaccinazione) REFERENCES idunivoci(idvaccinazione), FOREIGN KEY(codicefiscale) REFERENCES idunivoci(codicefiscale));
 
-INSERT INTO centrivaccinali VALUES('lariofiere', 'HUB', 'VIALE', 'Resegone', '9', 'Erba', 'CO', 22036);
-CREATE TABLE vaccinati_lariofiere(nomecittadino varchar(50), cognomecittadino varchar(50), codicefiscale varchar(50), data DATE, vaccino varchar(20), idvaccinazione SMALLINT, PRIMARY KEY(codicefiscale), FOREIGN KEY(idvaccinazione) REFERENCES idunivoci(idvaccinazione), FOREIGN KEY(codicefiscale) REFERENCES idunivoci(codicefiscale));
+INSERT INTO centrivaccinali VALUES('ospedale giuseppe casati', 'OSPEDALIERO', 'VIA', 'Luigi Settembrini', '1', 'Rho', 'MI', 22017);
+CREATE TABLE vaccinati_ospedale_giuseppe_casati (nomecittadino varchar(50), cognomecittadino varchar(50), codicefiscale varchar(50), data DATE, vaccino varchar(20), idvaccinazione SMALLINT, PRIMARY KEY(codicefiscale), FOREIGN KEY(idvaccinazione) REFERENCES idunivoci(idvaccinazione), FOREIGN KEY(codicefiscale) REFERENCES idunivoci(codicefiscale));
 
-INSERT INTO centrivaccinali VALUES('asst sette laghi', 'OSPEDALIERO', 'VIA', 'Bordini', '9/A', 'Angera', 'VA', 21021);
-CREATE TABLE vaccinati_asst_sette_laghi (nomecittadino varchar(50), cognomecittadino varchar(50), codicefiscale varchar(50), data DATE, vaccino varchar(20), idvaccinazione SMALLINT, PRIMARY KEY(codicefiscale), FOREIGN KEY(idvaccinazione) REFERENCES idunivoci(idvaccinazione), FOREIGN KEY(codicefiscale) REFERENCES idunivoci(codicefiscale));
+INSERT INTO centrivaccinali VALUES('palazzo delle scintille', 'HUB', 'PIAZZA', 'Sei Febbraio', '1', 'Milano', 'MI', 20145);
+CREATE TABLE vaccinati_palazzo_delle_scintille (nomecittadino varchar(50), cognomecittadino varchar(50), codicefiscale varchar(50), data DATE, vaccino varchar(20), idvaccinazione SMALLINT, PRIMARY KEY(codicefiscale), FOREIGN KEY(idvaccinazione) REFERENCES idunivoci(idvaccinazione), FOREIGN KEY(codicefiscale) REFERENCES idunivoci(codicefiscale));
 
-INSERT INTO centrivaccinali VALUES('rancio valcuvia', 'AZIENDALE', 'VIA', 'Provinciale', '13', 'Cuveglio', 'VA', 21030);
-CREATE TABLE vaccinati_rancio_valcuvia (nomecittadino varchar(50), cognomecittadino varchar(50), codicefiscale varchar(50), data DATE, vaccino varchar(20), idvaccinazione SMALLINT, PRIMARY KEY(codicefiscale), FOREIGN KEY(idvaccinazione) REFERENCES idunivoci(idvaccinazione), FOREIGN KEY(codicefiscale) REFERENCES idunivoci(codicefiscale));
+INSERT INTO centrivaccinali VALUES('multimedica marelli', 'HUB', 'VIALE', 'Edison Tommaso', '50', 'Sesto San Giovani', 'MI', 20099);
+CREATE TABLE vaccinati_multimedica_marelli (nomecittadino varchar(50), cognomecittadino varchar(50), codicefiscale varchar(50), data DATE, vaccino varchar(20), idvaccinazione SMALLINT, PRIMARY KEY(codicefiscale), FOREIGN KEY(idvaccinazione) REFERENCES idunivoci(idvaccinazione), FOREIGN KEY(codicefiscale) REFERENCES idunivoci(codicefiscale));
 
-INSERT INTO centrivaccinali VALUES('vaccination center', 'AZIENDALE', 'VIA', 'Giuseppe Pecchio', '19', 'Milano', 'MI', 20131);
-CREATE TABLE vaccinati_vaccination_center (nomecittadino varchar(50), cognomecittadino varchar(50), codicefiscale varchar(50), data DATE, vaccino varchar(20), idvaccinazione SMALLINT, PRIMARY KEY(codicefiscale), FOREIGN KEY(idvaccinazione) REFERENCES idunivoci(idvaccinazione), FOREIGN KEY(codicefiscale) REFERENCES idunivoci(codicefiscale));
+INSERT INTO centrivaccinali VALUES('centro vaccinale ats milano', 'AZIENDALE', 'VIA', 'Giuseppe Pecchio', '19', 'Milano', 'MI', 20131);
+CREATE TABLE vaccinati_centro_vaccinale_ats_milano (nomecittadino varchar(50), cognomecittadino varchar(50), codicefiscale varchar(50), data DATE, vaccino varchar(20), idvaccinazione SMALLINT, PRIMARY KEY(codicefiscale), FOREIGN KEY(idvaccinazione) REFERENCES idunivoci(idvaccinazione), FOREIGN KEY(codicefiscale) REFERENCES idunivoci(codicefiscale));
 
-INSERT INTO sintomi VALUES(0, 'Mal di testa', 'Dolori, giramenti di testa e cefalee costanti nella giornata');
-INSERT INTO sintomi VALUES(1, 'Dolori intestinali', 'Forti dolori nella zona dell''addome e/o dell''intestino');
-INSERT INTO sintomi VALUES(2, 'Forte spossatezza', 'Debolezza, fatica e sonnolenza durante tutta la giornata');
-INSERT INTO sintomi VALUES(3, 'Mancamenti', 'Mancamenti avvenuti dopo la somministrazione del vaccino');
-INSERT INTO sintomi VALUES(4, 'Nausea', 'Nausea forte e costante durante tutta la giornata, necessità di rimettere');
+INSERT INTO centrivaccinali VALUES('humanitas mater domini', 'OSPEDALIERO', 'VIA', 'Gerenzano', '2', 'Castellanza', 'VA', 21053);
+CREATE TABLE vaccinati_humanitas_mater_domini(nomecittadino varchar(50), cognomecittadino varchar(50), codicefiscale varchar(50), data DATE, vaccino varchar(20), idvaccinazione SMALLINT, PRIMARY KEY(codicefiscale), FOREIGN KEY(idvaccinazione) REFERENCES idunivoci(idvaccinazione), FOREIGN KEY(codicefiscale) REFERENCES idunivoci(codicefiscale));
 
-INSERT INTO idunivoci VALUES(3782, 'GLKMRL32F02F423Y', 'malpensa fiere');
-INSERT INTO idunivoci VALUES(437, 'GTFTTPN56R34L642L', 'malpensa fiere');
-INSERT INTO idunivoci VALUES(394, 'TLRFEF76E93L243N', 'lariofiere');
-INSERT INTO idunivoci VALUES(2387, 'BNNTLP43F11N584P', 'asst sette laghi');
-INSERT INTO idunivoci VALUES(821, 'MDRLPP52W31B903L', 'rancio valcuvia');
-INSERT INTO idunivoci VALUES(1324, 'FNERNE21L49W039Y', 'rancio valcuvia');
-INSERT INTO idunivoci VALUES(742, 'PLRNDS90L21N342P', 'rancio valcuvia');
-INSERT INTO idunivoci VALUES(4521, 'POMMRE33N82G349M', 'vaccination center');
-INSERT INTO idunivoci VALUES(643, 'HRDGNH23Y73C938U', 'vaccination center');
-INSERT INTO idunivoci VALUES(8421, 'FEPWRH88K00O302J', 'vaccination center');
+INSERT INTO sintomi VALUES(0, 'Mal di testa', 'Cefalea intensa, sbalzi di pressione e vertigini');
+INSERT INTO sintomi VALUES(1, 'Dolori intestinali', 'Colite, dolori severi e/o improvvisi nella zona dell''addome');
+INSERT INTO sintomi VALUES(2, 'Spossatezza', 'Affaticamenti e debolezza eccessivi durante la giornata, colpi di sonno');
+INSERT INTO sintomi VALUES(3, 'Mancamenti', 'Sincope postuma alla somministrazione del vaccino');
+INSERT INTO sintomi VALUES(4, 'Nausea', 'Emesi eccessiva e costante durante tutta la giornata, febbre e tachicardia');
 
-INSERT INTO utenti VALUES('ferna', 'f', 'DLSFNN99E02Z600X', 'fernando', 'edelstein');
-INSERT INTO utenti VALUES('eli', 'e', 'MTDDFF39A05U192U', 'eliana', 'monteleone');
-INSERT INTO utenti VALUES('elena', 'e', 'FNNTDO21E02P423L', 'elena', 'lago');
-INSERT INTO utenti VALUES('giuly', 'g', 'FRMSPW43A01P223L', 'giulia', 'galparoli');
+INSERT INTO idunivoci VALUES(4813, 'NVLNHL43R06A669H', 'cv gallarate aeronautica militare');
+INSERT INTO idunivoci VALUES(487, 'BRNFLV64D46A465K', 'centro vaccinale ats milano');
+INSERT INTO idunivoci VALUES(94, 'GRRSRA78L46M279D', 'multimedica marelli');
+INSERT INTO idunivoci VALUES(2787, 'VLTGLI86R24A786H', 'ospedale giuseppe casati');
+INSERT INTO idunivoci VALUES(145, 'MLTGCR57T17C052G', 'humanitas mater domini');
+INSERT INTO idunivoci VALUES(1954, 'MSZPLA67D59C707N', 'humanitas mater domini');
+INSERT INTO idunivoci VALUES(2845, 'DPSPQL56M59C040H', 'cv gallarate aeronautica militare');
+INSERT INTO idunivoci VALUES(675, 'VZZMSM66C25F205C', 'palazzo delle scintille');
+INSERT INTO idunivoci VALUES(25, 'VLLMNL63L54E514B', 'cv gallarate aeronautica militare');
+INSERT INTO idunivoci VALUES(692, 'BSCNDR77D26H264F', 'palazzo delle scintille');
 
-INSERT INTO utenti VALUES('matte', 'm', 'GLKMRL32F02F423Y', 'matteo', 'effimeri');
-INSERT INTO utenti VALUES('roccodb', 'r', 'GTFTTPN56R34L642L', 'rocco', 'de bueno');
-INSERT INTO utenti VALUES('michi', 'ml', 'TLRFEF76E93L243N', 'michela', 'liuzzo');
-INSERT INTO utenti VALUES('marce', 'me', 'BNNTLP43F11N584P', 'marcelo', 'edelstein');
-INSERT INTO utenti VALUES('thachab', 'chab', 'MDRLPP52W31B903L', 'martin', 'chab');
-INSERT INTO utenti VALUES('elibie', 'eb', 'FNERNE21L49W039Y', 'elisa', 'bielli');
-INSERT INTO utenti VALUES('serife', 'serfe', 'PLRNDS90L21N342P', 'serena', 'fedrigoni');
-INSERT INTO utenti VALUES('eddie', 'ec', 'POMMRE33N82G349M', 'eduard', 'chiriac');
-INSERT INTO utenti VALUES('phili', 'firthoffifth', 'HRDGNH23Y73C938U', 'phil', 'collins');
-INSERT INTO utenti VALUES('violet', 'viola', 'FEPWRH88K00O302J', 'viola', 'mattioni');
+INSERT INTO utenti VALUES('Elena', 'e', 'BRNLNE00L41F704I', 'elena', 'bernucci');
+INSERT INTO utenti VALUES('Luca', 'l', 'CLMLCU99H10E514Q', 'luca', 'clementi');
+INSERT INTO utenti VALUES('Federico', 'f', 'RCLFRC89P02L469I', 'federico', 'ercoli');
 
-INSERT INTO cittadinivaccinati VALUES('matte', 'matteo.e@gmail.com', 3782);
-INSERT INTO cittadinivaccinati VALUES('roccodb', 'roccodb@gmail.com', 437);
-INSERT INTO cittadinivaccinati VALUES('michi', 'michi-liu@icloud.com', 394);
-INSERT INTO cittadinivaccinati VALUES('marce', 'marce.edelstein72@outlook.com', 2387);
-INSERT INTO cittadinivaccinati VALUES('thachab', 'thachab@icloud.com', 821);
-INSERT INTO cittadinivaccinati VALUES('elibie', 'elisabielli@virgilio.it', 1324);
-INSERT INTO cittadinivaccinati VALUES('serife', 'seri.fedri@outlook.com', 742);
-INSERT INTO cittadinivaccinati VALUES('eddie', 'theeduard@gmail.com', 4521);
-INSERT INTO cittadinivaccinati VALUES('phili', 'philcollins@genesis.com', 643);
-INSERT INTO cittadinivaccinati VALUES('violet', 'violamattioni99@gmail.com', 8421);
 
-INSERT INTO vaccinati_malpensa_fiere VALUES('matteo', 'effimeri', 'GLKMRL32F02F423Y', '2021-04-22', 'PFIZER', 3782);
-INSERT INTO vaccinati_malpensa_fiere VALUES('rocco', 'de bueno', 'GTFTTPN56R34L642L', '2021-03-21', 'MODERNA', 437);
-INSERT INTO vaccinati_lariofiere VALUES('michela', 'liuzzo', 'TLRFEF76E93L243N', '2021-03-12', 'MODERNA', 394);
-INSERT INTO vaccinati_asst_sette_laghi VALUES('marcelo', 'edelstein', 'BNNTLP43F11N584P', '2021-05-01', 'JOHNSONANDJOHNSON', 2387);
-INSERT INTO vaccinati_rancio_valcuvia VALUES('martin', 'chab', 'MDRLPP52W31B903L', '2021-03-14', 'PFIZER', 821);
-INSERT INTO vaccinati_rancio_valcuvia VALUES('elisa', 'bielli', 'FNERNE21L49W039Y', '2021-05-04', 'PFIZER', 1324);
-INSERT INTO vaccinati_rancio_valcuvia VALUES('serena', 'fedrigoni', 'PLRNDS90L21N342P', '2021-03-05', 'ASTRAZENECA', 742);
-INSERT INTO vaccinati_vaccination_center VALUES('eduard', 'chiriac', 'POMMRE33N82G349M', '2021-05-12', 'MODERNA', 4521);
-INSERT INTO vaccinati_vaccination_center VALUES('phil', 'collins', 'HRDGNH23Y73C938U', '2021-04-03', 'JOHNSONANDJOHNSON', 643);
-INSERT INTO vaccinati_vaccination_center VALUES('viola', 'mattioni', 'FEPWRH88K00O302J', '2021-03-15', 'ASTRAZENECA', 8421);
+INSERT INTO utenti VALUES('Nicholas', 'n', 'NVLNHL43R06A669H', 'nicholas', 'noviello');
+INSERT INTO utenti VALUES('Flavia', 'f', 'BRNFLV64D46A465K', 'flavia', 'bernardi');
+INSERT INTO utenti VALUES('Sara', 's', 'GRRSRA78L46M279D', 'sara', 'gerardi');
+INSERT INTO utenti VALUES('Giulio', 'g', 'VLTGLI86R24A786H', 'giulio', 'veltroni');
+INSERT INTO utenti VALUES('Giancarlo', 'gian', 'MLTGCR57T17C052G', 'giancarlo', 'maltagliati');
+INSERT INTO utenti VALUES('Paola', 'p', 'MSZPLA67D59C707N', 'paola', 'musazzi');
+INSERT INTO utenti VALUES('Pasqualina', 'pa', 'DPSPQL56M59C040H', 'pasqualina', 'dipasquale');
+INSERT INTO utenti VALUES('Massimo', 'm', 'VZZMSM66C25F205C', 'massimo', 'vezzani');
+INSERT INTO utenti VALUES('Manuela', 'manu', 'VLLMNL63L54E514B', 'manuela', 'villani');
+INSERT INTO utenti VALUES('Andrea', 'a', 'BSCNDR77D26H264F', 'andrea', 'bosco');
 
-INSERT INTO segnalazioni VALUES(58472, 0, 'matte', 'malpensa fiere', 5, 'Non ho dormito');
-INSERT INTO segnalazioni VALUES(69382, 0, 'roccodb', 'malpensa fiere', 2, 'Solo un po di dolore');
-INSERT INTO segnalazioni VALUES(03928, 1, 'michi', 'lariofiere', 4, 'Forte male alla pancia, sono stata senza mangiare durante una giornata');
-INSERT INTO segnalazioni VALUES(57294, 1, 'marce', 'asst sette laghi', 5, 'Mi faceva malissimo la pancia, non potevo muovermi');
-INSERT INTO segnalazioni VALUES(91823, 2, 'thachab', 'rancio valcuvia', 2, 'Un po'' debole il giorno dopo');
-INSERT INTO segnalazioni VALUES(13245, 4, 'elibie', 'rancio valcuvia', 2, 'Rimesso qualche ora dopo il vaccino');
-INSERT INTO segnalazioni VALUES(28374, 2, 'serife', 'rancio valcuvia', 3, 'Sonnolenza dopo la vaccinazione durante tutta la giornata');
-INSERT INTO segnalazioni VALUES(65748, 3, 'eddie', 'vaccination center', 4, 'Mancamento subito dopo aver fatto il vaccino');
-INSERT INTO segnalazioni VALUES(78675, 1, 'phili', 'vaccination center', 3, 'Debolezza per tutta la giornata, dopo aver dormito mi sono rimesso');
-INSERT INTO segnalazioni VALUES(37552, 0, 'violet', 'vaccination center', 4, 'Dolori fortissimi!');
+INSERT INTO cittadinivaccinati VALUES('Nicholas', 'nick971@live.it', 4813);
+INSERT INTO cittadinivaccinati VALUES('Flavia', 'f.bernrdi@gmail.com', 487);
+INSERT INTO cittadinivaccinati VALUES('Sara', 'ss-gerardi@libero.it', 94);
+INSERT INTO cittadinivaccinati VALUES('Giulio', 'veltroni.official@outlook.com', 2787);
+INSERT INTO cittadinivaccinati VALUES('Giancarlo', 'malta.gianky@gmail.com', 145);
+INSERT INTO cittadinivaccinati VALUES('Paola', 'p.musazzi@virgilio.it', 1954);
+INSERT INTO cittadinivaccinati VALUES('Pasqualina', 'dipa.lina@libero.it', 2845);
+INSERT INTO cittadinivaccinati VALUES('Massimo', 'max.vez@gmail.com', 675);
+INSERT INTO cittadinivaccinati VALUES('Manuela', 'manu-villi@gmail.com', 25);
+INSERT INTO cittadinivaccinati VALUES('Andrea', 'ing.a.bosco@polimi.it', 692);
+
+INSERT INTO vaccinati_cv_gallarate_aeronautica_militare VALUES('nicholas', 'noviello', 'NVLNHL43R06A669H', '2021-04-22', 'PFIZER', 4813);
+INSERT INTO vaccinati_centro_vaccinale_ats_milano VALUES('flavia', 'bernardi', 'BRNFLV64D46A465K', '2021-03-21', 'PFIZER', 487);
+INSERT INTO vaccinati_multimedica_marelli VALUES('sara', 'gerardi', 'GRRSRA78L46M279D', '2021-12-24', 'MODERNA', 94);
+INSERT INTO vaccinati_ospedale_giuseppe_casati VALUES('giulio', 'veltroni', 'VLTGLI86R24A786H', '2021-05-01', 'JOHNSONANDJOHNSON', 2787);
+INSERT INTO vaccinati_humanitas_mater_domini VALUES('giancarlo', 'maltagliati', 'MLTGCR57T17C052G', '2021-03-14', 'PFIZER', 145);
+INSERT INTO vaccinati_humanitas_mater_domini VALUES('paola', 'musazzi', 'MSZPLA67D59C707N', '2022-01-04', 'PFIZER', 1954);
+INSERT INTO vaccinati_cv_gallarate_aeronautica_militare VALUES('pasqualina', 'dipasquale', 'DPSPQL56M59C040H', '2021-03-05', 'ASTRAZENECA', 2845);
+INSERT INTO vaccinati_palazzo_delle_scintille VALUES('massimo', 'vezzani', 'VZZMSM66C25F205C', '2021-05-12', 'MODERNA', 675);
+INSERT INTO vaccinati_cv_gallarate_aeronautica_militare VALUES('manuela', 'villani', 'VLLMNL63L54E514B', '2021-04-03', 'JOHNSONANDJOHNSON', 25);
+INSERT INTO vaccinati_palazzo_delle_scintille VALUES('andrea', 'bosco', 'BSCNDR77D26H264F', '2021-03-15', 'PFIZER', 692);
+
+INSERT INTO segnalazioni VALUES(58472, 0, 'Nicholas', 'cv gallarate aeronautica militare', 3, 'Ho avuto difficoltà a dormire');
+INSERT INTO segnalazioni VALUES(69382, 0, 'Flavia', 'centro vaccinale ats milano', 5, 'Non riuscivo a tenere gli occhi aperti, fitte lancinanti');
+INSERT INTO segnalazioni VALUES(03928, 1, 'Sara', 'multimedica marelli', 4, 'Dolori all''addome, avevo la nausea, ho rimesso più volte');
+INSERT INTO segnalazioni VALUES(57294, 1, 'Giulio', 'ospedale giuseppe casati', 1, 'Dolore sopportabile, sparito con un anti dolorifico');
+INSERT INTO segnalazioni VALUES(91823, 2, 'Giancarlo', 'humanitas mater domini', 2, 'Mi sono sentito debilitato il giorno dopo, dolore articolare');
+INSERT INTO segnalazioni VALUES(13245, 3, 'Manuela', 'cv gallarate aeronautica militare', 2, 'Abbassamento della pressione, vertigini');
+INSERT INTO segnalazioni VALUES(28374, 4, 'Pasqualina', 'cv gallarate aeronautica militare', 4, 'Nausea severa, non sono riuscita a lavorare');
