@@ -4,8 +4,6 @@ import clientCV.centriVaccinali.modelli.CentroVaccinale;
 import clientCV.centriVaccinali.modelli.Segnalazione;
 import clientCV.centriVaccinali.modelli.Sintomo;
 import clientCV.centriVaccinali.modelli.Vaccinato;
-import clientCV.condivisi.OggettoLogin;
-import clientCV.condivisi.RichiestaServer;
 
 import java.io.IOException;
 import java.rmi.RemoteException;
@@ -95,7 +93,7 @@ public class Server extends UnicastRemoteObject implements OperazioniServer{
         }
     }
 
-    public OggettoLogin login(RichiestaServer richiesta) throws IOException, SQLException, InterruptedException {
+    public Vaccinato.OggettoLogin login(Sintomo.RichiestaServer richiesta) throws IOException, SQLException, InterruptedException {
         System.out.println("Ricevuto richiesta di Login");
         connessione = new ConnessioneServer(richiesta, sem);
         connessione.start();
@@ -103,28 +101,28 @@ public class Server extends UnicastRemoteObject implements OperazioniServer{
         return connessione.getLogin();
     }
 
-    public List<Sintomo> riceviSintomi(RichiestaServer richiesta) throws IOException, SQLException, InterruptedException {
+    public List<Sintomo> riceviSintomi(Sintomo.RichiestaServer richiesta) throws IOException, SQLException, InterruptedException {
         connessione = new ConnessioneServer(richiesta, sem);
         connessione.start();
         connessione.join();
         return (List<Sintomo>) connessione.getLista();
     }
 
-    public Boolean inserireInDb(RichiestaServer richiesta) throws IOException, SQLException, InterruptedException {
+    public Boolean inserireInDb(Sintomo.RichiestaServer richiesta) throws IOException, SQLException, InterruptedException {
         connessione = new ConnessioneServer(richiesta, sem);
         connessione.start();
         connessione.join();
         return connessione.getRisultato();
     }
 
-    public Boolean registraCentroVaccinale(RichiestaServer richiesta) throws IOException, SQLException, InterruptedException {
+    public Boolean registraCentroVaccinale(Sintomo.RichiestaServer richiesta) throws IOException, SQLException, InterruptedException {
         connessione = new ConnessioneServer(richiesta, sem);
         connessione.start();
         connessione.join();
         return connessione.getRisultato();
     }
 
-    public List<String> riceviValoriIndividuali(RichiestaServer richiesta) throws IOException, SQLException, InterruptedException {
+    public List<String> riceviValoriIndividuali(Sintomo.RichiestaServer richiesta) throws IOException, SQLException, InterruptedException {
         System.out.println("Ricevuto richiesta valori individuali");
         connessione = new ConnessioneServer(richiesta, sem);
         connessione.start();
@@ -132,21 +130,21 @@ public class Server extends UnicastRemoteObject implements OperazioniServer{
         return (List<String>) connessione.getLista();
     }
 
-    public List<Vaccinato> riceviVaccinati(RichiestaServer richiesta) throws IOException, SQLException, InterruptedException {
+    public List<Vaccinato> riceviVaccinati(Sintomo.RichiestaServer richiesta) throws IOException, SQLException, InterruptedException {
         connessione = new ConnessioneServer(richiesta, sem);
         connessione.start();
         connessione.join();
         return (List<Vaccinato>) connessione.getLista();
     }
 
-    public List<CentroVaccinale> filtra(RichiestaServer richiesta) throws IOException, SQLException, InterruptedException {
+    public List<CentroVaccinale> filtra(Sintomo.RichiestaServer richiesta) throws IOException, SQLException, InterruptedException {
         connessione = new ConnessioneServer(richiesta, sem);
         connessione.start();
         connessione.join();
         return (List<CentroVaccinale>) connessione.getLista();
     }
 
-    public List<Segnalazione> riceviSegnalazione(RichiestaServer richiesta) throws IOException, SQLException, InterruptedException {
+    public List<Segnalazione> riceviSegnalazione(Sintomo.RichiestaServer richiesta) throws IOException, SQLException, InterruptedException {
         connessione = new ConnessioneServer(richiesta, sem);
         connessione.start();
         connessione.join();

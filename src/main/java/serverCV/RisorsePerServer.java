@@ -1,8 +1,6 @@
 package serverCV;
 
 import clientCV.centriVaccinali.modelli.*;
-import clientCV.condivisi.OggettoLogin;
-import clientCV.condivisi.RichiestaServer;
 
 import java.io.IOException;
 import java.sql.*;
@@ -18,8 +16,8 @@ import java.util.ArrayList;
 public class RisorsePerServer{
 
     private Connection connection;
-    private RichiestaServer richiesta;
-    private OggettoLogin login;
+    private Sintomo.RichiestaServer richiesta;
+    private Vaccinato.OggettoLogin login;
     private ArrayList<Object> lista;
     private CentroVaccinale centroVaccinale;
 
@@ -31,7 +29,7 @@ public class RisorsePerServer{
      * @param connection
      */
 
-    public RisorsePerServer(Connection connection, RichiestaServer richiesta) {
+    public RisorsePerServer(Connection connection, Sintomo.RichiestaServer richiesta) {
         this.connection = connection;
         this.richiesta = richiesta;
     }
@@ -43,8 +41,8 @@ public class RisorsePerServer{
      * @throws IOException
      * @throws SQLException
      */
-    public OggettoLogin login() throws IOException, SQLException {
-        login = new OggettoLogin();
+    public Vaccinato.OggettoLogin login() throws IOException, SQLException {
+        login = new Vaccinato.OggettoLogin();
         Statement statement = connection.createStatement();
 
         ResultSet resultSet = statement.executeQuery(richiesta.getQuery());

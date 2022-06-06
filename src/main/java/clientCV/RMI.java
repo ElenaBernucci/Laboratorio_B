@@ -8,8 +8,6 @@ import clientCV.centriVaccinali.modelli.Vaccinato;
 import clientCV.cittadini.Cittadino;
 import clientCV.cittadini.Utente;
 import clientCV.condivisi.Controlli;
-import clientCV.condivisi.OggettoLogin;
-import clientCV.condivisi.RichiestaServer;
 import serverCV.OperazioniServer;
 
 import java.io.IOException;
@@ -52,8 +50,8 @@ public class RMI extends UnicastRemoteObject implements FunzionalitaClient {
 
     public Utente login(String query, String User) throws IOException, SQLException, InterruptedException {
 
-        RichiestaServer richiestaServer = new RichiestaServer(query, User, "login");
-        OggettoLogin login = stub.login(richiestaServer);
+        Sintomo.RichiestaServer richiestaServer = new Sintomo.RichiestaServer(query, User, "login");
+        Vaccinato.OggettoLogin login = stub.login(richiestaServer);
 
         if(!login.isRegistrato())
             return null;
@@ -94,7 +92,7 @@ public class RMI extends UnicastRemoteObject implements FunzionalitaClient {
      */
 
     public List<CentroVaccinale> filtra(String query) throws IOException, SQLException, InterruptedException {
-        RichiestaServer richiesta = new RichiestaServer(query, "filtra");
+        Sintomo.RichiestaServer richiesta = new Sintomo.RichiestaServer(query, "filtra");
         List<CentroVaccinale> centrivaccinali = stub.filtra(richiesta);
 
         return centrivaccinali;
@@ -121,7 +119,7 @@ public class RMI extends UnicastRemoteObject implements FunzionalitaClient {
                 "FOREIGN KEY(idvaccinazione) REFERENCES idunivoci(idvaccinazione), " +
                 "FOREIGN KEY(codicefiscale) REFERENCES idunivoci(codicefiscale)" +
                 ")";
-        RichiestaServer richiesta = new RichiestaServer(query, nomeCentro, "registraNuovoCentro");
+        Sintomo.RichiestaServer richiesta = new Sintomo.RichiestaServer(query, nomeCentro, "registraNuovoCentro");
         return stub.registraCentroVaccinale(richiesta);
     }
 
@@ -134,7 +132,7 @@ public class RMI extends UnicastRemoteObject implements FunzionalitaClient {
      */
 
     public Boolean inserireInDb(String query) throws IOException, SQLException, InterruptedException {
-        RichiestaServer richiesta = new RichiestaServer(query, "inserireInDb");
+        Sintomo.RichiestaServer richiesta = new Sintomo.RichiestaServer(query, "inserireInDb");
         return stub.inserireInDb(richiesta);
     }
 
@@ -149,7 +147,7 @@ public class RMI extends UnicastRemoteObject implements FunzionalitaClient {
 
     public List<Vaccinato> riceviVaccinati(String query) throws IOException, SQLException, InterruptedException {
 
-        RichiestaServer richiesta = new RichiestaServer(query, "riceviVaccinati");
+        Sintomo.RichiestaServer richiesta = new Sintomo.RichiestaServer(query, "riceviVaccinati");
         return stub.riceviVaccinati(richiesta);
     }
 
@@ -164,7 +162,7 @@ public class RMI extends UnicastRemoteObject implements FunzionalitaClient {
 
     public List<Sintomo> riceviSintomi(String query) throws IOException, SQLException, InterruptedException {
 
-        RichiestaServer richiesta = new RichiestaServer(query, "riceviSintomi");
+        Sintomo.RichiestaServer richiesta = new Sintomo.RichiestaServer(query, "riceviSintomi");
         return stub.riceviSintomi(richiesta);
     }
 
@@ -178,7 +176,7 @@ public class RMI extends UnicastRemoteObject implements FunzionalitaClient {
 
     public List<Segnalazione> riceviSegnalazione(String query) throws IOException, SQLException, InterruptedException {
 
-        RichiestaServer richiesta = new RichiestaServer(query, "riceviSegnalazione");
+        Sintomo.RichiestaServer richiesta = new Sintomo.RichiestaServer(query, "riceviSegnalazione");
         return stub.riceviSegnalazione(richiesta);
     }
 
@@ -192,7 +190,7 @@ public class RMI extends UnicastRemoteObject implements FunzionalitaClient {
      */
 
     public List<String> riceviValoriIndividuali(String query, String colonna) throws IOException, SQLException, InterruptedException {
-        RichiestaServer richiesta = new RichiestaServer(query, colonna, "riceviValoriIndividuali");
+        Sintomo.RichiestaServer richiesta = new Sintomo.RichiestaServer(query, colonna, "riceviValoriIndividuali");
         return stub.riceviValoriIndividuali(richiesta);
     }
 

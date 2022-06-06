@@ -17,7 +17,7 @@
             <Font size="24.0" />
         </font>
     </Text>
-    <Button id="btnCerca" fx:id="cercaBtn" alignment="CENTER" layoutX="28.0" layoutY="463.0" mnemonicParsing="false" onAction="#vaiACerca" prefHeight="57.0" prefWidth="192.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="Cerca" textFill="WHITE">
+    <Button id="btnCerca" fx:id="cercaBtn" alignment="CENTER" disable="true" layoutX="28.0" layoutY="391.0" mnemonicParsing="false" onAction="#vaiACerca" prefHeight="57.0" prefWidth="192.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="Cerca" textFill="WHITE" visible="false">
         <font>
             <Font name="Montserrat Regular" size="18.0" />
         </font>
@@ -28,7 +28,7 @@
             <Cursor fx:constant="HAND" />
         </cursor>
     </Button>
-    <Button id="btnRegistrati" fx:id="registratiBtn" alignment="CENTER" layoutX="28.0" layoutY="397.0" mnemonicParsing="false" onAction="#vaiARegistrati" prefHeight="57.0" prefWidth="192.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="Registrati" textFill="WHITE">
+    <Button id="btnRegistrati" fx:id="registratiBtn" alignment="CENTER" layoutX="28.0" layoutY="463.0" mnemonicParsing="false" onAction="#vaiARegistrati" prefHeight="57.0" prefWidth="192.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="Registrati" textFill="WHITE">
         <font>
             <Font name="Montserrat Regular" size="18.0" />
         </font>
@@ -39,7 +39,7 @@
             <Cursor fx:constant="HAND" />
         </cursor>
     </Button>
-    <Button id="btnLogout" fx:id="logoutBtn" alignment="BASELINE_LEFT" layoutX="26.0" layoutY="519.0" mnemonicParsing="false" onAction="#logoutBtnImpl" prefHeight="57.0" prefWidth="145.0" style="-fx-border-style: none; -fx-background-color: transparent; " text="Logout" textFill="#787474" underline="true">
+    <Button id="btnLogout" fx:id="logoutBtn" alignment="BASELINE_LEFT" layoutX="23.0" layoutY="519.0" mnemonicParsing="false" onAction="#logoutBtnImpl" prefHeight="57.0" prefWidth="145.0" style="-fx-border-style: none; -fx-background-color: transparent; " text="Logout" textFill="#787474" underline="true">
         <font>
             <Font name="Montserrat Regular" size="18.0" />
         </font>
