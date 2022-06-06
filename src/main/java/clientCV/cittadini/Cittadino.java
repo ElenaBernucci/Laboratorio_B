@@ -12,7 +12,7 @@ public class Cittadino extends Utente {
     private int idVaccinazione;
 
     /**
-     * Cittadino
+     * Costruttore Cittadino
      *
      * @param username
      * @param password
@@ -55,6 +55,7 @@ public class Cittadino extends Utente {
 
     /**
      * Get Email
+     *
      * @return email
      */
     public String getEmail() {
@@ -63,6 +64,7 @@ public class Cittadino extends Utente {
 
     /**
      * Get IDVaccinazione
+     *
      * @return idVaccinazione
      */
     public int getIdVaccinazione() {

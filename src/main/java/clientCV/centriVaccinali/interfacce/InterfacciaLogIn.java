@@ -1,29 +1,23 @@
 package clientCV.centriVaccinali.interfacce;
 
-import clientCV.CentriVaccinali;
 import clientCV.RMI;
 import clientCV.cittadini.Cittadino;
 import clientCV.cittadini.Utente;
 import clientCV.condivisi.Controlli;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.FileSystems;
 import java.rmi.NotBoundException;
 import java.sql.SQLException;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
 /**
@@ -47,6 +41,9 @@ public class InterfacciaLogIn extends Interfaccia implements Initializable {
      *
      * @param event
      * @throws IOException
+     * @throws SQLException
+     * @throws NotBoundException
+     * @throws InterruptedException
      */
     public void vaiARegistra(ActionEvent event) throws IOException, SQLException, NotBoundException, InterruptedException {
 
@@ -56,22 +53,24 @@ public class InterfacciaLogIn extends Interfaccia implements Initializable {
     }
 
     /**
-     * Vai alla schermata HomeCittadini come ospite
+     * Vai alla schermata PrincipaleCittadini come ospite
      *
      * @param event
      * @throws IOException
      */
-    public void logInOspite(ActionEvent event) throws IOException, SQLException, NotBoundException {
+    public void logInOspite(ActionEvent event) throws IOException {
 
         cambiaSchermataConUtente("PrincipaleCittadini.fxml", null, event);
     }
 
     /**
-     * Controlla il collegamento col proxy ed esegue il log in
+     * Controlla che esista l'utente inserito ed esegue il log in
      *
      * @param event
      * @throws IOException
      * @throws SQLException
+     * @throws NotBoundException
+     * @throws InterruptedException
      */
     public void controllaLogIn(ActionEvent event) throws IOException, SQLException, NotBoundException, InterruptedException {
 
@@ -109,6 +108,12 @@ public class InterfacciaLogIn extends Interfaccia implements Initializable {
         }
     }
 
+    /**
+     * Inizializza la schermata
+     *
+     * @param url
+     * @param rb
+     */
 
 
     @Override
@@ -133,17 +138,18 @@ public class InterfacciaLogIn extends Interfaccia implements Initializable {
     }
 
     /**
-     * Controlla la connessione
+     * Controlla che il database non sia vuoto
      *
-     * @return boolean
      * @throws IOException
      * @throws SQLException
+     * @throws NotBoundException
+     * InterruptedException
      */
-    public void ControlliInserimento() throws IOException, SQLException, NotBoundException, InterruptedException {
+    public boolean ControlliInserimento() throws IOException, SQLException, NotBoundException, InterruptedException {
 
         Controlli check = new Controlli();
 
             //Se non ci sono valori sul database, allora riempi i database con i dati di default
-        check.databaseVuoto();
+        return check.databaseVuoto();
     }
 }

@@ -1,7 +1,7 @@
 package serverCV;
 
-import clientCV.centriVaccinali.modelli.Sintomo;
-import clientCV.centriVaccinali.modelli.Vaccinato;
+import clientCV.centriVaccinali.modelli.OggettoLogin;
+import clientCV.centriVaccinali.modelli.RichiestaServer;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -20,19 +20,19 @@ import java.util.concurrent.Semaphore;
 public class ConnessioneServer extends Thread{
 
     private Semaphore sem;
-    private Sintomo.RichiestaServer richiesta;
-    private Vaccinato.OggettoLogin login;
+    private RichiestaServer richiesta;
+    private OggettoLogin login;
     private List<?> lista;
     private Boolean risultato;
 
     /**
-     * ServerConnection Constructor
+     * Costruttore ConnessioneServer
      *
      * @param sem
      * @param richiesta
      */
 
-    public ConnessioneServer(Sintomo.RichiestaServer richiesta, Semaphore sem) {
+    public ConnessioneServer(RichiestaServer richiesta, Semaphore sem) {
         this.sem = sem;
         this.richiesta = richiesta;
     }
@@ -65,18 +65,36 @@ public class ConnessioneServer extends Thread{
         }
     }
 
+    /**
+     * Get Lista
+     *
+     * @return List
+     */
     public List<?> getLista() {
         return lista;
     }
 
-    public Vaccinato.OggettoLogin getLogin() {
+    /**
+     * Get Login
+     *
+     * @return OggettoLogin
+     */
+    public OggettoLogin getLogin() {
         return login;
     }
 
+    /**
+     * Get Risultato
+     *
+     * @return boolean
+     */
     public Boolean getRisultato() {
         return risultato;
     }
 
+    /**
+     * Operazioni del Thread
+     */
     public void run(){
         try {
             sem.acquire();

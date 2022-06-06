@@ -42,38 +42,80 @@ public class InformazioniServer {
 
 
         //Setters
-        public static void setPGUSERNAME(String PGUSERNAME) {
+
+    /**
+     * Set PGUSERNAME
+     *
+     * @param PGUSERNAME
+     */
+    public static void setPGUSERNAME(String PGUSERNAME) {
             InformazioniServer.PGUSERNAME = PGUSERNAME;
         }
 
-        public static void setPGPASSWORD(String PGPASSWORD) {
-            InformazioniServer.PGPASSWORD = PGPASSWORD;
-        }
+    /**
+    * Set PGPASSWORD
+    *
+    * @param PGPASSWORD
+    */
+    public static void setPGPASSWORD(String PGPASSWORD) {
+        InformazioniServer.PGPASSWORD = PGPASSWORD;
+    }
 
-        public static void setIPSERVER(String IPSERVER) {
-            InformazioniServer.IPSERVER = IPSERVER;
-        }
+    /**
+     * Set IPSERVER
+     *
+     * @param IPSERVER
+     */
+    public static void setIPSERVER(String IPSERVER) {
+        InformazioniServer.IPSERVER = IPSERVER;
+    }
 
 
 
-        //Getters
-        public static int getDBPORT() {
-            return DBPORT;
-        }
+    //Getters
 
-        public static String getPGUSERNAME() {
-            return PGUSERNAME;
-        }
+    /**
+     * Get DBPORT
+     *
+     * @return int
+     */
+    public static int getDBPORT() {
+        return DBPORT;
+    }
 
-        public static String getPGPASSWORD() {
-            return PGPASSWORD;
-        }
+    /**
+     * Get PGUSERNAME
+     *
+     * @return String
+     */
+    public static String getPGUSERNAME() {
+        return PGUSERNAME;
+    }
 
-        public static String getDBNAME() {
-            return DBNAME;
-        }
+    /**
+     * Get PGPASSWORD
+     *
+     * @return String
+     */
+    public static String getPGPASSWORD() {
+        return PGPASSWORD;
+    }
 
-        public static String getIPSERVER() {
-            return IPSERVER;
-        }
+    /**
+     * Get DBNAME
+     *
+     * @return String
+     */
+    public static String getDBNAME() {
+        return DBNAME;
+    }
+
+    /**
+     * Get IPSERVER
+     *
+     * @return String
+     */
+    public static String getIPSERVER() {
+        return IPSERVER;
+    }
 }

@@ -87,6 +87,8 @@ public class Controlli implements Serializable {
      * @return boolean
      * @throws IOException
      * @throws SQLException
+     * @throws NotBoundException
+     * @throws InterruptedException
      */
     public boolean databaseVuoto() throws IOException, SQLException, NotBoundException, InterruptedException {
         RMI RMICheck = new RMI();

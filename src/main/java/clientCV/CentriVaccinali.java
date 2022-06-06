@@ -15,6 +15,13 @@ import java.util.Objects;
  * @author Clementi Luca 740350 VA
  */
 public class CentriVaccinali extends Application {
+
+    /**
+     * Strart istruzioni eseguite all'avvio dell'applicazione
+     *
+     * @param primaryStage
+     * @throws Exception
+     */
     @Override
     public void start(Stage primaryStage) throws Exception {
 

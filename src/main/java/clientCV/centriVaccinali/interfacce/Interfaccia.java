@@ -1,6 +1,5 @@
 package clientCV.centriVaccinali.interfacce;
 
-import clientCV.CentriVaccinali;
 import clientCV.cittadini.Utente;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -36,7 +35,7 @@ public abstract class Interfaccia {
     public abstract void setUtente(Utente utente);
 
     /**
-     * Cambia schermata fxml
+     * Cambia schermata da file fxml
      *
      * @param fxml
      * @param event

@@ -67,7 +67,7 @@ public class InterfacciaRegistraVaccinato extends Interfaccia implements Initial
     }
 
     /**
-     * Vai alla schermata Home
+     * Vai alla schermata principale
      *
      * @param event
      * @throws IOException
@@ -207,8 +207,8 @@ public class InterfacciaRegistraVaccinato extends Interfaccia implements Initial
     }
 
     /**
-     * Genera un UID, verifica che non sia presente nel db
-     * @return
+     * Genera un UID e verifica che non sia presente nel db
+     * @return int
      */
     private int generaUID() {
         List<String> tmpID = new ArrayList<>();
@@ -239,7 +239,7 @@ public class InterfacciaRegistraVaccinato extends Interfaccia implements Initial
     }
 
     /**
-     * Impostazioni dei parametri al momenti di inizializzazione
+     * Inizializza la schermata
      *
      * @param url
      * @param resourceBundle

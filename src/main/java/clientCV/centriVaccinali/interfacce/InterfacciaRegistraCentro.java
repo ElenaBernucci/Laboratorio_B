@@ -35,7 +35,6 @@ import java.util.ResourceBundle;
 public class InterfacciaRegistraCentro extends Interfaccia implements Initializable {
     private Utente utente;
     private Controlli check = new Controlli();
-
     @FXML
     private TextField nomeField, stradaField, civicoField, provField, comuneField, capField;
     @FXML
@@ -56,7 +55,7 @@ public class InterfacciaRegistraCentro extends Interfaccia implements Initializa
     }
 
     /**
-     * Vai alla schermata Home
+     * Vai alla schermata principale
      *
      * @param event
      * @throws IOException
@@ -105,7 +104,7 @@ public class InterfacciaRegistraCentro extends Interfaccia implements Initializa
     }
 
     /**
-     * Controlla i campi e registra il centro
+     * Controlla i campi e registra il centro vaccinale
      * @param event
      * @throws IOException
      * @throws SQLException
@@ -201,7 +200,7 @@ public class InterfacciaRegistraCentro extends Interfaccia implements Initializa
     }
 
     /**
-     * Controlla che il centro non esista già
+     * Controlla che il centro non sia già registrato
      * @return boolean
      */
     private boolean controllaCentro() {
@@ -223,7 +222,7 @@ public class InterfacciaRegistraCentro extends Interfaccia implements Initializa
     }
 
     /**
-     * Imposta parametri di inizializzazione
+     * Inizializza la schermata
      * Limita la quantità e tipologia dei caratteri
      *
      * @param url

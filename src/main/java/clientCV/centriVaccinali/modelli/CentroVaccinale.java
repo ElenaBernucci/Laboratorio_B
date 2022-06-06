@@ -27,7 +27,7 @@ public class CentroVaccinale implements Serializable {
 
     /**
      * Get Nome
-     * @return nome
+     * @return String
      */
     public String getNome() {
         return nome;
@@ -43,7 +43,7 @@ public class CentroVaccinale implements Serializable {
 
     /**
      * Get Indirizzo
-     * @return indirizzo
+     * @return Indirizzo
      */
     public Indirizzo getIndirizzo() {
         return indirizzo;
@@ -59,7 +59,7 @@ public class CentroVaccinale implements Serializable {
 
     /**
      * Get Tipologia
-     * @return
+     * @return Tipologia
      */
     public Tipologia getTipologia() {
         return tipologia;

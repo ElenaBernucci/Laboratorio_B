@@ -75,6 +75,13 @@ public class InterfacciaCerca extends Interfaccia implements Initializable {
         cambiaSchermataConUtente("RegistraCittadino.fxml", utente, event);
     }
 
+    /**
+     * Vai alla schermata principale
+     *
+     * @param event
+     * @throws IOException
+     */
+
     public void vaiAHome(ActionEvent event) throws IOException {
         cambiaSchermataConUtente("PrincipaleCittadini.fxml", utente, event);
     }
@@ -121,10 +128,12 @@ public class InterfacciaCerca extends Interfaccia implements Initializable {
     /**
      * Mostra Centri Vaccinali
      * Verifica se ci sono errori nel inserimento dei campi
-     * Invia la query al Proxy
+     * Invia la query all'RMI per essere eseguita
      *
      * @throws IOException
      * @throws SQLException
+     * @throws NotBoundException
+     * @throws InterruptedException
      */
     public void cercaCentriVaccinali() throws IOException, SQLException, NotBoundException, InterruptedException {
 
@@ -213,6 +222,13 @@ public class InterfacciaCerca extends Interfaccia implements Initializable {
         comuneField.setDisable(radNome.isSelected());
         tipologiaCBox.setDisable(radNome.isSelected());
     }
+
+    /**
+     * Vai alla schermata segnalazione
+     *
+     * @param event
+     * @throws IOException
+     */
 
     public void saltaASegnalazione(ActionEvent event) throws IOException {
         RMI RMI, RMI2;
@@ -305,7 +321,7 @@ public class InterfacciaCerca extends Interfaccia implements Initializable {
     }
 
     /**
-     * Riempi il grid pane con tutti i centri vaccinali
+     * Riempe il grid pane con tutti i centri vaccinali
      */
     private void fillGridPane() {
         String query = "SELECT * FROM centrivaccinali";
@@ -335,7 +351,7 @@ public class InterfacciaCerca extends Interfaccia implements Initializable {
     }
 
     /**
-     * Impostazioni stetiche
+     * Inizializzazione della pagina
      *
      * @param url
      * @param resourceBundle

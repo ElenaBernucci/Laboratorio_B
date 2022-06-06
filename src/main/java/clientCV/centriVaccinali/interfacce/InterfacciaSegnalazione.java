@@ -234,7 +234,7 @@ public class InterfacciaSegnalazione extends Interfaccia implements Initializabl
     }
 
     /**
-     * Impostazione al momento di inizializzare la schermata
+     * Inizializza la schermata
      *
      * @param url
      * @param resourceBundle
@@ -287,7 +287,7 @@ public class InterfacciaSegnalazione extends Interfaccia implements Initializabl
 
     /**
      * Genera un UID della segnalazione, verifica che non sia giá presente nel db
-     * @return
+     * @return int
      */
     private int generaIdSegnalazione() {
         List<String> tmpID = new ArrayList<>();

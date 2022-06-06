@@ -49,7 +49,7 @@ public class Indirizzo implements Serializable {
 
     /**
      * Get Strada
-     * @return Strada
+     * @return String
      */
     public String getStrada() {
         return strada;
@@ -57,7 +57,7 @@ public class Indirizzo implements Serializable {
 
     /**
      * Get Civico
-     * @return civico
+     * @return String
      */
     public String getCivico() {
         return civico;
@@ -65,7 +65,7 @@ public class Indirizzo implements Serializable {
 
     /**
      * Get Comune
-     * @return comune
+     * @return String
      */
     public String getComune() {
         return comune;
@@ -73,7 +73,7 @@ public class Indirizzo implements Serializable {
 
     /**
      * Get Provincia
-     * @return provincia
+     * @return String
      */
     public String getProvincia() {
         return provincia;
@@ -81,7 +81,7 @@ public class Indirizzo implements Serializable {
 
     /**
      * Get CAP
-     * @return CAP
+     * @return String
      */
     public String getCAP() {
         return CAP;
@@ -89,7 +89,7 @@ public class Indirizzo implements Serializable {
 
     /**
      * Get Qualificatore
-     * @return Qualificatore
+     * @return String
      */
     public Qualificatore getQualificatore() {
         return qualificatore;

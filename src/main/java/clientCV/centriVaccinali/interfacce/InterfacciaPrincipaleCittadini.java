@@ -1,6 +1,5 @@
 package clientCV.centriVaccinali.interfacce;
 
-import clientCV.CentriVaccinali;
 import clientCV.RMI;
 import clientCV.centriVaccinali.modelli.CentroVaccinale;
 import clientCV.centriVaccinali.modelli.Vaccinato;
@@ -30,7 +29,6 @@ import java.net.URL;
 import java.nio.file.FileSystems;
 import java.rmi.NotBoundException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -70,6 +68,13 @@ public class InterfacciaPrincipaleCittadini extends Interfaccia implements Initi
     public void vaiARegistrati(ActionEvent event) throws IOException {
         cambiaSchermataConUtente("RegistraCittadino.fxml",utente, event);
     }
+
+    /**
+     * Vai alla schermata Segnalazione
+     *
+     * @param event
+     * @throws IOException
+     */
 
     public void saltaASegnalazione(ActionEvent event) throws IOException {
         RMI RMI, RMI2;
@@ -129,7 +134,7 @@ public class InterfacciaPrincipaleCittadini extends Interfaccia implements Initi
 
     /**
      * Implementazione del bottone LogOut
-     * Chiede conferma prima di tornare alla Home e settare l'user a null
+     * Chiede conferma prima di tornare alla schermata principale e settare l'user a null
      * @param event
      */
     public void logoutBtnImpl(ActionEvent event){
@@ -154,6 +159,13 @@ public class InterfacciaPrincipaleCittadini extends Interfaccia implements Initi
             }
         });
     }
+
+    /**
+     * Inizializzazione della schermata
+     *
+     * @param url
+     * @param rb
+     */
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {

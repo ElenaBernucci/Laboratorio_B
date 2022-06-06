@@ -1,9 +1,6 @@
 package serverCV;
 
-import clientCV.centriVaccinali.modelli.CentroVaccinale;
-import clientCV.centriVaccinali.modelli.Segnalazione;
-import clientCV.centriVaccinali.modelli.Sintomo;
-import clientCV.centriVaccinali.modelli.Vaccinato;
+import clientCV.centriVaccinali.modelli.*;
 
 import java.io.IOException;
 import java.rmi.RemoteException;
@@ -35,7 +32,7 @@ public class Server extends UnicastRemoteObject implements OperazioniServer{
     }
 
     /**
-     * First Runnable Program
+     * Eseguibile Server
      * @param args
      */
 
@@ -73,6 +70,17 @@ public class Server extends UnicastRemoteObject implements OperazioniServer{
         }
     }
 
+    /**
+     * Metodo testConnessione effettua una connessione di prova al database
+     *
+     * @param username
+     * @param password
+     * @param database
+     * @param ipAddress
+     * @param port
+     * @return boolean
+     * @throws ClassNotFoundException
+     */
     public static Boolean testConnessione(String username, String password, String database, String ipAddress, int port) throws ClassNotFoundException{
         Class.forName("org.postgresql.Driver");
         Boolean connessione = false;
@@ -93,7 +101,16 @@ public class Server extends UnicastRemoteObject implements OperazioniServer{
         }
     }
 
-    public Vaccinato.OggettoLogin login(Sintomo.RichiestaServer richiesta) throws IOException, SQLException, InterruptedException {
+    /**
+     * Metodo LogIn, prende un utente dal database e determina se è un vaccinato o un operatore
+     *
+     * @param richiesta
+     * @return OggettoLogin
+     * @throws IOException
+     * @throws SQLException
+     * @throws InterruptedException
+     */
+    public OggettoLogin login(RichiestaServer richiesta) throws IOException, SQLException, InterruptedException {
         System.out.println("Ricevuto richiesta di Login");
         connessione = new ConnessioneServer(richiesta, sem);
         connessione.start();
@@ -101,28 +118,64 @@ public class Server extends UnicastRemoteObject implements OperazioniServer{
         return connessione.getLogin();
     }
 
-    public List<Sintomo> riceviSintomi(Sintomo.RichiestaServer richiesta) throws IOException, SQLException, InterruptedException {
+    /**
+     * Metodo riceviSintomi, richiede i sintomi al database
+     *
+     * @param richiesta
+     * @return List(Sintomo)
+     * @throws IOException
+     * @throws SQLException
+     * @throws InterruptedException
+     */
+    public List<Sintomo> riceviSintomi(RichiestaServer richiesta) throws IOException, SQLException, InterruptedException {
         connessione = new ConnessioneServer(richiesta, sem);
         connessione.start();
         connessione.join();
         return (List<Sintomo>) connessione.getLista();
     }
 
-    public Boolean inserireInDb(Sintomo.RichiestaServer richiesta) throws IOException, SQLException, InterruptedException {
+    /**
+     * Metodo inserireInDb, inserisce nel database una query specifica
+     *
+     * @param richiesta
+     * @return boolean
+     * @throws IOException
+     * @throws SQLException
+     * @throws InterruptedException
+     */
+    public Boolean inserireInDb(RichiestaServer richiesta) throws IOException, SQLException, InterruptedException {
         connessione = new ConnessioneServer(richiesta, sem);
         connessione.start();
         connessione.join();
         return connessione.getRisultato();
     }
 
-    public Boolean registraCentroVaccinale(Sintomo.RichiestaServer richiesta) throws IOException, SQLException, InterruptedException {
+    /**
+     * Metodo registraCentroVaccinale, registra un Centro Vaccinale
+     *
+     * @param richiesta
+     * @return boolean
+     * @throws IOException
+     * @throws SQLException
+     * @throws InterruptedException
+     */
+    public Boolean registraCentroVaccinale(RichiestaServer richiesta) throws IOException, SQLException, InterruptedException {
         connessione = new ConnessioneServer(richiesta, sem);
         connessione.start();
         connessione.join();
         return connessione.getRisultato();
     }
 
-    public List<String> riceviValoriIndividuali(Sintomo.RichiestaServer richiesta) throws IOException, SQLException, InterruptedException {
+    /**
+     *Metodo riceviValoriIndividuali, richiede singoli valori al database
+     *
+     * @param richiesta
+     * @return List(String)
+     * @throws IOException
+     * @throws SQLException
+     * @throws InterruptedException
+     */
+    public List<String> riceviValoriIndividuali(RichiestaServer richiesta) throws IOException, SQLException, InterruptedException {
         System.out.println("Ricevuto richiesta valori individuali");
         connessione = new ConnessioneServer(richiesta, sem);
         connessione.start();
@@ -130,21 +183,48 @@ public class Server extends UnicastRemoteObject implements OperazioniServer{
         return (List<String>) connessione.getLista();
     }
 
-    public List<Vaccinato> riceviVaccinati(Sintomo.RichiestaServer richiesta) throws IOException, SQLException, InterruptedException {
+    /**
+     * Metodo riceviVaccinati, richiede la lista dei cittadini vaccinati al database
+     *
+     * @param richiesta
+     * @return List(Vaccinato)
+     * @throws IOException
+     * @throws SQLException
+     * @throws InterruptedException
+     */
+    public List<Vaccinato> riceviVaccinati(RichiestaServer richiesta) throws IOException, SQLException, InterruptedException {
         connessione = new ConnessioneServer(richiesta, sem);
         connessione.start();
         connessione.join();
         return (List<Vaccinato>) connessione.getLista();
     }
 
-    public List<CentroVaccinale> filtra(Sintomo.RichiestaServer richiesta) throws IOException, SQLException, InterruptedException {
+    /**
+     * Metodo filtra, filtra i risultati di ricerca
+     *
+     * @param richiesta
+     * @return List(CentroVaccinale)
+     * @throws IOException
+     * @throws SQLException
+     * @throws InterruptedException
+     */
+    public List<CentroVaccinale> filtra(RichiestaServer richiesta) throws IOException, SQLException, InterruptedException {
         connessione = new ConnessioneServer(richiesta, sem);
         connessione.start();
         connessione.join();
         return (List<CentroVaccinale>) connessione.getLista();
     }
 
-    public List<Segnalazione> riceviSegnalazione(Sintomo.RichiestaServer richiesta) throws IOException, SQLException, InterruptedException {
+    /**
+     * Metodo riceviSegnalazione, richiede le segnalazioni al database
+     *
+     * @param richiesta
+     * @return List(Segnalazione)
+     * @throws IOException
+     * @throws SQLException
+     * @throws InterruptedException
+     */
+    public List<Segnalazione> riceviSegnalazione(RichiestaServer richiesta) throws IOException, SQLException, InterruptedException {
         connessione = new ConnessioneServer(richiesta, sem);
         connessione.start();
         connessione.join();

@@ -13,7 +13,7 @@ public abstract class Persona {
     private String CF;
 
     /**
-     * Constructor Persona
+     * Costruttore Persona
      *
      * @param nome
      * @param cognome
@@ -28,6 +28,7 @@ public abstract class Persona {
     //Getters
     /**
      * Get Nome
+     *
      * @return nome
      */
     public String getNome() {
@@ -36,6 +37,7 @@ public abstract class Persona {
 
     /**
      * Get Cognome
+     *
      * @return cognome
      */
     public String getCognome() {
@@ -44,6 +46,7 @@ public abstract class Persona {
 
     /**
      * Get CF
+     *
      * @return CF
      */
     public String getCF() {

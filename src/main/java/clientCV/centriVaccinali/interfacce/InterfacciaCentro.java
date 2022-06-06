@@ -130,7 +130,7 @@ public class InterfacciaCentro extends Interfaccia implements Initializable {
 
     /**
      * Imposta l'utente corrente
-     * Nel caso sia nullo, attiva il bottone Accedi
+     * Nel caso sia nullo, attiva il bottone Accedi, distattiva il bottone di segnalazione
      *
      * @param utente
      */
@@ -173,7 +173,7 @@ public class InterfacciaCentro extends Interfaccia implements Initializable {
     }
 
     /**
-     * Imposta il centro richiesto
+     * Seleziona il centro richiesto
      * @param centro
      */
     public void setCentro(String centro){

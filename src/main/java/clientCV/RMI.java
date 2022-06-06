@@ -1,10 +1,7 @@
 package clientCV;
 
 
-import clientCV.centriVaccinali.modelli.CentroVaccinale;
-import clientCV.centriVaccinali.modelli.Segnalazione;
-import clientCV.centriVaccinali.modelli.Sintomo;
-import clientCV.centriVaccinali.modelli.Vaccinato;
+import clientCV.centriVaccinali.modelli.*;
 import clientCV.cittadini.Cittadino;
 import clientCV.cittadini.Utente;
 import clientCV.condivisi.Controlli;
@@ -19,7 +16,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 /**
- * Proxy
+ * RMI
  *
  * @author Bernucci Elena 740283 VA
  * @author Clementi Luca 740350 VA
@@ -29,9 +26,10 @@ public class RMI extends UnicastRemoteObject implements FunzionalitaClient {
     OperazioniServer stub;
 
     /**
-     * Proxy Constructor
+     * Costruttore RMI
      *
      * @throws IOException
+     * @throws NotBoundException
      */
 
     public RMI() throws IOException, NotBoundException {
@@ -40,18 +38,20 @@ public class RMI extends UnicastRemoteObject implements FunzionalitaClient {
     }
 
     /**
-     * Metodo Login, prende una query che richiede un utente e costruisce un oggetto Utente o Cittadino
+     * Metodo Login, riceve una query che richiede un utente e costruisce un oggetto Utente o Cittadino
      *
      * @param query
      * @param User
      * @return Utente
      * @throws IOException
+     * @throws SQLException
+     * @throws InterruptedException
      */
 
     public Utente login(String query, String User) throws IOException, SQLException, InterruptedException {
 
-        Sintomo.RichiestaServer richiestaServer = new Sintomo.RichiestaServer(query, User, "login");
-        Vaccinato.OggettoLogin login = stub.login(richiestaServer);
+        RichiestaServer richiestaServer = new RichiestaServer(query, User, "login");
+        OggettoLogin login = stub.login(richiestaServer);
 
         if(!login.isRegistrato())
             return null;
@@ -86,13 +86,14 @@ public class RMI extends UnicastRemoteObject implements FunzionalitaClient {
      * Metodo filtra
      *
      * @param query
-     * @return List Centro Vaccinale
+     * @return List(CentroVaccinale)
      * @throws IOException
      * @throws SQLException
+     * @throws InterruptedException
      */
 
     public List<CentroVaccinale> filtra(String query) throws IOException, SQLException, InterruptedException {
-        Sintomo.RichiestaServer richiesta = new Sintomo.RichiestaServer(query, "filtra");
+        RichiestaServer richiesta = new RichiestaServer(query, "filtra");
         List<CentroVaccinale> centrivaccinali = stub.filtra(richiesta);
 
         return centrivaccinali;
@@ -101,9 +102,11 @@ public class RMI extends UnicastRemoteObject implements FunzionalitaClient {
     /**
      * Metodo registraNuovoCentro, registra un nuovo centro e crea la tabella per i suoi vaccinati
      *
-     * @param nomeCentro
+     * @param
+     * @return boolean
      * @throws IOException
      * @throws SQLException
+     * @throws InterruptedException
      */
 
     public Boolean registraCentroVaccinale(String nomeCentro) throws SQLException, IOException, InterruptedException {
@@ -119,78 +122,87 @@ public class RMI extends UnicastRemoteObject implements FunzionalitaClient {
                 "FOREIGN KEY(idvaccinazione) REFERENCES idunivoci(idvaccinazione), " +
                 "FOREIGN KEY(codicefiscale) REFERENCES idunivoci(codicefiscale)" +
                 ")";
-        Sintomo.RichiestaServer richiesta = new Sintomo.RichiestaServer(query, nomeCentro, "registraNuovoCentro");
+        RichiestaServer richiesta = new RichiestaServer(query, nomeCentro, "registraNuovoCentro");
         return stub.registraCentroVaccinale(richiesta);
     }
 
     /**
-     * Metodo inserireInDb, inserisce i dati passati come argomento sul db
+     * Metodo inserireInDb, inserisce i dati passati come argomento sul database
      *
      * @param query
+     * @return boolean
      * @throws IOException
      * @throws SQLException
+     * @throws InterruptedException
      */
 
     public Boolean inserireInDb(String query) throws IOException, SQLException, InterruptedException {
-        Sintomo.RichiestaServer richiesta = new Sintomo.RichiestaServer(query, "inserireInDb");
+        RichiestaServer richiesta = new RichiestaServer(query, "inserireInDb");
         return stub.inserireInDb(richiesta);
     }
 
     /**
-     * Metodo riceviVaccinati, restituisce i un ArrayList con i vaccinati
+     * Metodo riceviVaccinati, restituisce una List dei vaccinati
      *
      * @param query
-     * @return ArrayList Vaccinato
+     * @return List(Vaccinato)
      * @throws IOException
      * @throws SQLException
+     * @throws InterruptedException
      */
 
     public List<Vaccinato> riceviVaccinati(String query) throws IOException, SQLException, InterruptedException {
 
-        Sintomo.RichiestaServer richiesta = new Sintomo.RichiestaServer(query, "riceviVaccinati");
+        RichiestaServer richiesta = new RichiestaServer(query, "riceviVaccinati");
         return stub.riceviVaccinati(richiesta);
     }
 
     /**
-     * Metodo riceviSintomo, genera un ArrayList pieno dei sintomi
+     * Metodo riceviSintomo, crea una List dei sintomi
      *
      * @param query
-     * @return ArrayList Sintomo
+     * @return List(Sintomo)
      * @throws IOException
      * @throws SQLException
+     * @throws InterruptedException
      */
 
     public List<Sintomo> riceviSintomi(String query) throws IOException, SQLException, InterruptedException {
 
-        Sintomo.RichiestaServer richiesta = new Sintomo.RichiestaServer(query, "riceviSintomi");
+        RichiestaServer richiesta = new RichiestaServer(query, "riceviSintomi");
         return stub.riceviSintomi(richiesta);
     }
 
     /**
-     * Metodo riceviSegnalazione, restituisce un ArrayList con tutte le segnalazioni fatte
+     * Metodo riceviSegnalazione, restituisce una List con tutte le segnalazioni fatte
      *
      * @param query
-     * @return
+     *
+     * @return List(Segnalazione)
      * @throws IOException
+     * @throws SQLException
+     * @throws InterruptedException
      */
 
     public List<Segnalazione> riceviSegnalazione(String query) throws IOException, SQLException, InterruptedException {
 
-        Sintomo.RichiestaServer richiesta = new Sintomo.RichiestaServer(query, "riceviSegnalazione");
+        RichiestaServer richiesta = new RichiestaServer(query, "riceviSegnalazione");
         return stub.riceviSegnalazione(richiesta);
     }
 
     /**
-     * Metodo riceviValoriIndividuali, crea un ArrayList con tutti i valori individuali
+     * Metodo riceviValoriIndividuali, crea una List con tutti i valori singoli
      *
      * @param query
      * @param colonna
-     * @return ArrayList String
+     * @return List(String)
      * @throws IOException
+     * @throws SQLException
+     * @throws InterruptedException
      */
 
     public List<String> riceviValoriIndividuali(String query, String colonna) throws IOException, SQLException, InterruptedException {
-        Sintomo.RichiestaServer richiesta = new Sintomo.RichiestaServer(query, colonna, "riceviValoriIndividuali");
+        RichiestaServer richiesta = new RichiestaServer(query, colonna, "riceviValoriIndividuali");
         return stub.riceviValoriIndividuali(richiesta);
     }
 

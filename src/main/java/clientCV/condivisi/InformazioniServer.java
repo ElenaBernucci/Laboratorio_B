@@ -24,43 +24,95 @@ public class InformazioniServer {
 
     //Setters
 
+    /**
+     * Set PGUSERNAME
+     *
+     * @param PGUSERNAME
+     */
+
     public static void setPGUSERNAME(String PGUSERNAME) {
         InformazioniServer.PGUSERNAME = PGUSERNAME;
     }
 
+    /**
+     * Set PGPASSWORD
+     *
+     * @param PGPASSWORD
+     */
     public static void setPGPASSWORD(String PGPASSWORD) {
         InformazioniServer.PGPASSWORD = PGPASSWORD;
     }
 
+    /**
+     * Set PORT
+     *
+     * @param PORT
+     */
     public static void setPORT(int PORT) {
         InformazioniServer.PORT = PORT;
     }
 
+    /**
+     * Set IPSERVER
+     *
+     * @param IPSERVER
+     */
     public static void setIPSERVER(String IPSERVER) {
         InformazioniServer.IPSERVER = IPSERVER;
     }
 
     //Getters
+
+    /**
+     * Get DBPORT
+     *
+     * @return
+     */
     public static int getDBPORT() {
         return DBPORT;
     }
 
+    /**
+     * Get PGUSERNAME
+     *
+     * @return
+     */
     public static String getPGUSERNAME() {
         return PGUSERNAME;
     }
 
+    /**
+     * Get PGPASSWORD
+     *
+     * @return
+     */
     public static String getPGPASSWORD() {
         return PGPASSWORD;
     }
 
+    /**
+     * Get PORT
+     *
+     * @return
+     */
     public static int getPORT() {
         return PORT;
     }
 
+    /**
+     * Get DBNAME
+     *
+     * @return
+     */
     public static String getDBNAME() {
         return DBNAME;
     }
 
+    /**
+     * Get IPSERVER
+     *
+     * @return
+     */
     public static String getIPSERVER() {
         return IPSERVER;
     }

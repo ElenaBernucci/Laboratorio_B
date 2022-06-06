@@ -36,7 +36,7 @@ public class Segnalazione implements Serializable {
 
     /**
      * Get Severita
-     * @return severita
+     * @return int
      */
     public int getSeverita() {
         return severita;
@@ -68,7 +68,7 @@ public class Segnalazione implements Serializable {
 
     /**
      * Get Descrizione
-     * @return descrizione
+     * @return String
      */
     public String getDescrizione() {
         return descrizione;
@@ -84,7 +84,7 @@ public class Segnalazione implements Serializable {
 
     /**
      * Get Centro Vaccinale
-     * @return centroVaccinale
+     * @return String
      */
     public String getCentroVaccinale() {
         return centroVaccinale;
@@ -100,7 +100,7 @@ public class Segnalazione implements Serializable {
 
     /**
      * Get Sintomo
-     * @return Sintomo
+     * @return String
      */
     public String getSintomo() {
         return sintomo;

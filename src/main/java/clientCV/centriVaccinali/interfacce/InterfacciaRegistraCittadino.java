@@ -16,7 +16,6 @@ import java.net.URL;
 import java.nio.file.FileSystems;
 import java.rmi.NotBoundException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -86,6 +85,13 @@ public class InterfacciaRegistraCittadino extends Interfaccia implements Initial
         });
     }
 
+    /**
+     * Inizializza la schermata
+     *
+     * @param url
+     * @param rb
+     */
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         String absolutePath = FileSystems.getDefault().getPath("src/main/resources/Images/sfondoAnimatoVideo.mp4").normalize().toAbsolutePath().toUri().toString();
@@ -108,10 +114,11 @@ public class InterfacciaRegistraCittadino extends Interfaccia implements Initial
     }
 
     /**
-     * Controlla i parametri e salva nel DB il cittadino
+     * Controlla i parametri e salva il cittadino nel DB
      * @throws IOException
      * @throws SQLException
      * @throws InterruptedException
+     * @throws NotBoundException
      */
     public void registraCittadino() throws IOException, SQLException, InterruptedException, NotBoundException {
         String nome = fieldNome.getText();
@@ -168,10 +175,13 @@ public class InterfacciaRegistraCittadino extends Interfaccia implements Initial
     }
 
     /**
-     * Controlla che l'ID non sia presente nel DB
+     * Controlla che l'ID non sia già presente nel DB
      * @param id
-     * @return
+     * @return boolean
      * @throws IOException
+     * @throws NotBoundException
+     * @throws SQLException
+     * @throws InterruptedException
      */
     private boolean controllaID(String id) throws IOException, NotBoundException, SQLException, InterruptedException {
 
@@ -193,8 +203,11 @@ public class InterfacciaRegistraCittadino extends Interfaccia implements Initial
     /**
      * Controlla che il codice fiscale inserito sia corretto
      * @param cf
-     * @return
+     * @return boolean
      * @throws IOException
+     * @throws NotBoundException
+     * @throws SQLException
+     * @throws InterruptedException
      */
     private boolean controllaCodiceFiscale(String cf) throws IOException, NotBoundException, SQLException, InterruptedException {
         List<String> cfs;

@@ -37,7 +37,7 @@ public class InterfacciaPrincipaleCentri extends Interfaccia implements Initiali
     private MediaView mediaView;
 
     /**
-     * Vai alla schermata Registra Centro
+     * Vai alla schermata RegistraCentro
      *
      * @param event
      * @throws IOException
@@ -47,7 +47,7 @@ public class InterfacciaPrincipaleCentri extends Interfaccia implements Initiali
     }
 
     /**
-     * Vai alla schermata Registra Vaccinato
+     * Vai alla schermata RegistraVaccinato
      *
      * @param event
      * @throws IOException
@@ -58,7 +58,7 @@ public class InterfacciaPrincipaleCentri extends Interfaccia implements Initiali
 
     /**
      * Implementazione del bottone LogOut
-     * Chiede conferma prima di tornare alla Home e settare l'user a null
+     * Chiede conferma prima di tornare alla scherata principale e settare l'user a null
      * @param event
      */
     public void logoutBtnImpl(ActionEvent event){
@@ -83,6 +83,13 @@ public class InterfacciaPrincipaleCentri extends Interfaccia implements Initiali
             }
         });
     }
+
+    /**
+     * Inizializza la schermata
+     *
+     * @param url
+     * @param rb
+     */
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {

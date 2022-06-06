@@ -16,8 +16,8 @@ import java.util.ArrayList;
 public class RisorsePerServer{
 
     private Connection connection;
-    private Sintomo.RichiestaServer richiesta;
-    private Vaccinato.OggettoLogin login;
+    private RichiestaServer richiesta;
+    private OggettoLogin login;
     private ArrayList<Object> lista;
     private CentroVaccinale centroVaccinale;
 
@@ -29,7 +29,7 @@ public class RisorsePerServer{
      * @param connection
      */
 
-    public RisorsePerServer(Connection connection, Sintomo.RichiestaServer richiesta) {
+    public RisorsePerServer(Connection connection, RichiestaServer richiesta) {
         this.connection = connection;
         this.richiesta = richiesta;
     }
@@ -41,8 +41,8 @@ public class RisorsePerServer{
      * @throws IOException
      * @throws SQLException
      */
-    public Vaccinato.OggettoLogin login() throws IOException, SQLException {
-        login = new Vaccinato.OggettoLogin();
+    public OggettoLogin login() throws IOException, SQLException {
+        login = new OggettoLogin();
         Statement statement = connection.createStatement();
 
         ResultSet resultSet = statement.executeQuery(richiesta.getQuery());
