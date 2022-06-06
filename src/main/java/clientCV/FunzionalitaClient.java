@@ -22,6 +22,8 @@ public interface FunzionalitaClient extends Remote {
     /**
      * Metodo LogIn, prende un utente dal database e determina se è un vaccinato o un operatore
      *
+     * @param query
+     * @param User
      * @return Utente
      * @throws IOException
      * @throws SQLException
@@ -32,6 +34,7 @@ public interface FunzionalitaClient extends Remote {
     /**
      * Metodo filtra, filtra i risultati in base alle richieste dell'utente
      *
+     * @param query
      * @return List(CentroVaccinale)
      * @throws IOException
      * @throws SQLException
@@ -42,6 +45,7 @@ public interface FunzionalitaClient extends Remote {
     /**
      * Metodo registraNuovoCentro, registra un Centro Vaccinale
      *
+     * @param nomeCentro
      * @return boolean
      * @throws IOException
      * @throws SQLException
@@ -52,6 +56,7 @@ public interface FunzionalitaClient extends Remote {
     /**
      * Metodo inserireInDb, Inserisce nel db un commando specifico
      *
+     * @param query
      * @return boolean
      * @throws IOException
      * @throws SQLException
@@ -62,6 +67,7 @@ public interface FunzionalitaClient extends Remote {
     /**
      * Metodo riceviVaccinati, prende i cittadini vaccinati dal DB
      *
+     * @param query
      * @return List(Vaccinato)
      * @throws IOException
      * @throws SQLException
@@ -72,6 +78,7 @@ public interface FunzionalitaClient extends Remote {
     /**
      * Metodo riceviSintomi, richiede i sintomi al database
      *
+     * @param query
      * @return List(Sintomo)
      * @throws IOException
      * @throws SQLException
@@ -82,6 +89,7 @@ public interface FunzionalitaClient extends Remote {
     /**
      * Metodo riceviSegnalazione, richiede le segnalazioni al database
      *
+     * @param query
      * @return List(Segnalazione)
      * @throws IOException
      * @throws SQLException
@@ -92,6 +100,8 @@ public interface FunzionalitaClient extends Remote {
     /**
      * Metodo riceviValoriIndividuali, richiede valori individuali al database
      *
+     * @param query
+     * @param colonna
      * @return List(String)
      * @throws IOException
      * @throws SQLException

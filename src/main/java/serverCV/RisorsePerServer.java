@@ -150,7 +150,6 @@ public class RisorsePerServer{
     /**
      * Metodo registraNuovoCentro, registra un Centro Vaccinale
      *
-     * @throws IOException
      * @throws SQLException
      */
     public Boolean registraCentroVaccinale() throws SQLException {
@@ -273,7 +272,6 @@ public class RisorsePerServer{
     /**
      * Metodo riceviSegnalazione, prende segnalazioni dal db
      *
-     * @throws IOException
      * @throws SQLException
      */
     public ArrayList riceviSegnalazione() throws SQLException {

@@ -28,7 +28,7 @@ public enum Vaccino implements Serializable {
     MODERNA,
 
     /**
-     * Johnson&Johnson
+     * JohnsonAndJohnson
      */
 
     JOHNSONANDJOHNSON

@@ -102,7 +102,7 @@ public class RMI extends UnicastRemoteObject implements FunzionalitaClient {
     /**
      * Metodo registraNuovoCentro, registra un nuovo centro e crea la tabella per i suoi vaccinati
      *
-     * @param
+     * @param nomeCentro
      * @return boolean
      * @throws IOException
      * @throws SQLException
