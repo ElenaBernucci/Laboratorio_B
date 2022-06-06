@@ -4,13 +4,12 @@ import clientCV.centriVaccinali.modelli.CentroVaccinale;
 import clientCV.centriVaccinali.modelli.Segnalazione;
 import clientCV.centriVaccinali.modelli.Sintomo;
 import clientCV.centriVaccinali.modelli.Vaccinato;
-import clientCV.condivisi.*;
+import clientCV.condivisi.OggettoLogin;
+import clientCV.condivisi.RichiestaServer;
 
 import java.io.IOException;
-import java.net.Socket;
 import java.rmi.Remote;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -51,7 +50,7 @@ public interface OperazioniServer extends Remote {
      * @throws IOException
      * @throws SQLException
      */
-    Boolean registraNuovoCentro(RichiestaServer richiestaServer) throws IOException, SQLException, InterruptedException;
+    Boolean registraCentroVaccinale(RichiestaServer richiestaServer) throws IOException, SQLException, InterruptedException;
 
     /**
      * Metodo riceviValoriIndividuali, prelieva valori individuali dal db

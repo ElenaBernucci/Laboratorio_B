@@ -4,7 +4,8 @@ import clientCV.centriVaccinali.modelli.CentroVaccinale;
 import clientCV.centriVaccinali.modelli.Segnalazione;
 import clientCV.centriVaccinali.modelli.Sintomo;
 import clientCV.centriVaccinali.modelli.Vaccinato;
-import clientCV.condivisi.*;
+import clientCV.condivisi.OggettoLogin;
+import clientCV.condivisi.RichiestaServer;
 
 import java.io.IOException;
 import java.rmi.RemoteException;
@@ -14,7 +15,6 @@ import java.rmi.server.UnicastRemoteObject;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.Semaphore;
@@ -117,7 +117,7 @@ public class Server extends UnicastRemoteObject implements OperazioniServer{
         return connessione.getRisultato();
     }
 
-    public Boolean registraNuovoCentro(RichiestaServer richiesta) throws IOException, SQLException, InterruptedException {
+    public Boolean registraCentroVaccinale(RichiestaServer richiesta) throws IOException, SQLException, InterruptedException {
         connessione = new ConnessioneServer(richiesta, sem);
         connessione.start();
         connessione.join();

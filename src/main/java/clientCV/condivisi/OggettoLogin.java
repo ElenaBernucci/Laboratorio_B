@@ -2,6 +2,13 @@ package clientCV.condivisi;
 
 import java.io.Serializable;
 
+/**
+ * OggettoLogin
+ *
+ * @author Bernucci Elena 740283 VA
+ * @author Clementi Luca 740350 VA
+ */
+
 public class OggettoLogin implements Serializable {
     private String userid;
     private boolean isRegistrato;

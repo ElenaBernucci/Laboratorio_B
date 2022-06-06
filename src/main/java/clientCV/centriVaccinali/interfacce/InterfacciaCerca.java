@@ -1,6 +1,5 @@
 package clientCV.centriVaccinali.interfacce;
 
-import clientCV.CentriVaccinali;
 import clientCV.RMI;
 import clientCV.centriVaccinali.modelli.CentroVaccinale;
 import clientCV.centriVaccinali.modelli.Tipologia;
@@ -31,7 +30,6 @@ import java.net.URL;
 import java.nio.file.FileSystems;
 import java.rmi.NotBoundException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -128,7 +126,7 @@ public class InterfacciaCerca extends Interfaccia implements Initializable {
      * @throws IOException
      * @throws SQLException
      */
-    public void mostraCentriVaccinali() throws IOException, SQLException, NotBoundException, InterruptedException {
+    public void cercaCentriVaccinali() throws IOException, SQLException, NotBoundException, InterruptedException {
 
         if(radNome.isSelected()) {
             String nome = nomeField.getText().trim();

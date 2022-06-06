@@ -1,12 +1,12 @@
 package serverCV;
 
 import clientCV.centriVaccinali.modelli.*;
-import clientCV.condivisi.*;
+import clientCV.condivisi.OggettoLogin;
+import clientCV.condivisi.RichiestaServer;
 
 import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * ServerResourcesImpl implementa tutte le funzionalità del database
@@ -155,7 +155,7 @@ public class RisorsePerServer{
      * @throws IOException
      * @throws SQLException
      */
-    public Boolean registraNuovoCentro() throws SQLException {
+    public Boolean registraCentroVaccinale() throws SQLException {
 
         String nomeCentro = richiesta.getParam();
         String createTableQuery= richiesta.getQuery();

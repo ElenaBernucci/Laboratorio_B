@@ -126,7 +126,7 @@ public class InterfacciaSegnalazione extends Interfaccia implements Initializabl
      * @param event
      * @throws IOException
      */
-    public void inviaSegnalazione(ActionEvent event) throws IOException {
+    public void inserisciEventiAvversi(ActionEvent event) throws IOException {
         String nomeCentro = centroVaccinale.getNome();
         String descrizione = noteAggiuntiveTextArea.getText().trim();
         String sintomo = sintomoCombo.getValue();

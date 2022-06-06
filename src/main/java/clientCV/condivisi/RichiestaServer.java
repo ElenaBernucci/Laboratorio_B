@@ -2,6 +2,13 @@ package clientCV.condivisi;
 
 import java.io.Serializable;
 
+/**
+ * RichiestaServer
+ *
+ * @author Bernucci Elena 740283 VA
+ * @author Clementi Luca 740350 VA
+ */
+
 public class RichiestaServer implements Serializable {
 
     private String tipoRichiesta;

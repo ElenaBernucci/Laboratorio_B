@@ -9,7 +9,6 @@ import clientCV.cittadini.Utente;
 import java.io.IOException;
 import java.rmi.Remote;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -42,7 +41,7 @@ public interface FunzionalitaClient extends Remote {
      * @throws IOException
      * @throws SQLException
      */
-    Boolean registraNuovoCentro(String nomeCentro) throws IOException, SQLException, InterruptedException;
+    Boolean registraCentroVaccinale(String nomeCentro) throws IOException, SQLException, InterruptedException;
 
     /**
      * Metodo inserireInDb, Inserisce nel db un commando specifico

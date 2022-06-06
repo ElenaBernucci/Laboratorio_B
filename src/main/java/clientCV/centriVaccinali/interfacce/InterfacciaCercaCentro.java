@@ -22,7 +22,6 @@ import java.net.URL;
  * @author Clementi Luca 740350 VA
  */
 public class InterfacciaCercaCentro {
-    private CentroVaccinale centro;
 
     private Controlli check = new Controlli();
 
@@ -40,11 +39,10 @@ public class InterfacciaCercaCentro {
 
     /**
      * Imposta il file fxml con i dati del centro
-     * @param c
-     * @param u
+     * @param centro
+     * @param utente
      */
-    public void setData(CentroVaccinale c, Utente u){
-        this.centro = c;
+    public void setData(CentroVaccinale centro, Utente utente){
 
         nomeCentroText.setText(check.primaMaiuscola(centro.getNome()));
         tipoText.setText(String.valueOf(centro.getTipologia()));
@@ -61,10 +59,10 @@ public class InterfacciaCercaCentro {
                 e.printStackTrace();
             }
 
-            Interfaccia cinterfaccia = loader.getController();
+            Interfaccia interfaccia = loader.getController();
             InterfacciaCentro interfacciaCentro = loader.getController();
 
-            cinterfaccia.setUtente(u);
+            interfaccia.setUtente(utente);
             interfacciaCentro.setCentro(centro.getNome());
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

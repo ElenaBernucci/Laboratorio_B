@@ -23,7 +23,7 @@ import java.util.regex.Pattern;
 public class Controlli implements Serializable {
 
     /**
-     * Verifica se il CF è valido
+     * Verifica se il Codice Fiscale è valido
      *
      * @param CF
      * @return boolean
@@ -35,7 +35,7 @@ public class Controlli implements Serializable {
     }
 
     /**
-     * Converte la prima lettera della String passata come argomento in maiuscola
+     * Rende maiuscola la prima lettera di ogni parola nella stringa fornita
      *
      * @param str
      * @return String
@@ -48,7 +48,7 @@ public class Controlli implements Serializable {
     }
 
     /**
-     * Verifica se l'email è un indirizzo valido
+     * Verifica se l'indirizzo email è valido
      *
      * @param email
      * @return boolean
@@ -82,7 +82,7 @@ public class Controlli implements Serializable {
     }
 
     /**
-     * Generazione di data di default se il database è vuoto
+     * Generazione di dati di default se il database è vuoto
      *
      * @return boolean
      * @throws IOException

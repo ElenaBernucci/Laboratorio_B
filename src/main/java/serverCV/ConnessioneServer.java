@@ -1,12 +1,12 @@
 package serverCV;
 
-import clientCV.condivisi.*;
+import clientCV.condivisi.OggettoLogin;
+import clientCV.condivisi.RichiestaServer;
 
-import java.io.*;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Semaphore;
 
@@ -55,7 +55,7 @@ public class ConnessioneServer extends Thread{
             case "login" -> login = eseguiRichiesta.login();
             case "riceviSintomi" -> lista = eseguiRichiesta.riceviSintomi();
             case "inserireInDb" -> risultato = eseguiRichiesta.inserireInDb();
-            case "registraNuovoCentro" -> risultato = eseguiRichiesta.registraNuovoCentro();
+            case "registraNuovoCentro" -> risultato = eseguiRichiesta.registraCentroVaccinale();
             case "riceviValoriIndividuali" -> lista = eseguiRichiesta.riceviValoriIndividuali();
             case "riceviVaccinati" -> lista = eseguiRichiesta.riceviVaccinati();
             case "filtra" -> lista = eseguiRichiesta.filtra();

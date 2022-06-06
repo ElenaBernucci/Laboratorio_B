@@ -171,7 +171,7 @@ public class InterfacciaRegistraCentro extends Interfaccia implements Initializa
             //Se il centro e stato registrato correttamente
             else{
                 RMI.inserireInDb(query);
-                RMI1.registraNuovoCentro(nomeCentro);
+                RMI1.registraCentroVaccinale(nomeCentro);
                 mostraWarning("Complimenti!", "Il centro vaccinale é stato registrato correttamente!");
                 vaiAHome(event);
             }

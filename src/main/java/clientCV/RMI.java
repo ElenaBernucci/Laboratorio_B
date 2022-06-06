@@ -1,7 +1,10 @@
 package clientCV;
 
 
-import clientCV.centriVaccinali.modelli.*;
+import clientCV.centriVaccinali.modelli.CentroVaccinale;
+import clientCV.centriVaccinali.modelli.Segnalazione;
+import clientCV.centriVaccinali.modelli.Sintomo;
+import clientCV.centriVaccinali.modelli.Vaccinato;
 import clientCV.cittadini.Cittadino;
 import clientCV.cittadini.Utente;
 import clientCV.condivisi.Controlli;
@@ -9,16 +12,13 @@ import clientCV.condivisi.OggettoLogin;
 import clientCV.condivisi.RichiestaServer;
 import serverCV.OperazioniServer;
 
-import java.io.*;
+import java.io.IOException;
 import java.rmi.NotBoundException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
-
-import static java.lang.System.out;
 
 /**
  * Proxy
@@ -108,7 +108,7 @@ public class RMI extends UnicastRemoteObject implements FunzionalitaClient {
      * @throws SQLException
      */
 
-    public Boolean registraNuovoCentro(String nomeCentro) throws SQLException, IOException, InterruptedException {
+    public Boolean registraCentroVaccinale(String nomeCentro) throws SQLException, IOException, InterruptedException {
         Controlli check = new Controlli();
         String query = "CREATE TABLE vaccinati_" + check.nomeTabella(nomeCentro) +
                 " (" +
@@ -122,7 +122,7 @@ public class RMI extends UnicastRemoteObject implements FunzionalitaClient {
                 "FOREIGN KEY(codicefiscale) REFERENCES idunivoci(codicefiscale)" +
                 ")";
         RichiestaServer richiesta = new RichiestaServer(query, nomeCentro, "registraNuovoCentro");
-        return stub.registraNuovoCentro(richiesta);
+        return stub.registraCentroVaccinale(richiesta);
     }
 
     /**

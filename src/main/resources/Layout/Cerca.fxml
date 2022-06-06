@@ -49,7 +49,7 @@
             <Cursor fx:constant="HAND" />
         </cursor>
     </Button>
-    <Button id="btnRisultati" layoutX="593.0" layoutY="230.0" mnemonicParsing="false" onAction="#mostraCentriVaccinali" prefHeight="47.0" prefWidth="236.0" style="-fx-background-color: #f2b705; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="CERCA ORA" textFill="WHITE">
+    <Button id="btnRisultati" layoutX="593.0" layoutY="230.0" mnemonicParsing="false" onAction="#cercaCentriVaccinali" prefHeight="47.0" prefWidth="236.0" style="-fx-background-color: #f2b705; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="CERCA ORA" textFill="WHITE">
         <font>
             <Font name="Montserrat Regular" size="18.0" />
         </font>
