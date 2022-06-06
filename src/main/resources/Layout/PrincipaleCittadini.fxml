@@ -16,7 +16,7 @@
                 <Image url="@../Images/Logo.png" />
             </image>
         </ImageView>
-        <Text fx:id="benvenutoText" fill="#787474" layoutX="574.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ciao, " wrappingWidth="202.78929138183594">
+        <Text fx:id="benvenutoText" fill="#787474" layoutX="574.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ciao, " wrappingWidth="202.78929138183594">
             <font>
                 <Font size="24.0" />
             </font>

@@ -71,7 +71,7 @@
             <Cursor fx:constant="HAND" />
         </cursor>
     </Button>
-   <Button id="btnLogout" fx:id="segnalaBtn" alignment="CENTER" layoutX="461.0" layoutY="506.0" mnemonicParsing="false" onAction="#inviaSegnalazione" prefHeight="57.0" prefWidth="195.0" style="-fx-background-color: #f2b705; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2) dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="INVIA SEGNALAZIONE" textFill="WHITE">
+   <Button id="btnLogout" fx:id="segnalaBtn" alignment="CENTER" layoutX="461.0" layoutY="506.0" mnemonicParsing="false" onAction="#inserisciEventiAvversi" prefHeight="57.0" prefWidth="195.0" style="-fx-background-color: #f2b705; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2) dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="INVIA SEGNALAZIONE" textFill="WHITE">
       <font>
          <Font name="Montserrat Regular" size="17.0" />
       </font>

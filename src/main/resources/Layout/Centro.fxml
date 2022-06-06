@@ -17,7 +17,7 @@
             <Font size="24.0" />
         </font>
     </Text>
-    <Button id="btnCerca" fx:id="cercaBtn" alignment="CENTER" layoutX="26.0" layoutY="390.0" mnemonicParsing="false" onAction="#vaiACerca" prefHeight="57.0" prefWidth="192.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="Cerca" textFill="WHITE">
+    <Button id="btnCerca" fx:id="cercaBtn" alignment="CENTER" disable="true" layoutX="28.0" layoutY="391.0" mnemonicParsing="false" onAction="#vaiACerca" prefHeight="57.0" prefWidth="192.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="Cerca" textFill="WHITE" visible="false">
         <font>
             <Font name="Montserrat Regular" size="18.0" />
         </font>
@@ -28,7 +28,7 @@
             <Cursor fx:constant="HAND" />
         </cursor>
     </Button>
-    <Button id="btnRegistrati" fx:id="registratiBtn" alignment="CENTER" layoutX="26.0" layoutY="455.0" mnemonicParsing="false" onAction="#vaiARegistrati" prefHeight="57.0" prefWidth="192.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="Registrati" textFill="WHITE">
+    <Button id="btnRegistrati" fx:id="registratiBtn" alignment="CENTER" layoutX="28.0" layoutY="463.0" mnemonicParsing="false" onAction="#vaiARegistrati" prefHeight="57.0" prefWidth="192.0" style="-fx-background-color: #787474; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" text="Registrati" textFill="WHITE">
         <font>
             <Font name="Montserrat Regular" size="18.0" />
         </font>
@@ -39,7 +39,7 @@
             <Cursor fx:constant="HAND" />
         </cursor>
     </Button>
-    <Button id="btnLogout" fx:id="logoutBtn" alignment="BASELINE_LEFT" layoutX="26.0" layoutY="519.0" mnemonicParsing="false" onAction="#logoutBtnImpl" prefHeight="57.0" prefWidth="145.0" style="-fx-border-style: none; -fx-background-color: transparent; " text="Logout" textFill="#787474" underline="true">
+    <Button id="btnLogout" fx:id="logoutBtn" alignment="BASELINE_LEFT" layoutX="23.0" layoutY="519.0" mnemonicParsing="false" onAction="#logoutBtnImpl" prefHeight="57.0" prefWidth="145.0" style="-fx-border-style: none; -fx-background-color: transparent; " text="Logout" textFill="#787474" underline="true">
         <font>
             <Font name="Montserrat Regular" size="18.0" />
         </font>
@@ -50,14 +50,14 @@
             <Cursor fx:constant="HAND" />
         </cursor>
     </Button>
-    <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="439.0" layoutY="39.0">
+    <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="574.0" layoutY="17.0">
         <image>
             <Image url="@../Images/Logo.png" />
         </image>
     </ImageView>
-    <Text id="txtNomeCV" fx:id="nomeText" fill="#d91e85" layoutX="383.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome Centro" textAlignment="CENTER" wrappingWidth="420.0">
+    <Text id="txtNomeCV" fx:id="nomeText" fill="#d91e85" layoutX="326.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome Centro" textAlignment="CENTER" wrappingWidth="536.0">
         <font>
-            <Font name="Montserrat Bold" size="32.0" />
+            <Font size="28.0" />
         </font>
     </Text>
     <Button id="btnIndietro" fx:id="tornaBtn" layoutX="19.0" layoutY="37.0" mnemonicParsing="false" onAction="#vaiACerca" prefHeight="43.0" prefWidth="105.0" style="-fx-border-style: none; -fx-background-color: transparent; " text="◄ Indietro" textFill="#787474" underline="true">
@@ -71,17 +71,17 @@
             <Cursor fx:constant="HAND" />
         </cursor>
     </Button>
-    <Text id="txtTipologia" fx:id="tipologiaText" fill="#787474a6" layoutX="27.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipologia: ">
+    <Text id="txtTipologia" fx:id="tipologiaText" fill="#787474" layoutX="27.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipologia: ">
         <font>
             <Font name="Montserrat Regular" size="18.0" />
         </font>
     </Text>
-    <Label id="txtIndirizzo" fx:id="indirizzoText" alignment="TOP_LEFT" layoutX="28.0" layoutY="185.0" maxHeight="89.0" maxWidth="481.0" prefHeight="89.0" prefWidth="208.0" text="Indirizzo: " textFill="#787474d1" wrapText="true">
+    <Label id="txtIndirizzo" fx:id="indirizzoText" alignment="TOP_LEFT" layoutX="28.0" layoutY="185.0" maxHeight="89.0" maxWidth="481.0" prefHeight="89.0" prefWidth="208.0" text="Indirizzo: " textFill="#787474" wrapText="true">
         <font>
             <Font name="Montserrat Regular" size="18.0" />
         </font>
     </Label>
-    <Text fill="#787474a6" layoutX="28.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Segnalazioni:">
+    <Text fill="#787474" layoutX="28.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Segnalazioni:">
         <font>
             <Font name="Montserrat Regular" size="18.0" />
         </font>
@@ -91,7 +91,7 @@
             <Font size="20.0" />
         </font>
     </Text>
-    <Text fill="#787474a6" layoutX="28.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Severità media:">
+    <Text fill="#787474" layoutX="28.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Severità media:">
         <font>
             <Font name="Montserrat Regular" size="18.0" />
         </font>
@@ -101,7 +101,7 @@
             <Font size="20.0" />
         </font>
     </Text>
-   <Button id="btnLogout" fx:id="segnalaBtn" alignment="CENTER" layoutX="425.0" layoutY="512.0" mnemonicParsing="false" onAction="#vaiASegnalazione" prefHeight="56.0" prefWidth="336.0" style="-fx-border-style: none; -fx-background-color: transparent; " text="Crea una segnalazione per questo centro" textFill="#787474" underline="true">
+   <Button id="btnLogout" fx:id="segnalaBtn" alignment="CENTER" layoutX="406.0" layoutY="520.0" mnemonicParsing="false" onAction="#vaiASegnalazione" prefHeight="56.0" prefWidth="336.0" style="-fx-border-style: none; -fx-background-color: transparent; " text="Crea una segnalazione per questo centro" textFill="#787474" underline="true">
       <font>
          <Font name="Montserrat Regular" size="17.0" />
       </font>
@@ -112,7 +112,7 @@
          <Cursor fx:constant="HAND" />
       </cursor>
    </Button>
-   <ScrollPane fx:id="segnalazioniScroll" fitToWidth="true" hbarPolicy="NEVER" layoutX="325.0" layoutY="135.0" maxHeight="394.0" maxWidth="799.0" minHeight="232.0" minWidth="495.0" prefHeight="362.0" prefWidth="536.0" style="-fx-opacity: 50; -fx-border-radius: 0; -fx-background: #FFFFFF; -fx-background-color: #FFFFFF;">
+   <ScrollPane fx:id="segnalazioniScroll" fitToWidth="true" hbarPolicy="NEVER" layoutX="326.0" layoutY="148.0" maxHeight="394.0" maxWidth="799.0" minHeight="232.0" minWidth="495.0" prefHeight="362.0" prefWidth="536.0" style="-fx-opacity: 50; -fx-border-radius: 0; -fx-background: #FFFFFF; -fx-background-color: #FFFFFF;">
       <content>
          <GridPane fx:id="segnalazioniGrid" style="-fx-opacity: 50; -fx-background-color: #FFFFFF;">
             <columnConstraints>
@@ -124,7 +124,7 @@
          </GridPane>
       </content>
    </ScrollPane>
-   <Text fx:id="benvenutoText1" fill="#f2b705" layoutX="516.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Segnalazioni:" textAlignment="CENTER" wrappingWidth="154.0">
+   <Text fx:id="benvenutoText1" fill="#f2b705" layoutX="517.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Segnalazioni:" textAlignment="CENTER" wrappingWidth="154.0">
       <font>
          <Font size="24.0" />
       </font>

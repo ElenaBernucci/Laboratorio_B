@@ -141,6 +141,7 @@ public class InterfacciaCentro extends Interfaccia implements Initializable {
         if (utente == null) {
             benvenutoText.setText("Accesso eseguito come ospite");
             segnalaBtn.setDisable(true);
+            segnalaBtn.setVisible(false);
             logoutBtn.setText("Accedi");
             logoutBtn.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
@@ -156,8 +157,8 @@ public class InterfacciaCentro extends Interfaccia implements Initializable {
         else {
             benvenutoText.setText("Ciao, " + utente.getUsername());
             segnalaBtn.setDisable(false);
-            registratiBtn.setText("Invia Segnalazione");
-
+           // registratiBtn.setText("Invia Segnalazione");
+            registratiBtn.setVisible(false);
             registratiBtn.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent actionEvent) {

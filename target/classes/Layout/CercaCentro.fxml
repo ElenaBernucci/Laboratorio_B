@@ -9,9 +9,9 @@
 <!--ScrollPane Size:
     799 x 232-->
 
-<AnchorPane prefHeight="108.0" prefWidth="536.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientCV.centriVaccinali.interfacce.InterfacciaCercaCentro">
+<AnchorPane prefHeight="127.0" prefWidth="523.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 2, 2);" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientCV.centriVaccinali.interfacce.InterfacciaCercaCentro">
    <children>
-      <Button fx:id="entraBtn" alignment="CENTER" layoutX="416.0" layoutY="36.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="86.0" style="-fx-background-color: #d91e85; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 2, 2);" text="Entra" textFill="WHITE">
+      <Button fx:id="entraBtn" alignment="CENTER" layoutX="399.0" layoutY="43.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="99.0" style="-fx-background-color: #d91e85; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 2, 2);" text="Visualizza" textFill="WHITE">
          <font>
             <Font name="Montserrat Regular" size="18.0" />
          </font>
@@ -32,7 +32,7 @@
             <Font size="15.0" />
          </font>
       </Text>
-      <Text fx:id="indirizzoText" fill="#787474" layoutX="28.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Indirizzo" wrappingWidth="388.0">
+      <Text fx:id="indirizzoText" fill="#787474" layoutX="28.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Indirizzo" wrappingWidth="296.0">
          <font>
             <Font size="15.0" />
          </font>
