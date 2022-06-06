@@ -27,8 +27,7 @@ import java.util.ResourceBundle;
  */
 public class InterfacciaRegistraCittadino extends Interfaccia implements Initializable {
     @FXML
-    private TextField fieldNome, fieldCognome, fieldCodiceFiscale,
-            fieldUsername, fieldEmail, fieldID;
+    private TextField fieldNome, fieldCognome, fieldCodiceFiscale, fieldUsername, fieldEmail, fieldID;
     @FXML
     private PasswordField fieldPassword;
     @FXML

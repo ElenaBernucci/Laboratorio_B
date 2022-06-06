@@ -47,7 +47,7 @@ public class InterfacciaLogIn extends Interfaccia implements Initializable {
      */
     public void vaiARegistra(ActionEvent event) throws IOException, SQLException, NotBoundException, InterruptedException {
 
-        ControlliInserimento();
+        controlliInserimento();
 
         cambiaSchermataConUtente("RegistraCittadino.fxml", null, event);
     }
@@ -74,7 +74,7 @@ public class InterfacciaLogIn extends Interfaccia implements Initializable {
      */
     public void controllaLogIn(ActionEvent event) throws IOException, SQLException, NotBoundException, InterruptedException {
 
-        ControlliInserimento();
+        controlliInserimento();
 
         String username = usernameField.getText();
         String password = passwordField.getText();
@@ -145,7 +145,7 @@ public class InterfacciaLogIn extends Interfaccia implements Initializable {
      * @throws NotBoundException
      * InterruptedException
      */
-    public boolean ControlliInserimento() throws IOException, SQLException, NotBoundException, InterruptedException {
+    public boolean controlliInserimento() throws IOException, SQLException, NotBoundException, InterruptedException {
 
         Controlli check = new Controlli();
 
